@@ -1,0 +1,41 @@
+.navbar {
+  position: fixed;
+  top: 20px; /* Add top margin */
+  left: 50%;
+  transform: translateX(-50%); /* Center the navbar horizontally */
+  width: auto;
+  background-color: #1e1e1e;
+  padding: 10px 13px; /* Adjusted padding for a wider 'bean' shape */
+  border-radius: 50px; /* Create the 'bean' shape */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #9c27b0;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.navbar a.active {
+  background-color: #9c27b0;
+  color: #fff;
+  transform: scale(1.1);
+}

@@ -1,0 +1,24 @@
+<div id="vanta-contact-bg"></div>
+<div class="contact-container">
+  <div class="contact-header">
+    <h1>Contact</h1>
+    <p class="subtitle">Lets get in touch!</p>
+  </div>
+  <h3>Contact Form</h3>
+  <div class="contact-box">
+    <div class="contact-form">
+      <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="contact-form">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" formControlName="message" required></textarea>
+
+        <div class=right><button type="submit" [disabled]="contactForm.invalid">Submit</button></div>
+      </form>
+    </div>
+  </div>
+</div>
