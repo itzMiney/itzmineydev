@@ -1,5 +1,4 @@
 import {Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
-import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-not-found',
@@ -9,13 +8,9 @@ import {Meta, Title} from '@angular/platform-browser';
 })
 
 export class NotFoundComponent implements OnInit, OnDestroy, AfterViewInit {
-  constructor(private titleService: Title, private meta: Meta) {}
   private vantaEffect: any;
 
   ngOnInit() {
-    this.titleService.setTitle('404 Not Found');
-    this.meta.updateTag({ name: 'description', content: 'How the hell did you end up here?' });
-    this.meta.updateTag({ property: 'og:image', content: 'https://itzminey.dev/assets/ogimg.png' });
 
     window.addEventListener('resize', this.onResize.bind(this)); // Add resize listener for responsiveness
 

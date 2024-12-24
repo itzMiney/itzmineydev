@@ -1,5 +1,4 @@
 import {Component, OnInit, OnDestroy, AfterViewInit} from '@angular/core';
-import {Meta, Title} from '@angular/platform-browser';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import {NgIf} from '@angular/common';
 
@@ -12,17 +11,13 @@ import {NgIf} from '@angular/common';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit, OnDestroy, AfterViewInit {
-  constructor(private titleService: Title, private meta: Meta, private deviceService: DeviceDetectorService) {
+  constructor( private deviceService: DeviceDetectorService) {
     this.isMobile = this.deviceService.isMobile();
   }
   isMobile: boolean;
   private vantaEffect: any;
 
   ngOnInit() {
-    this.titleService.setTitle('itzMiney\'s Home');
-    this.meta.updateTag({ name: 'description', content: 'Welcome to itzMiney\'s Homepage!\bHere you can find my portfolio and other cool stuff.' });
-    this.meta.updateTag({ property: 'og:image', content: 'https://itzminey.dev/assets/ogimg.png' });
-
     window.addEventListener('resize', this.onResize.bind(this)); // Add resize listener for responsiveness
 
     const bgElement = document.getElementById('vanta-about-bg');

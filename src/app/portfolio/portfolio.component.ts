@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
-import {Meta, Title } from '@angular/platform-browser';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import {NgIf} from '@angular/common';
 
@@ -12,16 +11,13 @@ import {NgIf} from '@angular/common';
   styleUrl: './portfolio.component.css'
 })
 export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
-  constructor(private titleService: Title, private meta: Meta, private deviceService: DeviceDetectorService) {
+  constructor(private deviceService: DeviceDetectorService) {
     this.isMobile = this.deviceService.isMobile();
   }
   isMobile: boolean;
   private vantaEffect: any;
 
   ngOnInit() {
-    this.titleService.setTitle('Portfolio | itzMiney');
-    this.meta.updateTag({ name: 'description', content: 'This is my portfolio where you can find examples of my designs and other projects!' });
-    this.meta.updateTag({ property: 'og:image', content: 'https://itzminey.dev/assets/ogimg.png' });
     window.addEventListener('resize', this.onResize.bind(this)); // Add resize listener for responsiveness
 
     const bgElement = document.getElementById('vanta-portfolio-bg');
