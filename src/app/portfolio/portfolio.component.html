@@ -1,6 +1,10 @@
 <div id="vanta-portfolio-bg"></div>
 <div class="portfolio-container">
-  <div class="portfolio-header">
+  <div class="portfolio-header" *ngIf="!isMobile">
+    <h1>My Portfolio</h1>
+    <p class="subtitle">Projects & Designs</p>
+  </div>
+  <div class="portfolio-header-mobile" *ngIf="isMobile">
     <h1>My Portfolio</h1>
     <p class="subtitle">Projects & Designs</p>
   </div>

@@ -1,0 +1,65 @@
+.mobile-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: none;
+  padding: 10px;
+  color: #fff;
+  z-index: 1000;
+}
+
+.menu-icon {
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.full-screen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.full-screen-menu ul {
+  list-style: none;
+  padding: 0;
+  position: fixed;
+  top: 72px;
+  left: 72px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.full-screen-menu li {
+  margin: 20px 0;
+  padding-bottom: 50px;
+}
+
+.full-screen-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}

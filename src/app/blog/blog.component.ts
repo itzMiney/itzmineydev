@@ -1,14 +1,21 @@
 import {Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-blog',
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
 export class BlogComponent implements OnInit, OnDestroy, AfterViewInit {
-  constructor(private titleService: Title, private meta: Meta) {}
+  constructor(private titleService: Title, private meta: Meta, private deviceService: DeviceDetectorService) {
+    this.isMobile = this.deviceService.isMobile();
+  }
+  isMobile: boolean;
   private vantaEffect: any;
 
   ngOnInit() {

@@ -30,3 +30,17 @@
   font-weight: 400;
   color: white;
 }
+
+.error-message-mobile h1 {
+  font-size: 8rem;
+  margin: 0;
+  font-weight: 700;
+  color: white;
+}
+
+.error-message-mobile p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  font-weight: 400;
+  color: white;
+}

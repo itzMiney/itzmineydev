@@ -1,14 +1,21 @@
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {Meta, Title } from '@angular/platform-browser';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
 })
 export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
-  constructor(private titleService: Title, private meta: Meta) {}
+  constructor(private titleService: Title, private meta: Meta, private deviceService: DeviceDetectorService) {
+    this.isMobile = this.deviceService.isMobile();
+  }
+  isMobile: boolean;
   private vantaEffect: any;
 
   ngOnInit() {
