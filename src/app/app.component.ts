@@ -40,6 +40,13 @@ export class AppComponent implements OnInit {
       )
       .subscribe(data => {
         const meta = data['meta'] || {};
+        if (this.router.url === '/') {
+          // Add specific fallback meta for root route
+          meta.title = meta.title || 'itzMiney\'s Home';
+          meta.description = meta.description || 'Welcome to itzMiney\'s Homepage! Here you can find my portfolio and other cool stuff.';
+          meta.image = meta.image || 'https://itzminey.dev/assets/ogimg.png';
+          meta.url = meta.url || 'https://itzminey.dev';
+        }
         this.updateMetaTags(meta);
       });
   }

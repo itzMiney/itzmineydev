@@ -12,7 +12,7 @@ export const routes: Routes = [
     data: {
       meta: {
         title: 'itzMiney\'s Home',
-        description: 'Welcome to itzMiney\'s Homepage! \bHere you can find my portfolio and other cool stuff.',
+        description: 'Welcome to itzMiney\'s Homepage! Here you can find my portfolio and other cool stuff.',
         image: 'https://itzminey.dev/assets/ogimg.png',
         url: 'https://itzminey.dev/about'
       }
@@ -24,7 +24,7 @@ export const routes: Routes = [
     data: {
       meta: {
         title: 'itzMiney\'s Home',
-        description: 'Welcome to itzMiney\'s Homepage! \bHere you can find my portfolio and other cool stuff.',
+        description: 'Welcome to itzMiney\'s Homepage! Here you can find my portfolio and other cool stuff.',
         image: 'https://itzminey.dev/assets/ogimg.png',
         url: 'https://itzminey.dev/about'
       }
@@ -48,7 +48,7 @@ export const routes: Routes = [
     data: {
       meta: {
         title: 'Blog | itzMiney',
-        description: 'Welcome to my blog! \bI\'ll post occasional updates here on the stuff I\'m currently up to.',
+        description: 'Welcome to my blog! I\'ll post occasional updates here on the stuff I\'m currently up to.',
         image: 'https://itzminey.dev/assets/ogimg.png',
         url: 'https://itzminey.dev/blog'
       }
