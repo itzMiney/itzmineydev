@@ -30,36 +30,21 @@
               "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
+            "csr": {
+              "browser": "src/main.ts"
             },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
+            "ssr": {
+              "browser": "src/main.ts",
+              "server": "src/main.server.ts",
+              "outputMode": "server",
+              "ssr": {
+                "entry": "src/server.ts"
+              }
             }
-          },
-          "defaultConfiguration": "production"
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -69,9 +54,15 @@
             },
             "development": {
               "buildTarget": "itzmineydev:build:development"
+            },
+            "csr": {
+              "buildTarget": "itzmineydev:build:csr"
+            },
+            "ssr": {
+              "buildTarget": "itzmineydev:build:ssr"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "csr"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"

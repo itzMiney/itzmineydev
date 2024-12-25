@@ -57,11 +57,11 @@ export class AboutComponent implements OnInit, OnDestroy, AfterViewInit {
   }
   ngOnDestroy() {
     if (isPlatformBrowser(this.platformId)) {
-      if (this.vantaEffect) {
-        this.vantaEffect.destroy(); // Clean up the effect on destroy
-      }
-      window.removeEventListener('resize', this.onResize); // Remove the listener when the component is destroyed
+    if (this.vantaEffect) {
+      this.vantaEffect.destroy(); // Clean up the effect on destroy
     }
+    window.removeEventListener('resize', this.onResize); // Remove the listener when the component is destroyed
+      }
   }
 
   initVanta() {

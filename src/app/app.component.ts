@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID} from '@angular/core';
 import {NgIf} from '@angular/common';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import {RouterOutlet, ActivatedRoute, Router, NavigationEnd} from '@angular/router';
@@ -7,6 +7,7 @@ import {MobileNavbarComponent} from './mobile-navbar/mobile-navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import { Title, Meta } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -22,12 +23,22 @@ export class AppComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.isMobile = this.deviceService.isMobile();
+    if (isPlatformBrowser(this.platformId)) {
+      // Use client-side logic to determine if it's mobile
+      this.isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+    } else {
+      // Default fallback for SSR
+      this.isMobile = false; // Or any other logic to handle SSR
+    }
   }
 
   ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile = window.innerWidth <= 768;
+    }
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
