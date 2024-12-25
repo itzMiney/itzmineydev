@@ -1,11 +1,15 @@
 <div id="vanta-blog-bg"></div>
 <div class="container" id="container">
+  <ng-container *ngIf="!isMobile; else mobileError">
   <div class="error-message" *ngIf="!isMobile">
     <h1>Soon&#8482;</h1>
     <p>Under Construction!</p>
   </div>
+  </ng-container>
+  <ng-template #mobileError>
   <div class="error-message-mobile" *ngIf="isMobile">
     <h1>Soon&#8482;</h1>
     <p>Under Construction!</p>
   </div>
+  </ng-template>
 </div>

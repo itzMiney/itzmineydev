@@ -1,13 +1,18 @@
 <div id="vanta-about-bg"></div>
+
 <div class="about-container">
-  <div class="about-header" *ngIf="!isMobile">
-    <h1>About Me</h1>
-    <p class="subtitle">Hobby developer & designer</p>
-  </div>
-  <div class="about-header-mobile" *ngIf="isMobile">
-    <h1>About Me</h1>
-    <p class="subtitle">Hobby developer & designer</p>
-  </div>
+  <ng-container *ngIf="!isMobile; else mobileContainer">
+    <div class="about-header" *ngIf="!isMobile">
+      <h1>About Me</h1>
+      <p class="subtitle">Hobby developer & designer</p>
+    </div>
+  </ng-container>
+  <ng-template #mobileContainer>
+    <div class="about-header-mobile" *ngIf="isMobile">
+      <h1>About Me</h1>
+      <p class="subtitle">Hobby developer & designer</p>
+    </div>
+  </ng-template>
 
   <div class="about-content">
     <p>
@@ -18,8 +23,12 @@
       When I'm not coding, I love learning new technologies and contributing to open-source projects.<br>I also give support on the Pterodactyl Discord
     </p>
     <br>
-    <h3 class="tech-stack-title" *ngIf="!isMobile">Tech Stack</h3>
-    <h3 class="tech-stack-title-mobile" *ngIf="isMobile">Tech Stack</h3>
+    <ng-container *ngIf="!isMobile; else mobileTechStack">
+      <h3 class="tech-stack-title" *ngIf="!isMobile">Tech Stack</h3>
+    </ng-container>
+    <ng-template #mobileTechStack>
+      <h3 class="tech-stack-title-mobile" *ngIf="isMobile">Tech Stack</h3>
+    </ng-template>
     <div class="tech-stack">
       <div class="category">
        <h4>= WEB SERVERS =</h4>

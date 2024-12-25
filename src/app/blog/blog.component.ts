@@ -22,12 +22,12 @@ export class BlogComponent implements OnInit, OnDestroy, AfterViewInit {
     private route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.isMobile = this.deviceService.isMobile();
   }
-  isMobile: boolean;
+  isMobile: boolean = false;
   private vantaEffect: any;
 
   ngOnInit() {
+    this.isMobile = this.deviceService.isMobile();
     const metaData = this.route.snapshot.data['meta'];
     if (metaData?.title) {
       this.title.setTitle(metaData.title);
