@@ -8,7 +8,7 @@
   <div class="full-screen-menu" *ngIf="menuOpen">
     <button class="close-icon" (click)="toggleMenu()">✖</button>
     <ul>
-      <li><a [routerLink]="'/about'" [class.active]="activeLink === '/about'">About</a></li>
+      <li><a [routerLink]="'/'" [class.active]="activeLink === '/'">About</a></li>
       <li><a [routerLink]="'/portfolio'" [class.active]="activeLink === '/portfolio'">Portfolio</a></li>
       <li><a href="https://linktr.ee/itzminey">Socials</a></li>
       <li><a [routerLink]="'/blog'" [class.active]="activeLink === '/blog'">Blog</a></li>

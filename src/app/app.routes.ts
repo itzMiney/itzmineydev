@@ -7,8 +7,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/about',
-    pathMatch: 'full',
+    component: AboutComponent,
     data: {
       meta: {
         title: 'itzMiney\'s Home',
@@ -20,15 +19,8 @@ export const routes: Routes = [
   }, // Redirect default route to 'about'
   {
     path: 'about',
-    component: AboutComponent,
-    data: {
-      meta: {
-        title: 'itzMiney\'s Home',
-        description: 'Welcome to itzMiney\'s Homepage! Here you can find my portfolio and other cool stuff.',
-        image: 'https://itzminey.dev/assets/ogimg.png',
-        url: 'https://itzminey.dev/about'
-      }
-    }
+    redirectTo: '/',
+    pathMatch: 'full'
   },
   {
     path: 'portfolio',
