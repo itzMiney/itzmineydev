@@ -51,18 +51,19 @@ export class AppComponent implements OnInit {
       )
       .subscribe(data => {
         const meta = data['meta'] || {};
-        if (this.router.url === '/') {
-          // Add specific fallback meta for root route
+        if (this.router.url === '/about') {
+          // fallback meta
           meta.title = meta.title || 'itzMiney\'s Home';
           meta.description = meta.description || 'Welcome to itzMiney\'s Homepage! Here you can find my portfolio and other cool stuff.';
           meta.image = meta.image || 'https://itzminey.dev/assets/ogimg.png';
           meta.url = meta.url || 'https://itzminey.dev';
+          meta.color = meta.color || '#eb284c';
         }
         this.updateMetaTags(meta);
       });
   }
 
-  updateMetaTags(meta: { title?: string; description?: string; image?: string; url?: string }) {
+  updateMetaTags(meta: { title?: string; description?: string; image?: string; url?: string; color?: string }) {
     if (meta.title) {
       this.titleService.setTitle(meta.title);
       this.metaService.updateTag({ name: 'og:title', content: meta.title });
@@ -76,6 +77,10 @@ export class AppComponent implements OnInit {
     }
     if (meta.url) {
       this.metaService.updateTag({ name: 'og:url', content: meta.url });
+    }
+    if (meta.color) {
+      this.titleService.setTitle(meta.color);
+      this.metaService.updateTag({ name: 'theme-color', content: meta.color});
     }
   }
 }
