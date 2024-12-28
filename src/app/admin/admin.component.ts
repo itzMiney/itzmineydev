@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AdminComponent implements OnInit {
   articles: any[] = [];
+  noArticles: boolean = false;
 
   constructor(private articleService: ArticleService, private router: Router) {}
 
@@ -34,6 +35,7 @@ export class AdminComponent implements OnInit {
     this.articleService.getArticles(token).subscribe(
       (data) => {
         this.articles = data;
+        this.noArticles = this.articles.length === 0;
       },
       (error) => {
         console.error('Failed to load articles', error);
@@ -43,6 +45,14 @@ export class AdminComponent implements OnInit {
 
   createArticle() {
     alert('Create article functionality goes here');
+  }
+
+  editArticle() {
+    alert('Delete article functionality goes here');
+  }
+
+  deleteArticle() {
+    alert('Delete article functionality goes here');
   }
 
   viewArticles() {

@@ -69,9 +69,9 @@ export class AboutComponent implements OnInit, OnDestroy, AfterViewInit {
       // Initialize the Vanta effect on the element with ID 'vanta-bg'
       this.vantaEffect = window.VANTA.NET({
         el: '#vanta-about-bg',
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
         scale: 1.00,
         scaleMobile: 1.00,
         points: 20.00,

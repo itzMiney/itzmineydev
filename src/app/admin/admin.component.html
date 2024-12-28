@@ -5,17 +5,25 @@
   <div class="admin-actions">
     <button (click)="createArticle()">Create Article</button>
     <button (click)="viewArticles()">View Articles</button>
-    <button (click)="logout()">Logout</button>
+    <button (click)="editArticle()">Edit Article</button>
+    <button (click)="deleteArticle()">Delete Article</button>
   </div>
 
-  <div *ngIf="articles && articles.length > 0">
-    <h3>Articles</h3>
-    <div class="articles-list">
-      <div *ngFor="let article of articles" class="article">
-        <h4>{{ article.title }}</h4>
-        <p>{{ article.content }}</p>
-      </div>
-    </div>
+  <div *ngIf="noArticles">
+    <p>No articles available.</p>  <!-- Show message if no articles -->
+  </div>
+
+  <div *ngIf="!noArticles">
+    <ul>
+      <li *ngFor="let article of articles">
+        <!-- Display article details here -->
+        {{ article.title }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="logout">
+    <button (click)="logout()">Logout</button>
   </div>
 </div>
 </div>

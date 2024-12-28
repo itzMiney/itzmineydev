@@ -8,6 +8,7 @@ import {FooterComponent} from './footer/footer.component';
 import { Title, Meta } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common';
+import {subscribe} from 'node:diagnostics_channel';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,9 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class AppComponent implements OnInit {
   isMobile: boolean;
+
+  showNavbar: boolean = true;
+  showFooter: boolean = true;
 
   constructor(
     private deviceService: DeviceDetectorService,
@@ -60,7 +64,9 @@ export class AppComponent implements OnInit {
           meta.color = meta.color || '#eb284c';
         }
         this.updateMetaTags(meta);
+        this.checkRoute();
       });
+    this.checkRoute();
   }
 
   updateMetaTags(meta: { title?: string; description?: string; image?: string; url?: string; color?: string }) {
@@ -81,6 +87,19 @@ export class AppComponent implements OnInit {
     if (meta.color) {
       this.titleService.setTitle(meta.color);
       this.metaService.updateTag({ name: 'theme-color', content: meta.color});
+    }
+  }
+
+  checkRoute() {
+    const currentRoute = this.activatedRoute.snapshot.firstChild?.routeConfig?.path;
+
+    // Hide navbar and footer on admin route
+    if (currentRoute === 'admin'||'login') {
+      this.showNavbar = false;
+      this.showFooter = false;
+    } else {
+      this.showNavbar = true;
+      this.showFooter = true;
     }
   }
 }

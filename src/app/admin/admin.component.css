@@ -11,7 +11,7 @@
 
 .admin-container {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 40px;
   width: 350px;
@@ -25,17 +25,31 @@
 }
 
 .admin-actions button {
-  background-color: #4CAF50;
+  background-color: #bd3948;
   color: white;
   padding: 12px 20px;
   margin: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
 }
 
 .admin-actions button:hover {
-  background-color: #45a049;
+  background-color: #e3485a;
+}
+
+.logout button {
+  background-color: #713252;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.logout button:hover {
+  background-color: #592840;
 }
 
 .articles-list {

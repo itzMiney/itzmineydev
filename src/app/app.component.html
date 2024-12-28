@@ -1,8 +1,8 @@
 <ng-container *ngIf="!isMobile; else mobileNavbar">
-  <app-navbar></app-navbar>
+  <app-navbar *ngIf="showNavbar" ></app-navbar>
 </ng-container>
 <ng-template #mobileNavbar>
-  <app-mobile-navbar></app-mobile-navbar>
+  <app-mobile-navbar *ngIf="showNavbar"></app-mobile-navbar>
 </ng-template>
 <router-outlet />
-<app-footer></app-footer>
+<app-footer *ngIf="showFooter"></app-footer>

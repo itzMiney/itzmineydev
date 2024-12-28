@@ -72,8 +72,8 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       // Initialize the Vanta effect on the element with ID 'vanta-bg'
       this.vantaEffect = window.VANTA.NET({
         el: '#vanta-login-bg',
-        mouseControls: true,
-        touchControls: true,
+        mouseControls: false,
+        touchControls: false,
         gyroControls: false,
         scale: 1.00,
         scaleMobile: 1.00,
