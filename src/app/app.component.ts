@@ -93,12 +93,22 @@ export class AppComponent implements OnInit {
     const currentRoute = this.activatedRoute.snapshot.firstChild?.routeConfig?.path;
 
     // Hide navbar and footer on admin route
-    if (currentRoute === 'admin'||'login') {
-      this.showNavbar = false;
-      this.showFooter = false;
-    } else {
-      this.showNavbar = true;
-      this.showFooter = true;
+    switch (currentRoute) {
+      case 'admin': {
+        this.showNavbar = false;
+        this.showFooter = false;
+        break;
+      }
+      case "login": {
+        this.showNavbar = false;
+        this.showFooter = false;
+        break;
+      }
+      default: {
+        this.showNavbar = true;
+        this.showFooter = true;
+        break;
+      }
     }
   }
 }
