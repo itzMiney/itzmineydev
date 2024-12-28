@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ArticleService {
 
-  private apiUrl = 'http://localhost:5000/api/articles';  // Replace with your API endpoint
+  private apiUrl = 'http://localhost:7020/api/articles';  // Replace with your API endpoint
 
   constructor(private http: HttpClient) {}
 

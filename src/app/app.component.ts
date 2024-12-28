@@ -85,7 +85,6 @@ export class AppComponent implements OnInit {
       this.metaService.updateTag({ name: 'og:url', content: meta.url });
     }
     if (meta.color) {
-      this.titleService.setTitle(meta.color);
       this.metaService.updateTag({ name: 'theme-color', content: meta.color});
     }
   }

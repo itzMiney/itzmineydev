@@ -54,10 +54,28 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    data: {
+      meta: {
+        title: 'Login | itzMiney',
+        description: 'Admin Panel Login',
+        image: 'https://itzminey.dev/assets/ogimg.png',
+        url: 'https://itzminey.dev/login',
+        color: '#eb284c'
+      }
+    }
   },
   {
     path: 'admin',
     component: AdminComponent,
+    data: {
+      meta: {
+        title: 'Admin Panel | itzMiney',
+        description: 'Admin Panel',
+        image: 'https://itzminey.dev/assets/ogimg.png',
+        url: 'https://itzminey.dev/admin',
+        color: '#eb284c'
+      }
+    }
   },
   {
     path: '**',
