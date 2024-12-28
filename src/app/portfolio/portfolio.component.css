@@ -17,6 +17,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.height-container {
+  min-height: 100vh;
+  align-content: center;
+}
+
 .portfolio-header {
   text-align: center;
 }
@@ -83,9 +88,10 @@
   font-weight: 400;
 }
 
-.portfolio-footer {
+.commission-button {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .ko-fi-btn {

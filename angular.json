@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "aot": true,
             "outputPath": "dist/itzmineydev",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -34,7 +35,8 @@
           },
           "configurations": {
             "csr": {
-              "browser": "src/main.ts"
+              "browser": "src/main.ts",
+              "aot": true
             },
             "ssr": {
               "browser": "src/main.ts",
@@ -42,7 +44,8 @@
               "outputMode": "server",
               "ssr": {
                 "entry": "src/server.ts"
-              }
+              },
+              "aot": true
             }
           }
         },

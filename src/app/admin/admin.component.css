@@ -1,0 +1,51 @@
+#admin-bg {
+  transition: opacity 0.3s ease-in-out;
+  background: #39354a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -100; /* Place the background behind content */
+}
+
+.admin-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 350px;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.height-container {
+  min-height: 100vh;
+  align-content: center;
+}
+
+.admin-actions button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-actions button:hover {
+  background-color: #45a049;
+}
+
+.articles-list {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.article {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}

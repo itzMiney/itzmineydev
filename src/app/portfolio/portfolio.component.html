@@ -1,4 +1,5 @@
 <div id="vanta-portfolio-bg"></div>
+<div class="height-container">
 <div class="portfolio-container">
   <ng-container *ngIf="!isMobile; else mobileContainer">
   <div class="portfolio-header" *ngIf="!isMobile">
@@ -18,8 +19,13 @@
       I mostly do modern graphic designs since a couple years now,
       but I'm also getting better at coding and you might soon see a couple little coding projects from my <a href="https://github.com/itzminey">GitHub</a> listed here too!<br>
       If you like what I do consider following me on my <a href="https://linktr.ee/itzminey">socials</a> and if you feel really generous leave a tip on my <a href="https://ko-fi.com/itzminey">Ko-Fi!</a><br>
-      You can also commission me to make designs for you, just click on the button at the end of this page!
+      You can also commission me to make designs for you, just click on the button below!
     </p>
+  </div>
+  <div class="commission-button">
+    <a href="https://ko-fi.com/itzminey/commissions" target="_blank">
+      <button class="ko-fi-btn">Commission me on Ko-Fi</button>
+    </a>
   </div>
   <div class="portfolio-gallery">
     <div class="gallery-item">
@@ -47,9 +53,5 @@
       <p>Logo Design</p>
     </div>
   </div>
-  <div class="portfolio-footer">
-    <a href="https://ko-fi.com/itzminey/commissions" target="_blank">
-      <button class="ko-fi-btn">Commission me on Ko-Fi</button>
-    </a>
-  </div>
+</div>
 </div>
