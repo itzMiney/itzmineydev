@@ -7,12 +7,12 @@ import {Observable, tap} from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:7020/api/auth/login';  // Replace with your API endpoint
+  private apiUrl = '/api/auth/login';  // Replace with your API endpoint
 
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post('http://localhost:7020/api/auth/login', { username, password })
+    return this.http.post(this.apiUrl, { username, password })
         .pipe(
             tap((response: any) => {
               // Store token in localStorage after successful login
