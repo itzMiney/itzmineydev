@@ -1,11 +1,11 @@
-import {Component, OnInit, OnDestroy, AfterViewInit, Inject} from '@angular/core';
-import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
+import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID } from '@angular/core';
+import {VantaBackgroundService} from '../services/vanta-background.service';
+import {DeviceDetectorService} from '../services/device-detector.service';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,6 @@ import { PLATFORM_ID } from '@angular/core';
   imports: [
     FormsModule,
     NgIf,
-    HttpClientModule
   ]
 })
 
@@ -22,80 +21,60 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   username: string = '';
   password: string = '';
   errorMessage: string = '';
-  private vantaEffect: any;
+  private readonly elementId = 'vanta-login-bg';
+  isMobile: boolean = false;
 
   constructor(
     private authService: AuthService,
     private router: Router,
+    private vantaService: VantaBackgroundService,
+    private deviceService: DeviceDetectorService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
-    window.addEventListener('resize', this.onResize.bind(this));
-
-    const bgElement = document.getElementById('vanta-login-bg');
-    if (bgElement) {
-      bgElement.style.position = 'fixed';
+    this.isMobile = this.deviceService.isMobile;
+    if (isPlatformBrowser(this.platformId)) {
+      window.addEventListener('resize', this.onResize.bind(this));
     }
   }
 
   onLogin() {
-    this.authService.login(this.username, this.password).subscribe(
-      (response: any) => {
+    const observer = {
+      'next': (response: any) => {
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/admin']); // Redirect to admin page
+        this.router.navigate(['/admin']).then(
+          (success) => {
+            if (success) {
+              console.log('Navigation to admin succeeded');
+            } else {
+              console.warn('Navigation to admin failed');
+            }
+          },
+          (error) => {
+            console.error('Navigation error:', error);
+          }
+        );
       },
-      () => {
+      error: () => {
         this.errorMessage = 'Invalid credentials';
-      }
-    );
+      },
+    };
+
+    this.authService.login(this.username, this.password).subscribe(observer);
   }
 
   ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      // Initialize VANTA effect only in the browser
-      this.initVanta();
-      this.resizeVanta();
-    }
+    this.vantaService.initVanta(this.elementId, {});
   }
   ngOnDestroy() {
+    this.vantaService.destroyVanta(this.elementId);
     if (isPlatformBrowser(this.platformId)) {
-      if (this.vantaEffect) {
-        this.vantaEffect.destroy(); // Clean up the effect on destroy
-      }
-      window.removeEventListener('resize', this.onResize); // Remove the listener when the component is destroyed
-    }
-  }
-
-  initVanta() {
-    if (isPlatformBrowser(this.platformId)) {
-      // Initialize the Vanta effect on the element with ID 'vanta-bg'
-      this.vantaEffect = window.VANTA.NET({
-        el: '#vanta-login-bg',
-        mouseControls: false,
-        touchControls: false,
-        gyroControls: false,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        points: 20.00,
-        maxDistance: 25.00,
-        spacing: 18.00,
-        showDots: false,
-        minWidth: window.innerWidth,
-        minHeight: window.innerHeight,
-      });
+      window.removeEventListener('resize', this.onResize);
     }
   }
 
   onResize() {
-    // Update the minHeight and minWidth when the window is resized
-    this.resizeVanta();
-  }
-
-  resizeVanta() {
-    if (this.vantaEffect) {
-      // Trigger the resize on the vanta effect
-      this.vantaEffect.resize();
-    }
+    this.vantaService.resizeVanta(this.elementId);
   }
 }

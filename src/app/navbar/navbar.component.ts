@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Router, NavigationEnd, RouterLink} from '@angular/router';
-import { DeviceDetectorService } from 'ngx-device-detector';
+import {Component, OnInit} from '@angular/core';
+import {NavigationEnd, Router, RouterLink} from '@angular/router';
+import {DeviceDetectorService} from 'ngx-device-detector';
 import {NgIf} from '@angular/common';
 
 @Component({
@@ -8,8 +8,7 @@ import {NgIf} from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
   imports: [
-    RouterLink,
-    NgIf,
+    RouterLink
   ]
 })
 export class NavbarComponent implements OnInit {

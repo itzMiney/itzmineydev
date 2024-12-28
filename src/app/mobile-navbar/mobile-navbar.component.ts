@@ -1,7 +1,7 @@
-import {Component, OnInit } from '@angular/core';
-import { DeviceDetectorService } from 'ngx-device-detector';
+import {Component, OnInit} from '@angular/core';
+import {DeviceDetectorService} from 'ngx-device-detector';
 import {NgIf} from '@angular/common';
-import {Router, NavigationEnd, RouterLink} from '@angular/router';
+import {NavigationEnd, Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-mobile-navbar',

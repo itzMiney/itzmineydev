@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ArticleService } from '../article.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {ArticleService} from '../services/article.service';
 import {NgFor, NgIf} from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {Observer} from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -10,8 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./admin.component.css'],
   imports: [
     NgIf,
-    NgFor,
-    HttpClientModule
+    NgFor
   ]
 })
 export class AdminComponent implements OnInit {
@@ -28,19 +27,35 @@ export class AdminComponent implements OnInit {
   fetchArticles() {
     const token = localStorage.getItem('token');
     if (!token) {
-      this.router.navigate(['/login']);  // Redirect to login if not logged in
+      this.router.navigate(['/login']).then(
+        (success) => {
+          if (success) {
+            console.log('Navigation to login succeeded');
+          } else {
+            console.warn('Navigation to login failed');
+          }
+        },
+        (error) => {
+          console.error('Navigation error:', error);
+        }
+      );
       return;
     }
 
-    this.articleService.getArticles(token).subscribe(
-      (data) => {
+    const articleObserver: Observer<any> = {
+      next: (data) => {
         this.articles = data;
         this.noArticles = this.articles.length === 0;
       },
-      (error) => {
+      error: (error) => {
         console.error('Failed to load articles', error);
+      },
+      complete: () => {
+        console.log('Article loading complete');
       }
-    );
+    };
+
+    this.articleService.getArticles(token).subscribe(articleObserver);
   }
 
   createArticle() {
@@ -61,6 +76,17 @@ export class AdminComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/login']);  // Redirect to login page
+    this.router.navigate(['/login']).then(
+      (success) => {
+        if (success) {
+          console.log('Navigation to login succeeded');
+        } else {
+          console.warn('Navigation to login failed');
+        }
+      },
+      (error) => {
+        console.error('Navigation error:', error);
+      }
+    );
   }
 }

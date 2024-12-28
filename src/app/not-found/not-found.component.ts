@@ -1,9 +1,7 @@
-import {Component, OnInit, OnDestroy, AfterViewInit, Inject} from '@angular/core';
-import {DeviceDetectorService} from 'ngx-device-detector';
-import {Meta, Title} from '@angular/platform-browser';
-import {ActivatedRoute} from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID } from '@angular/core';
+import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {DeviceDetectorService} from '../services/device-detector.service';
+import {VantaBackgroundService} from '../services/vanta-background.service';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-not-found',
@@ -13,87 +11,35 @@ import { PLATFORM_ID } from '@angular/core';
 })
 
 export class NotFoundComponent implements OnInit, OnDestroy, AfterViewInit {
+  private readonly elementId = 'vanta-not-found-bg';
+  isMobile: boolean = false;
   constructor(
+    private vantaService: VantaBackgroundService,
     private deviceService: DeviceDetectorService,
-    private meta: Meta,
-    private title: Title,
-    private route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
   }
-  isMobile: boolean = false;
-  private vantaEffect: any;
 
   ngOnInit() {
-    this.isMobile = this.deviceService.isMobile();
-    const metaData = this.route.snapshot.data['meta'];
-    if (metaData?.title) {
-      this.title.setTitle(metaData.title);
-    }
-    if (metaData?.description) {
-      this.meta.updateTag({ name: 'description', content: metaData.description });
-    }
-    if (metaData?.image) {
-      this.meta.updateTag({ property: 'og:image', content: metaData.image });
-    }
-    if (metaData?.url) {
-      this.meta.updateTag({ property: 'og:url', content: metaData.url });
-    }
-    window.addEventListener('resize', this.onResize.bind(this)); // Add resize listener for responsiveness
-
-    const bgElement = document.getElementById('vanta-not-found-bg');
-    if (bgElement) {
-      bgElement.style.position = 'fixed';
+    this.isMobile = this.deviceService.isMobile;
+    if (isPlatformBrowser(this.platformId)) {
+      window.addEventListener('resize', this.onResize.bind(this));
     }
   }
-
   ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      // Initialize VANTA effect only in the browser
-      this.initVanta();
-      this.resizeVanta();
-    }
+    this.vantaService.initVanta(this.elementId, {
+      color: 0xac1f4e,
+      backgroundColor: 0x191522
+    });
   }
   ngOnDestroy() {
+    this.vantaService.destroyVanta(this.elementId);
     if (isPlatformBrowser(this.platformId)) {
-      if (this.vantaEffect) {
-        this.vantaEffect.destroy(); // Clean up the effect on destroy
-      }
-      window.removeEventListener('resize', this.onResize); // Remove the listener when the component is destroyed
-    }
-  }
-
-  initVanta() {
-    if (isPlatformBrowser(this.platformId)) {
-      // Initialize the Vanta effect on the element with ID 'vanta-bg'
-      this.vantaEffect = window.VANTA.NET({
-        el: '#vanta-not-found-bg',
-        mouseControls: false,
-        touchControls: false,
-        gyroControls: false,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        points: 20.00,
-        maxDistance: 25.00,
-        spacing: 18.00,
-        showDots: false,
-        minWidth: window.innerWidth,
-        minHeight: window.innerHeight,
-        color: 0xac1f4e,
-        backgroundColor: 0x191522
-      });
+      window.removeEventListener('resize', this.onResize);
     }
   }
 
   onResize() {
-    // Update the minHeight and minWidth when the window is resized
-    this.resizeVanta();
-  }
-
-  resizeVanta() {
-    if (this.vantaEffect) {
-      // Trigger the resize on the vanta effect
-      this.vantaEffect.resize();
-    }
+    this.vantaService.resizeVanta(this.elementId);
   }
 }
