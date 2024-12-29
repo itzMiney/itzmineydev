@@ -1,29 +1,52 @@
-<div id="admin-bg"></div>
-<div class="height-container">
-<div class="admin-container">
-  <h2>Admin Dashboard</h2>
-  <div class="admin-actions">
-    <button (click)="createArticle()">Create Article</button>
-    <button (click)="viewArticles()">View Articles</button>
-    <button (click)="editArticle()">Edit Article</button>
-    <button (click)="deleteArticle()">Delete Article</button>
-  </div>
+<div id="admin-bg">
+  <div class="height-container">
+    <!-- Left Section: Placeholder -->
+    <div class="left-section">
+      <!-- Placeholder for future content -->
+    </div>
 
-  <div *ngIf="noArticles">
-    <p>No articles available.</p>  <!-- Show message if no articles -->
-  </div>
+    <!-- Center Section: Admin Dashboard and Create Article Tiles -->
+    <div class="center-section">
+      <div class="admin-dashboard-tile">
+        <h2>Admin Dashboard</h2>
+        <div class="admin-actions">
+          <button (click)="editArticle()">Edit Article</button>
+          <button (click)="deleteArticle()">Delete Article</button>
+          <button class="logout" (click)="logout()">Logout</button>
+        </div>
+      </div>
 
-  <div *ngIf="!noArticles">
-    <ul>
-      <li *ngFor="let article of articles">
-        <!-- Display article details here -->
-        {{ article.title }}
-      </li>
-    </ul>
-  </div>
+      <div class="create-article-tile">
+        <h2>Create New Article</h2>
+        <form (ngSubmit)="createArticle()">
+          <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" [(ngModel)]="title" name="title" required />
+          </div>
+          <div>
+            <label for="content">Content:</label>
+            <textarea id="content" [(ngModel)]="content" name="content" required></textarea>
+          </div>
+          <button type="submit" [disabled]="!title || !content">Create Article</button>
+        </form>
+      </div>
+    </div>
 
-  <div class="logout">
-    <button (click)="logout()">Logout</button>
+    <!-- Right Section: Articles List Tile -->
+    <div class="right-section">
+      <div class="articles-list-tile">
+        <h2>Articles</h2>
+        <div *ngIf="noArticles">
+          <p>No articles available.</p>
+        </div>
+        <div *ngIf="!noArticles">
+          <ul>
+            <li *ngFor="let article of articles">
+              <strong>ID {{ article.id }}</strong> - {{ article.title }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </div>

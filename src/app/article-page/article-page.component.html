@@ -1,0 +1,30 @@
+<div id="vanta-article-bg"></div>
+<div class="height-container">
+  <div class="article-container" *ngIf="article; else error">
+    <div>
+      <!-- Article Title -->
+      <h1>{{ article.title }}</h1>
+      <div class="content-container">
+        <!-- Article Content -->
+        <div class="article-content" [innerHTML]="article.content"></div>
+
+        <a href="/blog"><button>Back to Overview</button></a>
+        <!-- Article Metadata -->
+        <div class="article-meta">
+          <p><strong>Author:</strong> {{ article.authorName}}</p>
+          <p><strong>Views:</strong> {{ article.views }}</p><br>
+          <p><strong>Created At:</strong> {{ article.createdAt | date:'medium' }}</p>
+          <p><strong>Last Updated:</strong> {{ article.updatedAt | date:'medium' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Error Message -->
+  <ng-template #error>
+    <div class="error-message">
+      <h1>404</h1>
+      <p>Article not found!</p>
+      <a href="/blog"><button>Back to Overview</button></a>
+    </div>
+  </ng-template>
+</div>

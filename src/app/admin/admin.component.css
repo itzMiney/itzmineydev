@@ -4,27 +4,67 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  z-index: -100; /* Place the background behind content */
-}
-
-.admin-container {
-  background: #fff;
-  border-radius: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  width: 350px;
-  text-align: center;
-  margin: 50px auto;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
 }
 
 .height-container {
-  min-height: 100vh;
-  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
-.admin-actions button {
+.center-section,
+.left-section,
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  padding: 30px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.admin-dashboard-tile,
+.create-article-tile,
+.articles-list-tile {
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.admin-dashboard-tile,
+.create-article-tile {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.articles-list-tile {
+  overflow-y: auto;
+  max-width: 300px;
+}
+
+input,
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.admin-actions button, .create-article-tile button {
   background-color: #bd3948;
   color: white;
   padding: 12px 20px;
@@ -34,11 +74,11 @@
   cursor: pointer;
 }
 
-.admin-actions button:hover {
+.admin-actions button:hover, .create-article-tile button:hover {
   background-color: #e3485a;
 }
 
-.logout button {
+.admin-actions button.logout {
   background-color: #713252;
   color: white;
   padding: 12px 20px;
@@ -48,18 +88,37 @@
   cursor: pointer;
 }
 
-.logout button:hover {
+.admin-actions button.logout:hover {
   background-color: #592840;
 }
 
-.articles-list {
-  margin-top: 20px;
-  text-align: left;
+.articles-list-tile ul {
+  list-style-type: none;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
-.article {
+.articles-list-tile li {
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 10px;
-  border-radius: 4px;
+  border-radius: 25px;
+}
+
+.articles-list-tile li:last-child {
+  margin-bottom: 0;
+}
+
+.articles-list-tile h2 {
+  margin-bottom: 30px;
+}
+
+.articles-list-tile {
+  padding-bottom: 5px;
+}
+
+textarea {
+  resize: none;
+  min-height: 100px;
 }

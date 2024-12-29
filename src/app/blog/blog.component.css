@@ -28,30 +28,35 @@
   z-index: 10; /* Ensure the text and button are above the canvas */
 }
 
-.error-message h2 {
-  font-size: 10rem;
-  margin: 0;
-  font-weight: 700;
-  color: white;
+.blog-container {
+  max-width: 900px;
+  margin-top: 120px;
+  margin-bottom: 80px;
+  padding: 20px;
 }
 
-.error-message p {
-  font-size: 1.5rem;
-  margin: 20px 0;
-  font-weight: 400;
-  color: white;
+.article-card {
+  z-index: 10;
+  background: linear-gradient(135deg, #9c27b0, #6200ea);
+  padding: 15px;
+  margin: 25px 0;
+  cursor: pointer;
+  border-radius: 45px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.error-message-mobile h2 {
-  font-size: 4.0rem;
-  margin: 0;
-  font-weight: 500;
-  color: white;
+.article-card:hover {
+  background: linear-gradient(135deg, #b737cd, #773ec6);
+  transform: translateY(-5px);
 }
 
-.error-message-mobile p {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  font-weight: 400;
-  color: white;
+h2 {
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+p {
+  font-size: 1rem;
+  color: #dcdcdc;
 }

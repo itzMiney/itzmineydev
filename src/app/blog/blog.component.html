@@ -1,15 +1,15 @@
 <div id="vanta-blog-bg"></div>
 <div class="height-container">
-  <ng-container *ngIf="!isMobile; else mobileError">
-  <div class="error-message">
-    <h2>Soon&#8482;</h2>
-    <p>Under Construction!</p>
+  <div class="blog-container">
+    <div *ngIf="articles$ | async as articles; else noArticles">
+      <div *ngFor="let article of articles" (click)="navigateToArticle(article.slug)" class="article-card">
+        <h2>{{ (article.title | slice:0:45) + (article.title.length > 40 ? '...' : '')}}</h2>
+        <p>{{ (article.content | slice:0:80) + (article.content.length > 80 ? '...' : '')}}</p>
+        <p><small>By {{ article.authorName }} | {{ article.createdAt | date: 'short' }}</small></p>
+      </div>
+    </div>
   </div>
-  </ng-container>
-  <ng-template #mobileError>
-  <div class="error-message-mobile">
-    <h2>Soon&#8482;</h2>
-    <p>Under Construction!</p>
-  </div>
-  </ng-template>
+<ng-template #noArticles>
+  <h2>No Articles yet!</h2>
+</ng-template>
 </div>

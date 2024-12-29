@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router, RouterLink} from '@angular/router';
 import {DeviceDetectorService} from 'ngx-device-detector';
-import {NgIf} from '@angular/common';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -19,11 +19,16 @@ export class NavbarComponent implements OnInit {
     this.isMobile = this.deviceService.isMobile();
   }
 
-  ngOnInit() {
-    // Listen to route changes
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.activeLink = event.urlAfterRedirects; // Capture the active route
+  ngOnInit(): void {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      // Update activeLink based on current route
+      const currentRoute = this.router.url;
+      if (currentRoute.startsWith('/blog')) {
+        this.activeLink = '/blog';
+      } else {
+        this.activeLink = currentRoute;
       }
     });
   }

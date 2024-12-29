@@ -1,0 +1,114 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#vanta-article-bg {
+  animation: fadeIn 1s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -100; /* Place the background behind content */
+}
+.height-container {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+}
+
+.article-container {
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, rgb(0, 0, 0) 100%);
+  padding: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.content-container {
+  display: inline-grid;
+  max-width: 960px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-top: 120px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.article-content {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.8; /* Improve readability */
+  margin-bottom: 30px;
+}
+
+.article-meta {
+  font-size: 1rem;
+  color: #e6e6e6;
+  text-align: left;
+}
+
+.article-meta p {
+  margin: 8px 0;
+}
+
+.content-container button {
+  background-color: #713252;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+  font-weight: 400;
+}
+
+.content-container button:hover {
+  background-color: #bf9bae;
+}
+
+.error-message h1 {
+  font-size: 10rem;
+  margin: 0;
+  font-weight: 700;
+  color: white;
+}
+
+.error-message p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  font-weight: 400;
+  color: white;
+}
+
+.error-message button {
+  background-color: #713252;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+  font-weight: 400;
+}
+
+.error-message button:hover {
+  background-color: #bf9bae;
+}

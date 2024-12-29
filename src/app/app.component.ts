@@ -4,9 +4,9 @@ import {ActivatedRoute, NavigationEnd, Router, RouterOutlet} from '@angular/rout
 import {NavbarComponent} from './navbar/navbar.component';
 import {MobileNavbarComponent} from './mobile-navbar/mobile-navbar.component';
 import {FooterComponent} from './footer/footer.component';
-import {Meta, Title} from '@angular/platform-browser';
 import {filter, map, mergeMap} from 'rxjs/operators';
 import {DeviceDetectorService} from './services/device-detector.service';
+import { UpdateMetaService } from './services/update-meta.service';
 
 @Component({
   selector: 'app-root',
@@ -22,9 +22,8 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private titleService: Title,
-    private metaService: Meta,
     private deviceService: DeviceDetectorService,
+    private updateMetaService: UpdateMetaService,
   ) {}
 
   ngOnInit() {
@@ -50,29 +49,9 @@ export class AppComponent implements OnInit {
           meta.url = meta.url || 'https://itzminey.dev';
           meta.color = meta.color || '#eb284c';
         }
-        this.updateMetaTags(meta);
+        this.updateMetaService.updateMetaTags(meta);
         this.checkRoute();
       });
-  }
-
-  updateMetaTags(meta: { title?: string; description?: string; image?: string; url?: string; color?: string }) {
-    if (meta.title) {
-      this.titleService.setTitle(meta.title);
-      this.metaService.updateTag({ name: 'og:title', content: meta.title });
-    }
-    if (meta.description) {
-      this.metaService.updateTag({ name: 'description', content: meta.description });
-      this.metaService.updateTag({ name: 'og:description', content: meta.description });
-    }
-    if (meta.image) {
-      this.metaService.updateTag({ name: 'og:image', content: meta.image });
-    }
-    if (meta.url) {
-      this.metaService.updateTag({ name: 'og:url', content: meta.url });
-    }
-    if (meta.color) {
-      this.metaService.updateTag({ name: 'theme-color', content: meta.color});
-    }
   }
 
   checkRoute() {

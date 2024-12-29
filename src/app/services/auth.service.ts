@@ -7,7 +7,7 @@ import {Observable, tap} from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = '/api/auth/login';  // Replace with your API endpoint
+  private apiUrl = '/api/auth/login';
 
   constructor(private http: HttpClient) {}
 

@@ -1,31 +1,45 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {DeviceDetectorService} from '../services/device-detector.service'
-import {isPlatformBrowser, NgIf} from '@angular/common';
+import {DatePipe, isPlatformBrowser, NgIf, NgFor, AsyncPipe, SlicePipe} from '@angular/common';
 import {VantaBackgroundService} from '../services/vanta-background.service';
+import { ArticleService } from '../services/article.service';
+import { Router } from '@angular/router';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-blog',
   imports: [
-    NgIf
+    NgIf,
+    NgFor,
+    DatePipe,
+    AsyncPipe,
+    SlicePipe
   ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
 export class BlogComponent implements OnInit, OnDestroy, AfterViewInit {
+  articles$: Observable<any[]> | undefined;
   private readonly elementId = 'vanta-blog-bg';
   isMobile: boolean = false;
   constructor(
     private deviceService: DeviceDetectorService,
     private vantaService: VantaBackgroundService,
+    private articleService: ArticleService,
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.isMobile = this.deviceService.isMobile;
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize.bind(this));
     }
+    this.articles$ = this.articleService.getAllArticles();
+  }
+
+  navigateToArticle(slug: string): void {
+    this.router.navigate([`/blog/${slug}`]);
   }
 
   ngAfterViewInit() {
