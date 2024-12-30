@@ -13,8 +13,7 @@
         <div class="article-meta">
           <p><strong>Author:</strong> {{ article.authorName}}</p>
           <p><strong>Views:</strong> {{ article.views }}</p><br>
-          <p><strong>Created At:</strong> {{ article.createdAt | date:'medium' }}</p>
-          <p><strong>Last Updated:</strong> {{ article.updatedAt | date:'medium' }}</p>
+          <p><strong>Created At:</strong> {{ article.createdAt | date:'MMM dd, yyyy, HH:mm' }}</p>
         </div>
       </div>
     </div>

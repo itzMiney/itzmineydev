@@ -68,16 +68,19 @@ async function fetchDynamicMeta() {
     const articles = response.data;
 
     return articles.reduce((acc, article) => {
-      const updatedAt = new Date(article.updatedAt);
-      const formattedUpdatedAt = updatedAt.toLocaleDateString('de-DE', {
+      const createdAt = new Date(article.createdAt);
+
+      // Format the date directly using toLocaleDateString
+      const formattedCreatedAt = createdAt.toLocaleDateString('en-US', {
+        month: 'short',
+        day: '2-digit',
+        year: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-      });
+        hour12: false,
+      })
 
-    const description = `By ${article.authorName} | Last Updated: ${formattedUpdatedAt}`;
+      const description = `By ${article.authorName} | Article from ${formattedCreatedAt}`;
 
     acc[`/blog/${article.slug}`] = {
       title: article.title,
