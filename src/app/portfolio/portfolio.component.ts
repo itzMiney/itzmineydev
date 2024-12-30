@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import {DeviceDetectorService} from '../services/device-detector.service';
-import {isPlatformBrowser, NgIf, NgStyle} from '@angular/common';
+import {isPlatformBrowser, NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-portfolio',
