@@ -25,19 +25,18 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
 
   getAllArticles(): Observable<Article[]> {
-    const timeStampedUrl = "/api/articles?timestamp=" + new Date().getTime();
-    return this.http.get<Article[]>(timeStampedUrl);
+    return this.http.get<Article[]>(`${this.apiUrl}?timestamp=${new Date().getTime()}`);
   }
 
   getArticleBySlug(slug: string): Observable<Article |undefined> {
-    return this.http.get<Article[]>(this.apiUrl).pipe(
-      map((articles) => articles.find((article) => article.slug === slug))
+    return this.http.get<Article>(`${this.apiUrl}/${slug}`).pipe(
+      map(article => article)
     );
   }
 
   getArticleById(id: number): Observable<Article |undefined> {
-    return this.http.get<Article[]>(this.apiUrl).pipe(
-      map((articles) => articles.find((article) => article.id === id))
+    return this.http.get<Article>(`${this.apiUrl}/${id}`).pipe(
+      map(article => article)
     );
   }
 
