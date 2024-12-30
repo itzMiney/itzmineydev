@@ -77,7 +77,7 @@ async function fetchDynamicMeta() {
         year: 'numeric',
       });
 
-    const description = `By ${article.authorName} | Views: ${article.views} | Last Updated: ${formattedUpdatedAt}`;
+    const description = `By ${article.authorName} | Last Updated: ${formattedUpdatedAt}`;
 
     acc[`/blog/${article.slug}`] = {
       title: article.title,
