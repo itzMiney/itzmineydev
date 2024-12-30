@@ -80,7 +80,8 @@ export const routes: Routes = [
   },
   {
     path: 'blog/:slug',
-    component: ArticlePageComponent },
+    component: ArticlePageComponent
+  },
   {
     path: '**',
     pathMatch: 'full',

@@ -25,7 +25,8 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
 
   getAllArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.apiUrl);
+    const timeStampedUrl = "/api/articles?timestamp=" + new Date().getTime();
+    return this.http.get<Article[]>(timeStampedUrl);
   }
 
   getArticleBySlug(slug: string): Observable<Article |undefined> {
