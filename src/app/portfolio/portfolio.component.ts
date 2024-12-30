@@ -6,7 +6,6 @@ import {isPlatformBrowser, NgIf, NgStyle} from '@angular/common';
 @Component({
   selector: 'app-portfolio',
   imports: [
-    NgIf,
     NgStyle
   ],
   templateUrl: './portfolio.component.html',
