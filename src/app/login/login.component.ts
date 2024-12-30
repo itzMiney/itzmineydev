@@ -6,6 +6,7 @@ import {NgIf} from '@angular/common';
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import {DeviceDetectorService} from '../services/device-detector.service';
 import {isPlatformBrowser} from '@angular/common';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -29,10 +30,12 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
     private router: Router,
     private vantaService: VantaBackgroundService,
     private deviceService: DeviceDetectorService,
+    private titleService: Title,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
+    this.titleService.setTitle('Login | itzMiney')
     this.isMobile = this.deviceService.isMobile;
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize.bind(this));

@@ -4,7 +4,7 @@ import {DatePipe, isPlatformBrowser, NgIf} from '@angular/common';
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import {ArticleService} from '../services/article.service';
 import {ActivatedRoute} from '@angular/router';
-import {UpdateMetaService} from '../services/update-meta.service';
+import {Title} from '@angular/platform-browser';
 
 interface Article {
   id: number;
@@ -36,7 +36,7 @@ export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
     private deviceService: DeviceDetectorService,
     private vantaService: VantaBackgroundService,
     private articleService: ArticleService,
-    private updateMetaService: UpdateMetaService,
+    private titleService: Title,
     private route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
@@ -48,15 +48,9 @@ export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
     this.route.params.subscribe((params) => {
       const slug = params['slug'];
       if (slug) {
-        this.loadArticleMetaBySlug(slug);
+        this.loadTitleBySlug(slug);
       } else {
-        this.updateMetaService.updateMetaTags({
-          title: 'Article | itzMiney',
-          description: 'An article on itzMiney\'s Blog.',
-          image: 'https://itzminey.dev/assets/ogimg.png',
-          url: 'https://itzminey.dev/blog',
-          color: '#ffffff'
-        });
+        this.titleService.setTitle('Article | itzMiney');
       }
     });
 
@@ -92,38 +86,20 @@ export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
     this.vantaService.resizeVanta(this.elementId);
   }
 
-  loadArticleMetaBySlug(slug: string) {
+  loadTitleBySlug(slug: string) {
     this.articleService.getArticleBySlug(slug).subscribe(
       (article) => {
         if (article) {
           this.currentArticle = article;
-          this.updateMetaService.updateMetaTags({
-            title: article.title,
-            description: article.content.slice(0, 150), // First 150 characters
-            image: 'https://itzminey.dev/assets/ogimg.png', // Use article image or default
-            url: `https://itzminey.dev/blog/${article.slug}`,
-            color: '#ffffff'
-          });
+          this.titleService.setTitle( article.title );
         } else {
           console.warn('Article not found for slug:', slug);
-          this.updateMetaService.updateMetaTags({
-            title: 'Article Not Found',
-            description: 'The requested article could not be found.',
-            image: 'https://itzminey.dev/assets/ogimg.png',
-            url: 'https://itzminey.dev',
-            color: '#ff0000'
-          });
+          this.titleService.setTitle('Article Not Found');
         }
       },
       (error) => {
-        console.error('Failed to load article metadata', error);
-        this.updateMetaService.updateMetaTags({
-          title: 'Error',
-          description: 'An error occurred while loading this article.',
-          image: 'https://itzminey.dev/assets/ogimg.png',
-          url: 'https://itzminey.dev',
-          color: '#ff0000'
-        });
+        console.error('Failed to load article title', error);
+        this.titleService.setTitle('Error loading Article');
       }
     );
   }

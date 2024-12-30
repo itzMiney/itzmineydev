@@ -5,6 +5,7 @@ import {NgFor, NgIf, NgStyle} from '@angular/common';
 import {Observer} from 'rxjs';
 import {FormsModule} from '@angular/forms';
 import {DeviceDetectorService} from '../services/device-detector.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin',
@@ -28,11 +29,13 @@ export class AdminComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private router: Router,
-    private deviceService: DeviceDetectorService
+    private deviceService: DeviceDetectorService,
+    private titleService: Title
   ) {}
 
   // Fetch articles from backend
   ngOnInit() {
+    this.titleService.setTitle('Admin Panel | itzMiney')
     this.isMobile = this.deviceService.isMobile;
     if (!this.token) {
       this.navigateToLogin();

@@ -2,6 +2,7 @@ import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '
 import {DeviceDetectorService} from '../services/device-detector.service';
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import {isPlatformBrowser} from '@angular/common';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-not-found',
@@ -16,11 +17,13 @@ export class NotFoundComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private vantaService: VantaBackgroundService,
     private deviceService: DeviceDetectorService,
+    private titleService: Title,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
   }
 
   ngOnInit() {
+    this.titleService.setTitle('404 | Page Not Found')
     this.isMobile = this.deviceService.isMobile;
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize.bind(this));

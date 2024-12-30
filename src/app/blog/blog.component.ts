@@ -5,6 +5,7 @@ import {VantaBackgroundService} from '../services/vanta-background.service';
 import { ArticleService } from '../services/article.service';
 import { Router } from '@angular/router';
 import {Observable} from 'rxjs';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog',
@@ -28,10 +29,12 @@ export class BlogComponent implements OnInit, OnDestroy, AfterViewInit {
     private vantaService: VantaBackgroundService,
     private articleService: ArticleService,
     private router: Router,
+    private titleService: Title,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
+    this.titleService.setTitle('Blog | itzMiney')
     this.isMobile = this.deviceService.isMobile;
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize.bind(this));
@@ -40,7 +43,18 @@ export class BlogComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   navigateToArticle(slug: string): void {
-    this.router.navigate([`/blog/${slug}`]);
+    this.router.navigate([`/blog/${slug}`]).then(
+      (success) => {
+        if (success) {
+          console.log('Navigation to article succeeded');
+        } else {
+          console.warn('Navigation to article failed');
+        }
+      },
+      (error) => {
+        console.error('Navigation error:', error);
+      }
+    );
   }
 
   ngAfterViewInit() {

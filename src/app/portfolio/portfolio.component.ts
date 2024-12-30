@@ -2,6 +2,7 @@ import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import {DeviceDetectorService} from '../services/device-detector.service';
 import {isPlatformBrowser, NgStyle} from '@angular/common';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-portfolio',
@@ -17,11 +18,12 @@ export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private vantaService: VantaBackgroundService,
     private deviceService: DeviceDetectorService,
+    private titleService: Title,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
+    this.titleService.setTitle('Portfolio | itzMiney');
     this.isMobile = this.deviceService.isMobile;
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize.bind(this));
