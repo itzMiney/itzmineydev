@@ -1,18 +1,10 @@
 <div id="vanta-portfolio-bg"></div>
 <div class="height-container">
 <div class="portfolio-container">
-  <ng-container *ngIf="!isMobile; else mobileContainer">
-  <div class="portfolio-header" *ngIf="!isMobile">
+  <div class="portfolio-header" [ngStyle]="{'margin-top': isMobile ? '60px' : '120px'}">
     <h1>My Portfolio</h1>
     <p class="subtitle">Projects & Designs</p>
   </div>
-  </ng-container>
-  <ng-template #mobileContainer>
-  <div class="portfolio-header-mobile" *ngIf="isMobile">
-    <h1>My Portfolio</h1>
-    <p class="subtitle">Projects & Designs</p>
-  </div>
-  </ng-template>
   <div class="text-content">
     <p>
       Welcome to my portfolio!<br><br>

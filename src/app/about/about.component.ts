@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, OnDestroy, OnInit, ChangeDetectorRef, PLATFORM_ID, Inject} from '@angular/core';
-import {isPlatformBrowser, NgIf} from '@angular/common';
+import {AfterViewInit, Component, OnDestroy, OnInit, PLATFORM_ID, Inject} from '@angular/core';
+import {isPlatformBrowser, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import {DeviceDetectorService} from '../services/device-detector.service';
 
@@ -7,7 +7,7 @@ import {DeviceDetectorService} from '../services/device-detector.service';
   selector: 'app-about',
   templateUrl: './about.component.html',
   imports: [
-    NgIf
+    NgStyle
   ],
   styleUrls: ['./about.component.css']
 })

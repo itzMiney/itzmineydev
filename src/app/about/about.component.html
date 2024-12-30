@@ -1,19 +1,10 @@
 <div id="vanta-about-bg"></div>
 <div class="height-container">
-<div class="about-container">
-  <ng-container *ngIf="!isMobile; else mobileContainer">
-    <div class="about-header" *ngIf="!isMobile">
+  <div class="about-container">
+  <div class="about-header" [ngStyle]="{'margin-top': isMobile ? '60px' : '120px'}">
       <h1>About Me</h1>
       <p class="subtitle">Hobby developer & designer</p>
     </div>
-  </ng-container>
-  <ng-template #mobileContainer>
-    <div class="about-header-mobile" *ngIf="isMobile">
-      <h1>About Me</h1>
-      <p class="subtitle">Hobby developer & designer</p>
-    </div>
-  </ng-template>
-
   <div class="about-content">
     <p>
       Hello, I'm Michael, a developer and designer based in Austria. I specialize in frontend web development,
@@ -23,12 +14,7 @@
       When I'm not coding, I love learning new technologies and contributing to open-source projects.<br>I also give support on the Pterodactyl Discord
     </p>
     <br>
-    <ng-container *ngIf="!isMobile; else mobileTechStack">
-      <h3 class="tech-stack-title" *ngIf="!isMobile">Tech Stack</h3>
-    </ng-container>
-    <ng-template #mobileTechStack>
-      <h3 class="tech-stack-title-mobile" *ngIf="isMobile">Tech Stack</h3>
-    </ng-template>
+      <h3 class="tech-stack-title">Tech Stack</h3>
     <div class="tech-stack">
       <div class="category">
        <h4>= WEB SERVERS =</h4>

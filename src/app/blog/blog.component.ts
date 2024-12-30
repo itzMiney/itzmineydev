@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {DeviceDetectorService} from '../services/device-detector.service'
-import {DatePipe, isPlatformBrowser, NgIf, NgFor, AsyncPipe, SlicePipe} from '@angular/common';
+import {DatePipe, isPlatformBrowser, NgIf, NgFor, AsyncPipe, SlicePipe, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import { ArticleService } from '../services/article.service';
 import { Router } from '@angular/router';
@@ -13,7 +13,8 @@ import {Observable} from 'rxjs';
     NgFor,
     DatePipe,
     AsyncPipe,
-    SlicePipe
+    SlicePipe,
+    NgStyle
   ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'

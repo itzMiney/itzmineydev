@@ -1,8 +1,9 @@
 <div class="mobile-navbar">
   <!-- Hamburger Icon -->
-  <button class="menu-icon" (click)="toggleMenu()">
-    ☰
-  </button>
+  <button class="menu-icon" (click)="toggleMenu()">☰</button>
+
+  <!-- Logo Text (Centered) -->
+  <div class="navbar-title"><a [routerLink]="'/'" [class.active]="activeLink === '/'">itzMiney.dev</a></div>
 
   <!-- Full-Screen Menu -->
   <div class="full-screen-menu" *ngIf="menuOpen">

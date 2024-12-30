@@ -1,5 +1,9 @@
 <div id="vanta-blog-bg"></div>
 <div class="height-container">
+  <div class="blog-header" [ngStyle]="{'margin-top': isMobile ? '72px' : '112px'}">
+    <h1>Blog</h1>
+    <p class="subtitle">Some (very) irregular updates</p>
+  </div>
   <div class="blog-container">
     <div *ngIf="articles$ | async as articles; else noArticles">
       <div *ngFor="let article of articles" (click)="navigateToArticle(article.slug)" class="article-card">
