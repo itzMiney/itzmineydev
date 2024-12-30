@@ -1,12 +1,13 @@
 <div id="admin-bg">
   <div class="height-container">
     <!-- Left Section: Placeholder -->
+    <ng-container *ngIf="!isMobile">
     <div class="left-section">
       <!-- Placeholder for future content -->
     </div>
-
+    </ng-container>
     <!-- Center Section: Admin Dashboard and Create Article Tiles -->
-    <div class="center-section">
+    <div class="center-section" [ngStyle]="{'width': isMobile ? '100%' : '33.33%'}">
       <div class="admin-dashboard-tile">
         <h2>Admin Dashboard</h2>
         <div class="admin-actions">
@@ -15,6 +16,7 @@
           <button class="logout" (click)="logout()">Logout</button>
         </div>
       </div>
+
 
       <div class="create-article-tile">
         <h2>Create New Article</h2>
@@ -30,9 +32,25 @@
           <button type="submit" [disabled]="!title || !content">Create Article</button>
         </form>
       </div>
+      <ng-container *ngIf="isMobile">
+        <div class="articles-list-tile">
+          <h2>Articles</h2>
+          <div *ngIf="noArticles">
+            <p>No articles available.</p>
+          </div>
+          <div *ngIf="!noArticles">
+            <ul>
+              <li *ngFor="let article of articles" (click)="navigateToArticle(article.slug)">
+                <strong>ID {{ article.id }}</strong> - {{ article.title }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </ng-container>
     </div>
 
     <!-- Right Section: Articles List Tile -->
+    <ng-container *ngIf="!isMobile">
     <div class="right-section">
       <div class="articles-list-tile">
         <h2>Articles</h2>
@@ -48,5 +66,6 @@
         </div>
       </div>
     </div>
+    </ng-container>
   </div>
 </div>

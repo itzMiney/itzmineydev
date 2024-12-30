@@ -1,5 +1,16 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 #admin-bg {
-  transition: opacity 0.3s ease-in-out;
+  animation: fadeIn 1s ease-out;
   background: #39354a;
   position: fixed;
   top: 0;
@@ -7,14 +18,16 @@
   width: 100vw;
   height: 100vh;
   z-index: -100;
+  overflow-y: auto;
 }
 
 .height-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
+  overflow-y: auto;
 }
 
 .center-section,

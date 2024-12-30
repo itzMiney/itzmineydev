@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ArticleService} from '../services/article.service';
-import {NgFor, NgIf} from '@angular/common';
+import {NgFor, NgIf, NgStyle} from '@angular/common';
 import {Observer} from 'rxjs';
 import {FormsModule} from '@angular/forms';
+import {DeviceDetectorService} from '../services/device-detector.service';
 
 @Component({
   selector: 'app-admin',
@@ -13,23 +14,26 @@ import {FormsModule} from '@angular/forms';
     NgIf,
     NgFor,
     FormsModule,
+    NgStyle
   ]
 })
 export class AdminComponent implements OnInit {
   articles: any[] = [];
   noArticles: boolean = false;
-
+  isMobile: boolean = false;
   title: string = '';
   content: string = '';
   token: string | null = localStorage.getItem('token');
 
   constructor(
     private articleService: ArticleService,
-    private router: Router
+    private router: Router,
+    private deviceService: DeviceDetectorService
   ) {}
 
   // Fetch articles from backend
   ngOnInit() {
+    this.isMobile = this.deviceService.isMobile;
     if (!this.token) {
       this.navigateToLogin();
       return;
