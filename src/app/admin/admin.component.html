@@ -41,7 +41,7 @@
         </div>
         <div *ngIf="!noArticles">
           <ul>
-            <li *ngFor="let article of articles">
+            <li *ngFor="let article of articles" (click)="navigateToArticle(article.slug)">
               <strong>ID {{ article.id }}</strong> - {{ article.title }}
             </li>
           </ul>

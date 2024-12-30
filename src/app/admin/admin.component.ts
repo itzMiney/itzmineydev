@@ -147,6 +147,10 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  navigateToArticle(slug: string): void {
+    this.router.navigate([`/blog/${slug}`]);
+  }
+
   loadArticles(): void {
     const articleObserver: Observer<any> = {
       next: (data) => {
