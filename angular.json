@@ -13,7 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "aot": true,
             "outputPath": "dist/itzmineydev",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -28,26 +27,34 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
-            "csr": {
-              "browser": "src/main.ts",
-              "aot": true
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
             },
-            "ssr": {
-              "browser": "src/main.ts",
-              "server": "src/main.server.ts",
-              "outputMode": "server",
-              "ssr": {
-                "entry": "src/server.ts"
-              },
-              "aot": true
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -57,15 +64,9 @@
             },
             "development": {
               "buildTarget": "itzmineydev:build:development"
-            },
-            "csr": {
-              "buildTarget": "itzmineydev:build:csr"
-            },
-            "ssr": {
-              "buildTarget": "itzmineydev:build:ssr"
             }
           },
-          "defaultConfiguration": "csr"
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
@@ -82,11 +83,9 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "src/assets"
+              }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -96,6 +95,6 @@
     }
   },
   "cli": {
-    "analytics": "7c748d65-f240-495f-a7b6-3433648bdabf"
+    "analytics": "d1479826-daae-48a2-af4d-c698a5b01a13"
   }
 }
