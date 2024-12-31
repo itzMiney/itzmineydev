@@ -45,7 +45,9 @@
 
 .admin-dashboard-tile,
 .create-article-tile,
-.articles-list-tile {
+.articles-list-tile,
+.delete-article-tile,
+.edit-article-tile {
   background: #fff;
   border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -63,7 +65,38 @@
   justify-content: space-between;
 }
 
+.edit-article-tile {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+#editId, #editTitle {
+  flex-direction: row;
+}
+
+#editId {
+  max-width: 80px;
+}
+
+#editTitle {
+  margin-left: 30px;
+  max-width: 230px;
+}
+
+.delete-article-tile {
+  margin-bottom: 30px;
+  max-width: 300px;
+}
+.delete-article-tile input {
+  max-width: 80px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 .articles-list-tile {
+  margin-top: 30px;
   overflow-y: auto;
   max-width: 300px;
 }
@@ -77,7 +110,7 @@ textarea {
   border-radius: 25px;
 }
 
-.admin-actions button, .create-article-tile button {
+.admin-actions button, .create-article-tile button, .delete-article-tile button, .edit-article-tile button {
   background-color: #bd3948;
   color: white;
   padding: 12px 20px;
@@ -87,8 +120,13 @@ textarea {
   cursor: pointer;
 }
 
-.admin-actions button:hover, .create-article-tile button:hover {
+.admin-actions button:hover:enabled, .create-article-tile button:hover:enabled, .delete-article-tile button:hover:enabled, .edit-article-tile button:hover:enabled {
   background-color: #e3485a;
+}
+
+.create-article-tile button:disabled, .delete-article-tile button:disabled, .edit-article-tile button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .admin-actions button.logout {

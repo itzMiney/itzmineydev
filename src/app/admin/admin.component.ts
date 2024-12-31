@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ArticleService} from '../services/article.service';
 import {NgFor, NgIf, NgStyle} from '@angular/common';
-import {Observer} from 'rxjs';
+import { Observer} from 'rxjs';
 import {FormsModule} from '@angular/forms';
 import {DeviceDetectorService} from '../services/device-detector.service';
 import {Title} from '@angular/platform-browser';
@@ -59,18 +59,21 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  createArticle() {
+  createArticle(form: any) {
     if (!this.token) {
       this.navigateToLogin();
       return;
     }
 
-    if (!this.title || !this.content) {
+    const title = form.value.title;
+    const content = form.value.content;
+
+    if (!title || !content) {
       alert('Both title and content are required!');
       return;
     }
 
-    this.articleService.postArticle(this.token, this.title, this.content).subscribe(
+    this.articleService.postArticle(this.token, title, content).subscribe(
       (response) => {
         alert('Article created successfully!');
         this.loadArticles();
@@ -83,13 +86,13 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  editArticle(): void {
+  editArticle(form: any): void {
     if (!this.token) {
       this.navigateToLogin();
       return;
     }
 
-    const articleId = prompt('Enter the article ID to edit:');
+    const articleId = form.value.editId;
 
     if (articleId && !isNaN(Number(articleId))) {
       const id = Number(articleId);
@@ -103,8 +106,8 @@ export class AdminComponent implements OnInit {
           }
 
           // Prompt for title and content with placeholders
-          const newTitle = prompt('Enter the new title (Leave blank to leave as is):');
-          const newContent = prompt('Enter the new content (Leave blank to leave as is):');
+          const newTitle = form.value.editTitle || form.value.editTitleMobile;
+          const newContent = form.value.editContent || form.value.editContentMobile;
 
           // Use current values if left blank
           const updatedTitle = newTitle?.trim() || article.title;
@@ -130,23 +133,22 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  deleteArticle(): void {
+  deleteArticle(form: any): void {
     if (!this.token) {
       this.navigateToLogin();
       return;
     }
-    const articleId = prompt('Enter the article ID to delete:');
+
+    const articleId = form.value.deleteId || form.value.deleteIdMobile;
 
     if (articleId && !isNaN(Number(articleId))) {
-      const id = Number(articleId);
-
-      this.articleService.deleteArticle(id, this.token).subscribe(
+      this.articleService.deleteArticle(articleId, this.token).subscribe(
         () => {
-          alert(`Article ${id} deleted successfully`);
+          alert(`Article ${articleId} deleted successfully`);
           this.loadArticles();
         },
         (error) => {
-          alert(`Error deleting article ${id}: ${error.message}`);
+          alert(`Error deleting article ${articleId}: ${error.message}`);
         }
       );
     } else {

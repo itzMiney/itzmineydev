@@ -3,7 +3,22 @@
     <!-- Left Section: Placeholder -->
     <ng-container *ngIf="!isMobile">
     <div class="left-section">
-      <!-- Placeholder for future content -->
+      <div class="delete-article-tile">
+        <h2>Delete Article</h2>
+        <form #deleteForm="ngForm" id="deleteForm" (ngSubmit)="deleteArticle(deleteForm)">
+          <input id="deleteId" type="number" min="1" required name="deleteId" ngModel placeholder="Article ID">
+          <button type="submit" [disabled]="deleteForm.invalid">Delete Article</button>
+        </form>
+      </div>
+      <div class="edit-article-tile">
+        <h2>Edit Article</h2>
+        <form #editForm="ngForm" id="editForm" (ngSubmit)="editArticle(editForm)">
+          <input id="editId" type="number" min="1" required name="editId" ngModel placeholder="Article ID">
+          <input id="editTitle" type="text" name="editTitle" ngModel placeholder="Edit Title (Optional)"><br>
+          <textarea id="editContent" type="text" name="editContent" placeholder="Edit Content (Optional)"></textarea>
+          <button type="submit" [disabled]="editForm.invalid">Edit Article</button>
+        </form>
+      </div>
     </div>
     </ng-container>
     <!-- Center Section: Admin Dashboard and Create Article Tiles -->
@@ -11,8 +26,6 @@
       <div class="admin-dashboard-tile">
         <h2>Admin Dashboard</h2>
         <div class="admin-actions">
-          <button (click)="editArticle()">Edit Article</button>
-          <button (click)="deleteArticle()">Delete Article</button>
           <button class="logout" (click)="logout()">Logout</button>
         </div>
       </div>
@@ -20,19 +33,29 @@
 
       <div class="create-article-tile">
         <h2>Create New Article</h2>
-        <form (ngSubmit)="createArticle()">
-          <div>
-            <label for="title">Title:</label>
-            <input type="text" id="title" [(ngModel)]="title" name="title" required />
-          </div>
-          <div>
-            <label for="content">Content:</label>
-            <textarea id="content" [(ngModel)]="content" name="content" required></textarea>
-          </div>
-          <button type="submit" [disabled]="!title || !content">Create Article</button>
+        <form #createForm="ngForm" (ngSubmit)="createArticle(createForm)">
+            <input type="text" id="title" name="title" required ngModel placeholder="Article Title"/><br>
+            <textarea id="content" name="content" required ngModel placeholder="Article Content"></textarea>
+          <button type="submit" [disabled]="createForm.invalid">Create Article</button>
         </form>
       </div>
       <ng-container *ngIf="isMobile">
+        <div class="delete-article-tile">
+          <h2>Delete Article</h2>
+          <form #deleteFormMobile="ngForm" id="deleteFormMobile" (ngSubmit)="deleteArticle(deleteFormMobile)">
+            <input id="deleteIdMobile" type="number" min="1" required name="deleteId" ngModel placeholder="Article ID">
+            <button type="submit" [disabled]="deleteFormMobile.invalid">Delete Article</button>
+          </form>
+        </div>
+        <div class="edit-article-tile">
+          <h2>Edit Article</h2>
+          <form #editFormMobile="ngForm" id="editFormMobile" (ngSubmit)="editArticle(editFormMobile)">
+            <input id="editIdMobile" type="number" min="1" required name="editId" ngModel placeholder="Article ID">
+            <input id="editTitleMobile" type="text" name="editTitle" ngModel placeholder="Edit Title (Optional)"><br>
+            <textarea id="editContentMobile" type="text" name="editContent" placeholder="Edit Content (Optional)"></textarea>
+            <button type="submit" [disabled]="editFormMobile.invalid">Edit Article</button>
+          </form>
+        </div>
         <div class="articles-list-tile">
           <h2>Articles</h2>
           <div *ngIf="noArticles">
