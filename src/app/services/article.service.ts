@@ -29,13 +29,13 @@ export class ArticleService {
   }
 
   getArticleBySlug(slug: string): Observable<Article |undefined> {
-    return this.http.get<Article>(`${this.apiUrl}/${slug}`).pipe(
+    return this.http.get<Article>(`${this.apiUrl}/slug/${slug}`).pipe(
       map(article => article)
     );
   }
 
   getArticleById(id: number): Observable<Article |undefined> {
-    return this.http.get<Article>(`${this.apiUrl}/${id}`).pipe(
+    return this.http.get<Article>(`${this.apiUrl}/id/${id}`).pipe(
       map(article => article)
     );
   }
