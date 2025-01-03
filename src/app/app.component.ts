@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {NgIf} from '@angular/common';
 import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
-import {NavbarComponent} from './navbar/navbar.component';
-import {MobileNavbarComponent} from './mobile-navbar/mobile-navbar.component';
-import {FooterComponent} from './footer/footer.component';
+import {NavbarComponent} from './shared/navbar/navbar.component';
+import {MobileNavbarComponent} from './shared/mobile-navbar/mobile-navbar.component';
+import {FooterComponent} from './shared/footer/footer.component';
 import {DeviceDetectorService} from './services/device-detector.service';
 
 @Component({

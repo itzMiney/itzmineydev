@@ -59,8 +59,14 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
           }
         );
       },
-      error: () => {
-        this.errorMessage = 'Invalid credentials';
+      error: (err: any) => {
+        // Check if the error response contains a message
+        if (err.error && err.error.message) {
+          this.errorMessage = err.error.message;
+        } else {
+          this.errorMessage = 'An error occurred. Please try again later.';
+        }
+        console.error('Login error:', err);
       },
     };
 

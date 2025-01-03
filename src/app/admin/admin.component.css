@@ -89,7 +89,7 @@
   margin-bottom: 30px;
   max-width: 300px;
 }
-.delete-article-tile input {
+.delete-article-tile input, #editUserId, #deleteUserId {
   max-width: 80px;
   margin-right: 20px;
   margin-left: 20px;
@@ -110,7 +110,7 @@ textarea {
   border-radius: 25px;
 }
 
-.admin-actions button, .create-article-tile button, .delete-article-tile button, .edit-article-tile button {
+button {
   background-color: #bd3948;
   color: white;
   padding: 12px 20px;
@@ -120,11 +120,11 @@ textarea {
   cursor: pointer;
 }
 
-.admin-actions button:hover:enabled, .create-article-tile button:hover:enabled, .delete-article-tile button:hover:enabled, .edit-article-tile button:hover:enabled {
+button:hover:enabled {
   background-color: #e3485a;
 }
 
-.create-article-tile button:disabled, .delete-article-tile button:disabled, .edit-article-tile button:disabled {
+button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
@@ -141,6 +141,26 @@ textarea {
 
 .admin-actions button.logout:hover {
   background-color: #592840;
+}
+
+button.toggle-button {
+  background-color: transparent;
+  padding: 0;
+  color: #007bff;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transform: translateY(+5px);
+}
+
+button.toggle-button i {
+  font-size: 27px;
+}
+
+button.toggle-button:hover:active, button.toggle-button:hover {
+  background-color: transparent;
+  color: #0056b3;
 }
 
 .articles-list-tile ul {
@@ -164,6 +184,7 @@ textarea {
 
 .articles-list-tile h2 {
   margin-bottom: 30px;
+  transform: translateX( +15px);
 }
 
 .articles-list-tile {

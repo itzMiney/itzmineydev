@@ -26,8 +26,44 @@
       <div class="admin-dashboard-tile">
         <h2>Admin Dashboard</h2>
         <div class="admin-actions">
+          <button (click)="openModal('create')">Create User</button>
+          <button (click)="openModal('edit')">Edit User</button>
+          <button (click)="openModal('delete')">Delete User</button>
           <button class="logout" (click)="logout()">Logout</button>
         </div>
+
+        <!-- User Actions Modal -->
+        <app-modal
+          [isOpen]="isModalOpen"
+          [title]="modalTitle"
+          (onClose)="closeModal()"
+        >
+          <ng-container *ngIf="modalAction === 'create'">
+            <form (submit)="createUser(createUserForm)" #createUserForm="ngForm" id="createUserForm">
+              <input id="createUsername" ngModel required name="createUsername" placeholder="Username"/>
+              <input id="createPassword" type="password" ngModel required name="createPassword" placeholder="Password"/>
+
+              <button type="submit" [disabled]="createUserForm.invalid">Create User</button>
+            </form>
+          </ng-container>
+
+          <ng-container *ngIf="modalAction === 'edit'">
+            <form (submit)="editUser(editUserForm)" #editUserForm="ngForm" id="editUserForm">
+              <input id="editUserId" type="number" min="1" ngModel required name="editUserId" placeholder="User ID"/>
+              <input id="editUsername" ngModel name="editUsername" placeholder="New Username (Optional)"/>
+              <input id="editPassword" ngModel type="password" name="editPassword" placeholder="New Password (Optional)"/>
+              <button type="submit" [disabled]="editUserForm.invalid">Edit User</button>
+            </form>
+          </ng-container>
+
+          <ng-container *ngIf="modalAction === 'delete'">
+            <form (submit)="deleteUser(deleteUserForm)" #deleteUserForm="ngForm" id="deleteUserForm">
+              <input id="deleteUserId" type="number" min="1" required name="deleteUserId" ngModel placeholder="User ID"/>
+
+              <button type="submit" [disabled]="deleteUserForm.invalid">Delete User</button>
+            </form>
+          </ng-container>
+        </app-modal>
       </div>
 
 
@@ -57,7 +93,55 @@
           </form>
         </div>
         <div class="articles-list-tile">
-          <h2>Articles</h2>
+          <h2>
+            {{ isViewingArticles ? 'Articles' : 'Users' }}
+            <button (click)="toggleView()" class="toggle-button">
+              <i class="material-icons">{{ isViewingArticles ? 'person' : 'article' }}</i>
+            </button>
+          </h2>
+
+          <div *ngIf="isViewingArticles">
+            <div *ngIf="noArticles">
+              <p>No articles available.</p>
+            </div>
+            <div *ngIf="!noArticles">
+              <ul>
+                <li *ngFor="let article of articles" (click)="navigateToArticle(article.slug)">
+                  <strong>ID {{ article.id }}</strong> - {{ article.title }}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Display users list -->
+          <div *ngIf="!isViewingArticles">
+            <div *ngIf="users.length === 0">
+              <p>No users available.</p>
+            </div>
+            <div *ngIf="users.length > 0">
+              <ul>
+                <li *ngFor="let user of users">
+                  <strong>ID {{ user.id }}</strong> - {{ user.username }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- Right Section: Articles List Tile -->
+    <ng-container *ngIf="!isMobile">
+    <div class="right-section">
+      <div class="articles-list-tile">
+        <h2>
+          {{ isViewingArticles ? 'Articles' : 'Users' }}
+          <button (click)="toggleView()" class="toggle-button">
+            <i class="material-icons">{{ isViewingArticles ? 'person' : 'article' }}</i>
+          </button>
+        </h2>
+
+        <div *ngIf="isViewingArticles">
           <div *ngIf="noArticles">
             <p>No articles available.</p>
           </div>
@@ -69,23 +153,19 @@
             </ul>
           </div>
         </div>
-      </ng-container>
-    </div>
 
-    <!-- Right Section: Articles List Tile -->
-    <ng-container *ngIf="!isMobile">
-    <div class="right-section">
-      <div class="articles-list-tile">
-        <h2>Articles</h2>
-        <div *ngIf="noArticles">
-          <p>No articles available.</p>
-        </div>
-        <div *ngIf="!noArticles">
-          <ul>
-            <li *ngFor="let article of articles" (click)="navigateToArticle(article.slug)">
-              <strong>ID {{ article.id }}</strong> - {{ article.title }}
-            </li>
-          </ul>
+        <!-- Display users list -->
+        <div *ngIf="!isViewingArticles">
+          <div *ngIf="users.length === 0">
+            <p>No users available.</p>
+          </div>
+          <div *ngIf="users.length > 0">
+            <ul>
+              <li *ngFor="let user of users">
+                <strong>ID {{ user.id }}</strong> - {{ user.username }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
