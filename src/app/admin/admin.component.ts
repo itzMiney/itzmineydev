@@ -277,8 +277,8 @@ export class AdminComponent implements OnInit {
       (error) => {
         alert('Error creating user');
         console.error(error);
-      }
-    );
+      });
+    this.closeModal();
   }
 
   editUser(form: any): void {
