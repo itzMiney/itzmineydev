@@ -152,6 +152,7 @@ button.toggle-button {
   border-radius: 25px;
   cursor: pointer;
   transform: translateY(+5px);
+  z-index: 10;
 }
 
 button.toggle-button i {
@@ -185,6 +186,7 @@ button.toggle-button:hover:active, button.toggle-button:hover {
 .articles-list-tile h2 {
   margin-bottom: 30px;
   transform: translateX( +15px);
+  z-index: 10;
 }
 
 .articles-list-tile {
