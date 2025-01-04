@@ -113,3 +113,31 @@ h1 {
 .error-message button:hover {
   background-color: #bf9bae;
 }
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 6px solid transparent;
+  border-top: 6px solid #d13d71;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

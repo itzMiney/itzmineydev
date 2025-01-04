@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {DeviceDetectorService} from '../../services/device-detector.service'
-import {DatePipe, isPlatformBrowser, NgIf} from '@angular/common';
+import {DatePipe, isPlatformBrowser, NgIf, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../../services/vanta-background.service';
 import {ArticleService} from '../../services/article.service';
 import {ActivatedRoute} from '@angular/router';
@@ -22,7 +22,8 @@ interface Article {
   selector: 'app-article-page',
   imports: [
     NgIf,
-    DatePipe
+    DatePipe,
+    NgStyle
   ],
   templateUrl: './article-page.component.html',
   styleUrl: './article-page.component.css'
@@ -32,6 +33,10 @@ export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
   isMobile: boolean = false;
   article: Article | undefined;
   currentArticle: any;
+  error: boolean = false;
+  copied: boolean = false;
+
+  loading: boolean = true;
   constructor(
     private deviceService: DeviceDetectorService,
     private vantaService: VantaBackgroundService,
@@ -61,12 +66,29 @@ export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
     this.articleService.getArticleBySlug(slug).subscribe(
       (article) => {
           this.article = article;
+          this.loading = false;
           console.log('Article found!')
         },
       (error) => {
         console.error('Error fetching article:', error);
+        this.loading = false;
+        if (error.status === 404) {
+          this.error = true;
+        }
       }
     );
+  }
+
+  copyLink() {
+    const slug = this.route.snapshot.paramMap.get('slug') || '';
+    const shareLink: string = 'https://itzminey.dev/blog/' + slug;
+    this.copied = true;
+
+    setTimeout(() => {
+      this.copied = false;
+    }, 3000);
+
+    navigator.clipboard.writeText(shareLink).then()
   }
 
   ngAfterViewInit() {
@@ -75,6 +97,7 @@ export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
       backgroundColor: 0x191522
     });
   }
+
   ngOnDestroy() {
     this.vantaService.destroyVanta(this.elementId);
     if (isPlatformBrowser(this.platformId)) {

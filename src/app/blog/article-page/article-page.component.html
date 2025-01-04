@@ -1,6 +1,6 @@
 <div id="vanta-article-bg"></div>
 <div class="height-container">
-  <div class="article-container" *ngIf="article; else error">
+  <div class="article-container" *ngIf="!loading && article; else error">
     <div>
       <!-- Article Title -->
       <h1>{{ article.title }}</h1>
@@ -12,15 +12,19 @@
         <!-- Article Metadata -->
         <div class="article-meta">
           <p><strong>Author:</strong> {{ article.authorName}}</p>
-          <p><strong>Views:</strong> {{ article.views }}</p><br>
+          <p><strong>Views:</strong> {{ article.views }}</p><br><button (click)="copyLink()" [ngStyle]="{'background-color':copied ? '#22b34b' : ''}">{{ copied ? 'Copied' : 'Share' }}</button>
           <p><strong>Created At:</strong> {{ article.createdAt | date:'MMM dd, yyyy, HH:mm' }}</p>
         </div>
       </div>
     </div>
   </div>
+  <!-- Loading State-->
+  <div *ngIf="loading" class="loading-container">
+    <div class="spinner"></div>
+  </div>
   <!-- Error Message -->
   <ng-template #error>
-    <div class="error-message">
+    <div class="error-message" *ngIf="!loading && error">
       <h1>404</h1>
       <p>Article not found!</p>
       <a href="/blog"><button>Back to Overview</button></a>
