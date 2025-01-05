@@ -25,6 +25,13 @@ const staticMeta = {
     url: 'https://itzminey.dev/portfolio',
     color: '#eb284c'
   },
+  '/socials': {
+    title: 'Socials | itzMiney',
+    description: 'Here you can find links to all the places I hang around in!',
+    image: 'https://meta.itzminey.dev/assets/ogimg.png',
+    url: 'https://itzminey.dev/socials',
+    color: '#eb284c'
+  },
   '/blog': {
     title: 'Blog | itzMiney',
     description: 'Welcome to my blog! I\'ll post occasional updates here on the stuff I\'m currently up to.',

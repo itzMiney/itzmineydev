@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
-import {isPlatformBrowser, NgOptimizedImage, NgStyle} from '@angular/common';
+import {isPlatformBrowser, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import {DeviceDetectorService} from '../services/device-detector.service';
 import {Title} from '@angular/platform-browser';
@@ -7,8 +7,7 @@ import {Title} from '@angular/platform-browser';
 @Component({
   selector: 'app-socials',
   imports: [
-    NgStyle,
-    NgOptimizedImage
+    NgStyle
   ],
   templateUrl: './socials.component.html',
   styleUrl: './socials.component.css'
