@@ -32,8 +32,8 @@ export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     this.vantaService.initVanta(this.elementId, {
-      color: 0xac1f4e,
-      backgroundColor: 0x191522
+      color: 0xb3b3b3,
+      backgroundColor: 0x291c3c
     });
   }
   ngOnDestroy() {

@@ -1,0 +1,104 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#vanta-socials-bg {
+  animation: fadeIn 1s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -100; /* Place the background behind content */
+}
+
+.height-container {
+  min-height: 100vh;
+  width: 100vw;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+
+.socials-container {
+  position: relative;
+  color: white;
+  max-width: 900px;
+  margin-bottom: 80px;
+  font-family: 'Roboto', sans-serif;
+  z-index: 1;
+}
+
+.socials-header {
+  text-align: center;
+}
+
+.socials-header .subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 75px;
+}
+
+.socials-header h1 {
+  font-size: 2.5rem;
+  background: transparent;
+  border: 4px solid white;
+  margin: 8px auto 8px auto;
+  max-width: 220px;
+  padding: 10px;
+  border-radius: 45px;
+}
+
+.social-links {
+  text-align: center;
+}
+
+button {
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display:inline-flex;
+  align-items:center;
+}
+
+#username {
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  color: #cdcdcd;
+}
+
+button.discord { background-color: #5865F2; }
+button.discord:hover { background-color: #818aec; }
+
+button.youtube { background-color: #f25858; }
+button.youtube:hover { background-color: #ff7474; }
+
+button.twitter { background-color: #58adf2; }
+button.twitter:hover { background-color: #8bcefd; }
+
+button.twitch { background-color: #9146FF; }
+button.twitch:hover { background-color: #a76bff; }
+
+button.steam { background-color: #1c1c1c; }
+button.steam:hover { background-color: #202020; }
+
+button.osu { background-color: #ff66aa; transform: translateY( +3px);}
+button.osu:hover { background-color: #fd83b9; }
+
+button.kofi { background-color: #fff; color: #ff5a78;}
+button.kofi:hover { background-color: #fff4f4; color: #ff5a78;}
+
+button.kofi-comms { background-color: #fff; color: #39354a;}
+button.kofi-comms:hover { background-color: #fff4f4; color: #39354a;}

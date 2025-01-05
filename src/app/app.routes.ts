@@ -6,6 +6,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
 import {ArticlePageComponent} from './blog/article-page/article-page.component';
+import {SocialsComponent} from './socials/socials.component';
 
 export const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'socials', component: SocialsComponent },
   { path: 'blog/:slug', component: ArticlePageComponent },
   { path: '**', pathMatch: 'full', component: NotFoundComponent }
 ];

@@ -1,19 +1,20 @@
-import {AfterViewInit, Component, OnDestroy, OnInit, PLATFORM_ID, Inject} from '@angular/core';
-import {isPlatformBrowser, NgStyle} from '@angular/common';
+import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser, NgOptimizedImage, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../services/vanta-background.service';
 import {DeviceDetectorService} from '../services/device-detector.service';
 import {Title} from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
+  selector: 'app-socials',
   imports: [
-    NgStyle
+    NgStyle,
+    NgOptimizedImage
   ],
-  styleUrls: ['./about.component.css']
+  templateUrl: './socials.component.html',
+  styleUrl: './socials.component.css'
 })
-export class AboutComponent implements OnInit, OnDestroy, AfterViewInit {
-  private readonly elementId = 'vanta-about-bg';
+export class SocialsComponent implements OnInit, OnDestroy, AfterViewInit {
+  private readonly elementId = 'vanta-socials-bg';
   isMobile: boolean = false;
   constructor(
     private vantaService: VantaBackgroundService,
@@ -23,18 +24,20 @@ export class AboutComponent implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   ngOnInit() {
-    this.titleService.setTitle('itzMiney\'s Home');
+    this.titleService.setTitle('Socials | itzMiney');
     this.isMobile = this.deviceService.isMobile;
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize.bind(this));
     }
   }
+
   ngAfterViewInit() {
     this.vantaService.initVanta(this.elementId, {
-      color: 0xa24d68,
-      backgroundColor: 0x291c3c
+      color: 0xc3b65c,
+      backgroundColor: 0x23153c
     });
   }
+
   ngOnDestroy() {
     this.vantaService.destroyVanta(this.elementId);
     if (isPlatformBrowser(this.platformId)) {

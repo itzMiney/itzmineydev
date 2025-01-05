@@ -29,13 +29,13 @@
 }
 
 .navbar a:hover {
-  background-color: #9c27b0;
+  background-color: #452737;
   color: #fff;
   transform: scale(1.1);
 }
 
 .navbar a.active {
-  background-color: #9c27b0;
+  background-color: #e43b68;
   color: #fff;
   transform: scale(1.1);
 }
