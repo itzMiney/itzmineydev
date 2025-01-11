@@ -83,6 +83,7 @@
 .gallery-item p {
   font-size: 1.0rem;
   font-weight: 400;
+  color: white;
 }
 
 .commission-button {
@@ -132,4 +133,8 @@
   .gallery-item {
     width: 100%;
   }
+}
+
+a {
+  color: white;
 }
