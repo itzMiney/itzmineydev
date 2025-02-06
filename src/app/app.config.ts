@@ -5,7 +5,7 @@ import {routes} from './app.routes';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {provideClientHydration, withEventReplay} from '@angular/platform-browser';
 import {provideHttpClient} from '@angular/common/http';
-import {AuthService} from './services/auth.service';
+import {AuthService} from './shared/services/auth.service';
 import {AuthInterceptor} from './auth.interceptor';
 
 export const appConfig: ApplicationConfig = {

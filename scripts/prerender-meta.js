@@ -32,6 +32,13 @@ const staticMeta = {
     url: 'https://itzminey.dev/socials',
     color: '#eb284c'
   },
+  '/services': {
+    title: 'Services | itzMiney',
+    description: 'All the Services I offer are listed here!',
+    image: 'https://meta.itzminey.dev/assets/ogimg.png',
+    url: 'https://itzminey.dev/services',
+    color: '#eb284c'
+  },
   '/blog': {
     title: 'Blog | itzMiney',
     description: 'Welcome to my blog! I\'ll post occasional updates here on the stuff I\'m currently up to.',
@@ -60,6 +67,20 @@ const staticMeta = {
     url: 'https://itzminey.dev/404',
     color: '#eb284c',
   },
+  '/tos': {
+    title: 'Terms of Service | itzMiney',
+    description: 'My Terms of Service for the Freelancing work I provide',
+    image: 'https://meta.itzminey.dev/assets/ogimg.png',
+    url: 'https://itzminey.dev/tos',
+    color: '#eb284c'
+  },
+  '/imprint': {
+    title: 'Imprint | itzMiney',
+    description: 'Imprint and Contact',
+    image: 'https://meta.itzminey.dev/assets/ogimg.png',
+    url: 'https://itzminey.dev/imprint',
+    color: '#eb284c'
+  }
 };
 
 // Output directory for pre-rendered metadata

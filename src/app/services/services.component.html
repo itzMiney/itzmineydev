@@ -1,0 +1,44 @@
+<div id="vanta-services-bg"></div>
+<div class="height-container">
+  <div class="services-container">
+    <div class="services-header" [ngStyle]="{'margin-top': isMobile ? '60px' : '120px'}">
+      <h1>My Services</h1>
+      <p class="subtitle">Web Development & Design</p>
+    </div>
+    <div class="text-content">
+      <p>
+        Welcome!<br><br>
+        Here is where I offer freelance services in web development and design!<br>
+        For some of the work I did you can consider checking out my <a href="/portfolio">Portfolio</a>.<br>
+        If you like what I do consider commissioning my services that I offer for various prices and tiers here on this site!<br>
+        If you're interested, shoot me a mail at <a href="mailto://michael@itzminey.dev">michael&#64;itzminey.dev</a> with the requested Service and any details and specifications you want me to know about.
+      </p>
+    </div>
+    <div class="commission-button">
+      <a href="mailto://michael@itzminey.dev" target="_blank">
+        <button class="comm-btn">Commission me!</button>
+      </a>
+    </div>
+    <div class="service-cards">
+      <div class="service-item" *ngFor="let service of services; let i = index">
+        <div class="service-card">
+          <span [innerHTML]="service.name"></span>
+          <div class="tabs">
+            <button
+              class="tab-btn"
+              [class.active]="activeTab[i] === 'basic'"
+              (click)="switchTab(i, 'basic')">Basic</button>
+            <button
+              class="tab-btn"
+              [class.active]="activeTab[i] === 'advanced'"
+              (click)="switchTab(i, 'advanced')">Advanced</button>
+          </div>
+          <div *ngIf="activeTab[i] === 'basic'" class="tab-content" [innerHTML]="service.basic">
+          </div>
+          <div *ngIf="activeTab[i] === 'advanced'" class="tab-content" [innerHTML]="service.advanced">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

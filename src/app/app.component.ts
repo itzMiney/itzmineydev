@@ -4,7 +4,7 @@ import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import {NavbarComponent} from './shared/navbar/navbar.component';
 import {MobileNavbarComponent} from './shared/mobile-navbar/mobile-navbar.component';
 import {FooterComponent} from './shared/footer/footer.component';
-import {DeviceDetectorService} from './services/device-detector.service';
+import {DeviceDetectorService} from './shared/services/device-detector.service';
 
 @Component({
   selector: 'app-root',

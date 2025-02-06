@@ -1,10 +1,10 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
-import {AuthService} from '../services/auth.service';
+import {AuthService} from '../shared/services/auth.service';
 import {Router} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
-import {VantaBackgroundService} from '../services/vanta-background.service';
-import {DeviceDetectorService} from '../services/device-detector.service';
+import {VantaBackgroundService} from '../shared/services/vanta-background.service';
+import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {isPlatformBrowser} from '@angular/common';
 import {Title} from '@angular/platform-browser';
 

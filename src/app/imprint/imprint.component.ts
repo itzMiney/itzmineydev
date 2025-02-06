@@ -1,30 +1,29 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
-import {isPlatformBrowser, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
-import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
+import {isPlatformBrowser, NgIf} from '@angular/common';
 
 @Component({
-  selector: 'app-socials',
+  selector: 'app-services',
   imports: [
-    NgStyle
+    NgIf
   ],
-  templateUrl: './socials.component.html',
-  styleUrl: './socials.component.css'
+  templateUrl: './imprint.component.html',
+  styleUrl: './imprint.component.css'
 })
-export class SocialsComponent implements OnInit, OnDestroy, AfterViewInit {
-  private readonly elementId = 'vanta-socials-bg';
-  isMobile: boolean = false;
+
+export class ImprintComponent implements OnInit, OnDestroy, AfterViewInit {
+  private readonly elementId = 'vanta-imprint-bg';
+  copiedSection: string | null = null;
+
   constructor(
     private vantaService: VantaBackgroundService,
-    private deviceService: DeviceDetectorService,
     private titleService: Title,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Socials | itzMiney');
-    this.isMobile = this.deviceService.isMobile;
+    this.titleService.setTitle('Imprint | itzMiney');
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize.bind(this));
     }
@@ -32,11 +31,10 @@ export class SocialsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     this.vantaService.initVanta(this.elementId, {
-      color: 0xc3b65c,
-      backgroundColor: 0x23153c
+      color: 0x5b417a,
+      backgroundColor: 0x41e3c
     });
   }
-
   ngOnDestroy() {
     this.vantaService.destroyVanta(this.elementId);
     if (isPlatformBrowser(this.platformId)) {
@@ -46,5 +44,20 @@ export class SocialsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onResize() {
     this.vantaService.resizeVanta(this.elementId);
+  }
+
+  copyToClipboard(text: string): void {
+    navigator.clipboard.writeText(text).then(() => {
+      if (text.includes('@')) {
+        this.copiedSection = 'email';
+      } else if (text.includes('+')) {
+        this.copiedSection = 'phone';
+      }
+
+      // Reset the copied section after 2 seconds
+      setTimeout(() => {
+        this.copiedSection = null;
+      }, 2000);
+    });
   }
 }

@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {ArticleService} from '../services/article.service';
-import {UserService} from '../services/user.service';
+import {ArticleService} from '../shared/services/article.service';
+import {UserService} from '../shared/services/user.service';
 import {NgFor, NgIf, NgStyle} from '@angular/common';
 import { Observer} from 'rxjs';
 import {FormsModule} from '@angular/forms';
-import {DeviceDetectorService} from '../services/device-detector.service';
+import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
 import {ModalComponent} from '../shared/modal/modal.component';
 

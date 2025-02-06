@@ -1,0 +1,185 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#vanta-services-bg {
+  animation: fadeIn 1s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -100; /* Place the background behind content */
+}
+
+.services-container {
+  position: relative;
+  color: white;
+  padding-bottom: 60px;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.height-container {
+  min-height: 100vh;
+  align-content: center;
+}
+
+.services-header {
+  text-align: center;
+}
+
+.services-header h1 {
+  font-size: 2.5rem;
+  background: transparent;
+  border: 4px solid white;
+  margin: 8px auto 8px auto;
+  max-width: 280px;
+  padding: 10px;
+  border-radius: 45px;
+}
+
+.services-header .subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.service-item {
+  width: 450px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+}
+
+.service-item span {
+  font-size: 1.0rem;
+  font-weight: 400;
+  color: white;
+}
+
+.service-card {
+  background: linear-gradient(135deg, #8054aa, #bc5570);
+  border-radius: 35px;
+  border: none;
+  padding: 25px;
+  text-align: center;
+  color: white;
+}
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tab-btn {
+  background-color: rgba(57, 53, 74, 0.45);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px;
+  margin-inline: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 110px;
+  display: inline-block;
+}
+
+.tab-btn:hover {
+  background-color: rgb(227, 72, 90);
+}
+
+.tab-btn.active {
+  background-color: rgb(227, 72, 90);
+  color: #ffffff;
+}
+
+.tab-content {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  white-space: pre-line;
+  text-wrap: pretty;
+  text-align: left;
+}
+
+:host ::ng-deep .centered-text {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.commission-button {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.comm-btn {
+  background-color: #FF5C8D;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.comm-btn:hover {
+  background-color: #FF3C75;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.text-content a {
+  color: cornflowerblue;
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 20px 10px;
+  }
+
+  .services-header h1 {
+    font-size: 2rem;
+  }
+
+  .service-cards {
+    flex-direction: column;
+  }
+
+  .service-item {
+    width: 100%;
+  }
+}
+
+a {
+  color: white;
+}

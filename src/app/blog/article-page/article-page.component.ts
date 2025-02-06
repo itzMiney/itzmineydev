@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
-import {DeviceDetectorService} from '../../services/device-detector.service'
+import {DeviceDetectorService} from '../../shared/services/device-detector.service'
 import {DatePipe, isPlatformBrowser, NgIf, NgStyle} from '@angular/common';
-import {VantaBackgroundService} from '../../services/vanta-background.service';
-import {ArticleService} from '../../services/article.service';
+import {VantaBackgroundService} from '../../shared/services/vanta-background.service';
+import {ArticleService} from '../../shared/services/article.service';
 import {ActivatedRoute} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 

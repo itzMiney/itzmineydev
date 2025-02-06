@@ -1,0 +1,217 @@
+<div id="vanta-tos-bg"></div>
+<div class="height-container">
+  <div class="tos-container">
+    <div class="floating-nav" [class.hidden]="isMobile">
+      <ul>
+        <li><a href="#introduction" [class.active]="activeSection === 'introduction'" (click)="scrollToSection($event, 'introduction')">1. Introduction</a></li>
+        <li><a href="#services-provided" [class.active]="activeSection === 'services-provided'" (click)="scrollToSection($event, 'services-provided')">2. Services Provided</a></li>
+        <li><a href="#project-scope-and-deliverables" [class.active]="activeSection === 'project-scope-and-deliverables'" (click)="scrollToSection($event, 'project-scope-and-deliverables')">3. Project Scope and Deliverables</a></li>
+        <li><a href="#payment-terms" [class.active]="activeSection === 'payment-terms'" (click)="scrollToSection($event, 'payment-terms')">4. Payment Terms</a></li>
+        <li><a href="#timeline-and-deadlines" [class.active]="activeSection === 'timeline-and-deadlines'" (click)="scrollToSection($event, 'timeline-and-deadlines')">5. Timeline and Deadlines</a></li>
+        <li><a href="#client-responsibilities" [class.active]="activeSection === 'client-responsibilities'" (click)="scrollToSection($event, 'client-responsibilities')">6. Client Responsibilities</a></li>
+        <li><a href="#revisions" [class.active]="activeSection === 'revisions'" (click)="scrollToSection($event, 'revisions')">7. Revisions</a></li>
+        <li><a href="#ownership-and-rights" [class.active]="activeSection === 'ownership-and-rights'" (click)="scrollToSection($event, 'ownership-and-rights')">8. Ownership and Rights</a></li>
+        <li><a href="#confidentiality" [class.active]="activeSection === 'confidentiality'" (click)="scrollToSection($event, 'confidentiality')">9. Confidentiality</a></li>
+        <li><a href="#cancellations-and-refunds" [class.active]="activeSection === 'cancellations-and-refunds'" (click)="scrollToSection($event, 'cancellations-and-refunds')">10. Cancellations and Refunds</a></li>
+        <li><a href="#limitation-of-liability" [class.active]="activeSection === 'limitation-of-liability'" (click)="scrollToSection($event, 'limitation-of-liability')">11. Limitation of Liability</a></li>
+        <li><a href="#dispute-resolution" [class.active]="activeSection === 'dispute-resolution'" (click)="scrollToSection($event, 'dispute-resolution')">12. Dispute Resolution</a></li>
+        <li><a href="#force-majeure" [class.active]="activeSection === 'force-majeure'" (click)="scrollToSection($event, 'force-majeure')">13. Force Majeure</a></li>
+        <li><a href="#governing-law" [class.active]="activeSection === 'governing-law'" (click)="scrollToSection($event, 'governing-law')">14. Governing Law</a></li>
+        <li><a href="#modifications" [class.active]="activeSection === 'modifications'" (click)="scrollToSection($event, 'modifications')">15. Modifications</a></li>
+        <li><a href="#contact" [class.active]="activeSection === 'contact'" (click)="scrollToSection($event, 'contact')">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="text-content">
+      <section id="introduction">
+      <h1>Terms of Service</h1>
+        <br><br>
+        <h2 (click)="copySectionLink('introduction')" class="clickable-title">
+          1. Introduction
+          <span class="link-icon" *ngIf="copiedSection !== 'introduction'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'introduction'">Copied!</span>
+        </h2>
+        <p>These Terms of Service ("Terms") apply to all services provided by Michael Reisinger ("Freelancer," "we," "us," or "our") to clients ("Client," "you," or "your"). By hiring us for web development and design services, you agree to comply with these Terms.</p>
+      </section>
+
+      <section id="services-provided">
+        <br><br>
+        <h2 (click)="copySectionLink('services-provided')" class="clickable-title">
+          2. Services Provided
+          <span class="link-icon" *ngIf="copiedSection !== 'services-provided'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'services-provided'">Copied!</span>
+        </h2>
+        <p>We offer web development and design services, including but not limited to:</p>
+        <ul>
+          <li>Custom WordPress website design and development.</li>
+          <li>Website maintenance and support.</li>
+          <li>Domain registration and hosting assistance.</li>
+          <li>DDoS protection setup.</li>
+        </ul>
+      </section>
+
+      <section id="project-scope-and-deliverables">
+        <br><br>
+        <h2 (click)="copySectionLink('project-scope-and-deliverables')" class="clickable-title">
+          3. Project Scope and Deliverables
+          <span class="link-icon" *ngIf="copiedSection !== 'project-scope-and-deliverables'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'project-scope-and-deliverables'">Copied!</span>
+        </h2>
+        <p>The scope of the project, including deliverables, timeline, and specific requirements, will be defined in a written agreement between the Client and Freelancer prior to the commencement of work. Any changes to the project scope may require an additional fee.</p>
+      </section>
+
+      <section id="payment-terms">
+        <br><br>
+        <h2 (click)="copySectionLink('payment-terms')" class="clickable-title">
+          4. Payment Terms
+          <span class="link-icon" *ngIf="copiedSection !== 'payment-terms'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'payment-terms'">Copied!</span>
+        </h2>
+        <ul>
+          <li>A deposit of 30% of the total project cost is required before work begins. The remaining balance is due upon completion of the project or as outlined in the agreement.</li>
+          <li>Payments can be made via bank transfer, PayPal, or other mutually agreed payment methods.</li>
+          <li>If additional work or revisions are requested that were not included in the original agreement, those will be billed at a rate of 20 EUR/revision.</li>
+        </ul>
+      </section>
+
+      <section id="timeline-and-deadlines">
+        <br><br>
+        <h2 (click)="copySectionLink('timeline-and-deadlines')" class="clickable-title">
+          5. Timeline and Deadlines
+          <span class="link-icon" *ngIf="copiedSection !== 'timeline-and-deadlines'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'timeline-and-deadlines'">Copied!</span>
+        </h2>
+        <p>We will make reasonable efforts to complete the project within the agreed timeline. However, delays may occur due to unforeseen circumstances, or if the Client does not provide necessary content, information, or feedback on time.</p>
+      </section>
+
+      <section id="client-responsibilities">
+        <br><br>
+        <h2 (click)="copySectionLink('client-responsibilities')" class="clickable-title">
+          6. Client Responsibilities
+          <span class="link-icon" *ngIf="copiedSection !== 'client-responsibilities'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'client-responsibilities'">Copied!</span>
+        </h2>
+        <ul>
+          <li>The Client must provide all necessary materials (e.g., text, images, logos, branding) for the project.</li>
+          <li>The Client agrees to provide timely feedback and approvals as required for the project’s progress.</li>
+          <li>The Client is responsible for ensuring they have the necessary licenses or permissions for any third-party materials provided.</li>
+        </ul>
+      </section>
+
+      <section id="revisions">
+        <br><br>
+        <h2 (click)="copySectionLink('revisions')" class="clickable-title">
+          7. Revisions
+          <span class="link-icon" *ngIf="copiedSection !== 'revisions'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'revisions'">Copied!</span>
+        </h2>
+        <p>e offer 5 rounds of revisions as part of the project. Additional revisions will incur a fee of 20 EUR per revision.</p>
+      </section>
+
+      <section id="ownership-and-rights">
+        <br><br>
+        <h2 (click)="copySectionLink('ownership-and-rights')" class="clickable-title">
+          8. Ownership and Rights
+          <span class="link-icon" *ngIf="copiedSection !== 'ownership-and-rights'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'ownership-and-rights'">Copied!</span>
+        </h2>
+        <p>Upon full payment, the Client will own the rights to the website and its content. However, we retain the right to showcase the project in our portfolio and marketing materials unless otherwise agreed.</p>
+      </section>
+
+      <section id="confidentiality">
+        <br><br>
+        <h2 (click)="copySectionLink('confidentiality')" class="clickable-title">
+          9. Confidentiality
+          <span class="link-icon" *ngIf="copiedSection !== 'confidentiality'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'confidentiality'">Copied!</span>
+        </h2>
+        <p>We agree to keep all Client information confidential and not share it with third parties, except as necessary to perform the services or as required by law.</p>
+      </section>
+
+      <section id="cancellations-and-refunds">
+        <br><br>
+        <h2 (click)="copySectionLink('cancellations-and-refunds')" class="clickable-title">
+          10. Cancellations and Refunds
+          <span class="link-icon" *ngIf="copiedSection !== 'cancellations-and-refunds'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'cancellations-and-refunds'">Copied!</span>
+        </h2>
+        <ul>
+          <li>If the Client cancels the project after work has commenced, the deposit is non-refundable.</li>
+          <li>If the Client is dissatisfied with the work, they should notify us in writing. We will make reasonable efforts to resolve the issue. If the project is cancelled due to a breach of agreement, no refunds will be provided.</li>
+        </ul>
+      </section>
+
+      <section id="limitation-of-liability">
+        <br><br>
+        <h2 (click)="copySectionLink('limitation-of-liability')" class="clickable-title">
+          11. Limitation of Liability
+          <span class="link-icon" *ngIf="copiedSection !== 'limitation-of-liability'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'limitation-of-liability'">Copied!</span>
+        </h2>
+        <p>To the extent permitted by law, our liability for any claims arising from the services we provide is limited to the total amount paid for the services. We are not liable for any indirect, incidental, or consequential damages.</p>
+      </section>
+
+      <section id="dispute-resolution">
+        <br><br>
+        <h2 (click)="copySectionLink('dispute-resolution')" class="clickable-title">
+          12. Dispute Resolution
+          <span class="link-icon" *ngIf="copiedSection !== 'dispute-resolution'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'dispute-resolution'">Copied!</span>
+        </h2>
+        <p>In the event of a dispute, both parties agree to attempt to resolve the issue amicably. If a resolution cannot be reached, the dispute will be handled through mediation or arbitration as agreed upon by both parties.</p>
+      </section>
+
+      <section id="force-majeure">
+        <br><br>
+        <h2 (click)="copySectionLink('force-majeure')" class="clickable-title">
+          13. Force Majeure
+          <span class="link-icon" *ngIf="copiedSection !== 'force-majeure'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'force-majeure'">Copied!</span>
+        </h2>
+        <p>Neither party shall be held liable for any failure or delay in performance due to causes beyond their control, including but not limited to natural disasters, strikes, or governmental actions.</p>
+      </section>
+
+      <section id="governing-law">
+        <br><br>
+        <h2 (click)="copySectionLink('governing-law')" class="clickable-title">
+          14. Governing Law
+          <span class="link-icon" *ngIf="copiedSection !== 'governing-law'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'governing-law'">Copied!</span>
+        </h2>
+        <p>These Terms will be governed by and construed in accordance with the laws of Austria.</p>
+      </section>
+
+      <section id="modifications">
+        <br><br>
+        <h2 (click)="copySectionLink('modifications')" class="clickable-title">
+          15. Modifications
+          <span class="link-icon" *ngIf="copiedSection !== 'modifications'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'modifications'">Copied!</span>
+        </h2>
+        <p>We reserve the right to modify or update these Terms at any time. Any changes will be communicated to the Client, and continued use of our services constitutes acceptance of those changes.</p>
+      </section>
+
+      <section id="contact">
+        <br><br>
+        <h2 (click)="copySectionLink('contact')" class="clickable-title">
+          Contact Information
+          <span class="link-icon" *ngIf="copiedSection !== 'contact'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'contact'">Copied!</span>
+        </h2>
+        <p>For any questions or concerns regarding these Terms of Service, please contact us at:</p>
+        <ul class="contact-details">
+          <li>
+            <span (click)="copyToClipboard('michael@itzminey.dev')"><i class="fa-solid fa-envelope"></i></span>
+            Email: <a href="mailto:michael@itzminey.dev">michael&#64;itzminey.dev</a>
+            <span *ngIf="copiedSection === 'email'" class="copy-status">Copied!</span>
+          </li>
+          <li>
+            <span (click)="copyToClipboard('+436604349465')"><i class="fa-solid fa-phone"></i></span>
+            Phone: <a href="tel:+436604349465">+43 660 4349465</a>
+            <span *ngIf="copiedSection === 'phone'" class="copy-status">Copied!</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>

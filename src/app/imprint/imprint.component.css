@@ -1,0 +1,85 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#vanta-imprint-bg {
+  animation: fadeIn 1s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -100; /* Place the background behind content */
+}
+
+.imprint-container {
+  position: relative;
+  color: white;
+  padding-bottom: 60px;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.height-container {
+  min-height: 100vh;
+  align-content: center;
+}
+
+.text-content {
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-family: Roboto, sans-serif;
+}
+
+.text-content ul {
+  list-style-type: none;
+}
+
+.text-content li {
+  margin-bottom: 10px;
+}
+
+.text-content a {
+  color: cornflowerblue;
+}
+
+.text-content button {
+  background: none;
+  border: none;
+}
+
+.text-content span {
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.text-content span:hover {
+  color: cornflowerblue;
+}
+
+.text-content span:active {
+  color: mediumpurple;
+}
+
+.copy-status {
+  color: #7fd67f;
+}
+
+@media (max-width: 768px) {
+  .imprint-container {
+    padding: 20px 10px;
+  }
+
+  .imprint-header h1 {
+    font-size: 2rem;
+  }
+}

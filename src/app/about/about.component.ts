@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnDestroy, OnInit, PLATFORM_ID, Inject} from '@angular/core';
 import {isPlatformBrowser, NgStyle} from '@angular/common';
-import {VantaBackgroundService} from '../services/vanta-background.service';
-import {DeviceDetectorService} from '../services/device-detector.service';
+import {VantaBackgroundService} from '../shared/services/vanta-background.service';
+import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
 
 @Component({
