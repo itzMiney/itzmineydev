@@ -25,17 +25,21 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
       name: "<b>Support & Maintenance Service</b>",
       basic: `
             <b class="centered-text">Maintenance Service</b><br>
-            Depending on the software(s) in use, baseline ~€35-90/month. Contact me for a precise estimate.<br><br>
+            Depending on the software(s) in use, flexible baseline ~€35-90+/month.<br>
+            Contact me for a precise estimate.<br><br>
             <b>Support Service</b><br>
-            Depending on the software(s) in use, baseline ~€50-75/hour.<br>
-            <b>Flat Rate:</b> ~€60-130 for minor issues (up to 2.5 hours). Contact me for a precise estimate.
+            Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br>
+            <b>Flat Rate:</b> €60-130 for minor issues<br>
+            (up to 2.5 hours, depends on complexity, contact me for a precise estimate)
         `,
       advanced: `
             <b class="centered-text">Maintenance Service</b><br>
-            Depending on the software(s) in use, baseline ~€35-90/month. Contact me for a precise estimate.<br><br>
+            Depending on the software(s) in use, flexible baseline ~€35-90+/month.<br>
+            Contact me for a precise estimate.<br><br>
             <b>Support Service</b><br>
-            Depending on the software(s) in use, baseline ~€50-75/hour.<br>
-            <b>Flat Rate:</b> ~€60-130 for minor issues (up to 2.5 hours). Contact me for a precise estimate.
+            Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br>
+            <b>Flat Rate:</b> €60-130 for minor issues<br>
+            (up to 2.5 hours, depends on complexity, contact me for a precise estimate)
         `
     },
     {
@@ -88,7 +92,7 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
       name: "<b>Custom-Made Website in Angular</b> (Files Only)",
       basic: `
             <b class="centered-text">Base Service: €200</b><br>
-            I will develop a custom frontend using Angular, Node.js, TypeScript, HTML, and CSS, and provide the files.<br><br>
+            I will develop a custom frontend using Angular, Node.js, TypeScript, HTML, and CSS, and provide the files.<br>
             If you have a backend, provide its documentation, so I can integrate it.<br>
             If not, I will add placeholders for future backend integration.<br><br>
             <b class="centered-text">Additional Services:</b><br>
@@ -133,22 +137,26 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
         `
     },
     {
-      name: "<b>Web Server Setup for Provided Software</b>",
+      name: "<b>Server Setup for Provided Software</b>",
       basic: `
-            <b class="centered-text">Base Service: €350</b><br>
-            I will set up and securely configure custom server software on your dedicated server.<br><br>
+            <b class="centered-text">Flexible Baseline ~€100-250+</b><br>
+            Pricing depends on software complexity, required configurations, and security hardening.<br>
+            Contact me for a precise estimate.<br><br>
             <b class="centered-text">Additional Services:</b><br>
             • Maintenance Service (€60/month)<br>
             • Support Service (€90/hour)<br>
-            <b>Flat Rate:</b> €130 for minor issues (up to 2.5 hours)
+            <b>Flat Rate:</b> €60-130 for minor issues
+            (up to 2.5 hours, depends on complexity, contact me for a precise estimate)
         `,
       advanced: `
-            <b class="centered-text">Base Service: €350</b><br>
-            I will set up and host your provided server software on my dedicated server (shared hosting: €30/month).<br><br>
+            <b class="centered-text">Flexible Baseline ~€100-250+</b><br>
+            Pricing depends on software complexity, resource requirements, and hosting needs.<br>
+            Shared hosting available (€30/month). Contact me for a dedicated solution.<br><br>
             <b class="centered-text">Additional Services:</b><br>
             • Maintenance Service (€60/month)<br>
             • Support Service (€90/hour)<br>
-            <b>Flat Rate:</b> €130 for minor issues (up to 2.5 hours)
+            <b>Flat Rate:</b> €60-130 for minor issues
+            (up to 2.5 hours, depends on complexity, contact me for a precise estimate)
         `
     }
   ];
