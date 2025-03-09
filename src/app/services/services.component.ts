@@ -22,29 +22,134 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
 
   services = [
     {
-      name: '<b>Design a custom WordPress Website</b> (Files Only)',
-      basic: '<b class="centered-text">Base Service: (€100)</b>I will make your basic custom designed WordPress Website,<br>and give you the files for installing it on your own dedicated server or WordPress host.<br><b class="centered-text">Additional Services:</b>&bull; Maintenance Service (€35/month),<br><br>&bull; Support Service (€50/month)<br>(Flat Rate €100 for minor issues up to 2.5 hours)',
-      advanced: '<b class="centered-text">Base Service: (€100)</b>Basic + Detailed documentation of each feature.<br><b class="centered-text">Additional Services:</b>&bull; Maintenance Service (€35/month),<br><br>&bull; Support Service (€50/month)<br>(Flat Rate €100 for minor issues up to 2.5 hours)'
+      name: "<b>Support & Maintenance Service</b>",
+      basic: `
+            <b class="centered-text">Maintenance Service</b><br>
+            Depending on the software(s) in use, baseline ~€35-90/month. Contact me for a precise estimate.<br><br>
+            <b>Support Service</b><br>
+            Depending on the software(s) in use, baseline ~€50-75/hour.<br>
+            <b>Flat Rate:</b> ~€60-130 for minor issues (up to 2.5 hours). Contact me for a precise estimate.
+        `,
+      advanced: `
+            <b class="centered-text">Maintenance Service</b><br>
+            Depending on the software(s) in use, baseline ~€35-90/month. Contact me for a precise estimate.<br><br>
+            <b>Support Service</b><br>
+            Depending on the software(s) in use, baseline ~€50-75/hour.<br>
+            <b>Flat Rate:</b> ~€60-130 for minor issues (up to 2.5 hours). Contact me for a precise estimate.
+        `
     },
     {
-      name: '<b>Design custom WordPress Website + Setup</b>',
-      basic: '<b class="centered-text">Base Service: (€150)</b>I will make your basic custom designed WordPress Website and also set it up for you on either:<br><br>&bull; A dedicated Server you provide<br>&bull; A WordPress host you already pay for<br>&bull; My own Server (shared host - €20/month)</span><br><b class="centered-text">Additional Services:</b>&bull; Domain registration and management (€20 setup)<br>+ Basic DDoS Protection Setup (€25/month),<br><br>&bull; Maintenance Service (€35/month),<br><br>&bull; Support Service (€50/hour)<br>(Flat Rate €100 for minor issues up to 2.5 hours)',
-      advanced: '<b class="centered-text">Base Service: (€200)</b>Same as Basic Service + Additional security configuration<br><b class="centered-text">Additional Services:</b>&bull; Domain registration and management (€20 setup)<br>+ Advanced DDoS Protection Setup (€45/month),<br><br>&bull; Dedicated IPv4 Address (€15/month),<br><br>&bull; Maintenance Service (€35/month),<br><br>&bull; Support Service (€50/hour)<br>(Flat Rate €100 for minor issues up to 2.5 hours)'
+      name: "<b>Design a Custom WordPress Website</b> (Files Only)",
+      basic: `
+            <b class="centered-text">Base Service: €100</b><br>
+            I will design a custom WordPress website and provide the installation files for your dedicated server or WordPress host.<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Maintenance Service (€35/month)<br>
+            • Support Service (€50/hour)<br>
+            <b>Flat Rate:</b> €50 for minor issues (up to 2.5 hours)
+        `,
+      advanced: `
+            <b class="centered-text">Base Service: €100</b><br>
+            Includes basic service + detailed documentation of each feature.<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Maintenance Service (€35/month)<br>
+            • Support Service (€50/hour)<br>
+            <b>Flat Rate:</b> €50 for minor issues (up to 2.5 hours)
+        `
     },
     {
-      name: '<b>Custom-made Website in Angular</b> (Files Only)',
-      basic: '<b class="centered-text">Base Service: (€200)</b>I will make a custom Website <b>frontend</b> for you using Node.js, TypeScript, HTML & CSS in Angular CLI and give you the files.<br><br>If you already have a backend please provide it to me or a documentation of it, so I can implement it in the frontend.<br><br>If not, provide me with the details of what the backend will be able to do later and I will make placeholders in the frontend code for the backend calls that can be added later.<br><b class="centered-text">Additional Services:</b>&bull; Maintenance Service (€50/month),<br><br>&bull; Support Service (€75/hour)<br>(Flat Rate €130 for minor issues up to 2.5 hours)',
-      advanced: '<b class="centered-text">Base Service: (€300)</b>Same as basic, but I will also make a Backend for you too.<br><b class="centered-text">Additional Services:</b>Maintenance Service (€50/month),<br><br>Support Service (€75/hour - Flat Rate €130 for minor issues up to 2.5 hours)'
+      name: "<b>Design & Setup Custom WordPress Website</b>",
+      basic: `
+            <b class="centered-text">Base Service: €150</b><br>
+            I will design a custom WordPress website and set it up on:<br>
+            • Your dedicated server<br>
+            • Your existing WordPress host<br>
+            • My server (shared hosting: €20/month)<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Domain registration & management (€20 setup)<br>
+            • Basic DDoS Protection (€25/month)<br>
+            • Maintenance Service (€35/month)<br>
+            • Support Service (€50/hour)<br>
+            <b>Flat Rate:</b> €60 for minor issues (up to 2.5 hours)
+        `,
+      advanced: `
+            <b class="centered-text">Base Service: €200</b><br>
+            Includes basic service + additional security configuration.<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Domain registration & management (€20 setup)<br>
+            • Advanced DDoS Protection (€45/month)<br>
+            • Dedicated IPv4 Address (€15/month)<br>
+            • Maintenance Service (€35/month)<br>
+            • Support Service (€50/hour)<br>
+            <b>Flat Rate:</b> €60 for minor issues (up to 2.5 hours)
+        `
     },
     {
-      name: '<b>Custom-made Website in Angular + Setup</b>',
-      basic: '<b class="centered-text">Base Service: (€400)</b>I will make a custom Website front- and backend for you using Node.js, TypeScript, HTML & CSS in Angular CLI and set it up for you on either:<br><br>&bull; A dedicated Server you provide<br>&bull; A WordPress host you already pay for<br>&bull; My own Server (shared host - €20/month)<br><b class="centered-text">Additional Services:</b>&bull; Domain registration and management (€20 setup)<br>+ Basic DDoS Protection Setup (€25/month),<br><br>&bull; Maintenance Service (€50/month),<br><br>&bull; Support Service (€75/hour)<br>(Flat Rate €130 for minor issues up to 2.5 hours)',
-      advanced: '<b class="centered-text">Base Service: (€400)</b>Same as Basic Service<br><b class="centered-text">Additional Services:</b>&bull; Domain registration and management (€20 setup)<br>+ Advanced DDoS Protection Setup (€45/month),<br><br>&bull; Dedicated IPv4 Address (€15/month),<br><br>&bull; Maintenance Service (€50/month),<br><br>&bull; Support Service (€75/hour)<br>(Flat Rate €130 for minor issues up to 2.5 hours)'
+      name: "<b>Custom-Made Website in Angular</b> (Files Only)",
+      basic: `
+            <b class="centered-text">Base Service: €200</b><br>
+            I will develop a custom frontend using Angular, Node.js, TypeScript, HTML, and CSS, and provide the files.<br><br>
+            If you have a backend, provide its documentation, so I can integrate it.<br>
+            If not, I will add placeholders for future backend integration.<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Maintenance Service (€50/month)<br>
+            • Support Service (€75/hour)<br>
+            <b>Flat Rate:</b> €100 for minor issues (up to 2.5 hours)
+        `,
+      advanced: `
+            <b class="centered-text">Base Service: €300</b><br>
+            Includes basic service + backend development.<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Maintenance Service (€50/month)<br>
+            • Support Service (€75/hour)<br>
+            <b>Flat Rate:</b> €100 for minor issues (up to 2.5 hours)
+        `
     },
     {
-      name: '<b>Web Server Setup for Customer provided Software</b>',
-      basic: '<b class="centered-text">Base Service: (€350)</b>I will set up custom server software that you already obtained for you on a dedicated server you provide and configure it to run securely.<br><b class="centered-text">Additional Services:</b>&bull; Maintenance Service (€60/month),<br><br>&bull; Support Service (€90/hour - Flat Rate €160 for minor issues up to 2.5 hours)',
-      advanced: '<b class="centered-text">Base Service: (€350):</b>I will set up custom server software that you already obtained for you and host it for you on my own dedicated server (shared host - €30/month).<br><b class="centered-text">Additional Services:</b>&bull; Maintenance Service (€60/month),<br><br>&bull; Support Service (€90/hour - Flat Rate €160 for minor issues up to 2.5 hours)'
+      name: "<b>Custom-Made Website in Angular + Setup</b>",
+      basic: `
+            <b class="centered-text">Base Service: €400</b><br>
+            I will develop a full-stack website using Angular, Node.js, TypeScript, HTML, and CSS, and set it up on:<br>
+            • Your dedicated server<br>
+            • Your existing hosting provider<br>
+            • My server (shared hosting: €20/month)<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Domain registration & management (€20 setup)<br>
+            • Basic DDoS Protection (€25/month)<br>
+            • Maintenance Service (€50/month)<br>
+            • Support Service (€75/hour)<br>
+            <b>Flat Rate:</b> €100 for minor issues (up to 2.5 hours)
+        `,
+      advanced: `
+            <b class="centered-text">Base Service: €400</b><br>
+            Includes basic service + additional security configuration.<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Domain registration & management (€20 setup)<br>
+            • Advanced DDoS Protection (€45/month)<br>
+            • Dedicated IPv4 Address (€15/month)<br>
+            • Maintenance Service (€50/month)<br>
+            • Support Service (€75/hour)<br>
+            <b>Flat Rate:</b> €100 for minor issues (up to 2.5 hours)
+        `
+    },
+    {
+      name: "<b>Web Server Setup for Provided Software</b>",
+      basic: `
+            <b class="centered-text">Base Service: €350</b><br>
+            I will set up and securely configure custom server software on your dedicated server.<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Maintenance Service (€60/month)<br>
+            • Support Service (€90/hour)<br>
+            <b>Flat Rate:</b> €130 for minor issues (up to 2.5 hours)
+        `,
+      advanced: `
+            <b class="centered-text">Base Service: €350</b><br>
+            I will set up and host your provided server software on my dedicated server (shared hosting: €30/month).<br><br>
+            <b class="centered-text">Additional Services:</b><br>
+            • Maintenance Service (€60/month)<br>
+            • Support Service (€90/hour)<br>
+            <b>Flat Rate:</b> €130 for minor issues (up to 2.5 hours)
+        `
     }
   ];
 
