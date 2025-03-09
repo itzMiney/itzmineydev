@@ -184,7 +184,7 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     this.vantaService.initVanta(this.elementId, {
-      color: 0xb3b3b3,
+      color: 0x7272bd,
       backgroundColor: 0x291c3c
     });
   }
