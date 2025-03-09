@@ -29,7 +29,7 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
             Contact me for a precise estimate.<br><br>
             <b>Support Service</b><br>
             Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br>
-            <b>Flat Rate:</b> €60-130 for minor issues<br>
+            <b>Flat Rate:</b> €60-130 for minor issues
             (up to 2.5 hours, depends on complexity, contact me for a precise estimate)
         `,
       advanced: `
@@ -38,7 +38,7 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
             Contact me for a precise estimate.<br><br>
             <b>Support Service</b><br>
             Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br>
-            <b>Flat Rate:</b> €60-130 for minor issues<br>
+            <b>Flat Rate:</b> €60-130 for minor issues
             (up to 2.5 hours, depends on complexity, contact me for a precise estimate)
         `
     },
