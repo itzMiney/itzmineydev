@@ -41,6 +41,11 @@ export class AppComponent implements OnInit {
         this.showFooter = false;
         break;
       }
+      case 'shortener': {
+        this.showNavbar = false;
+        this.showFooter = false;
+        break;
+      }
       default: {
         this.showNavbar = true;
         this.showFooter = true;

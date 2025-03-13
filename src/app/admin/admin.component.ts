@@ -61,7 +61,6 @@ export class AdminComponent implements OnInit {
       return;
     }
     this.loadArticles();
-    this.loadArticles();
   }
 
   navigateToLogin() {

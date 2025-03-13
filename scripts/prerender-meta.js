@@ -80,6 +80,13 @@ const staticMeta = {
     image: 'https://meta.itzminey.dev/assets/ogimg.png',
     url: 'https://itzminey.dev/imprint',
     color: '#eb284c'
+  },
+  '/shortener': {
+    title: 'Shortener | itzMiney',
+    description: 'URL Shortener',
+    image: 'https://meta.itzminey.dev/assets/ogimg.png',
+    url: 'https://itzminey.dev/shortener',
+    color: '#eb284c'
   }
 };
 

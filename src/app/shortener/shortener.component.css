@@ -1,0 +1,118 @@
+/* Make the body fill the entire height of the viewport */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+/* Flexbox to center the container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 35px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+  overflow: scroll;
+}
+
+.container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #592840;
+}
+
+h1 {
+  margin-top: 60px;
+  text-align: center;
+  color: #333;
+}
+
+h3 {
+  text-align: center;
+}
+
+.form-section {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 12px;
+}
+
+input[type="url"],
+input[type="text"] {
+  min-width: 240px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="number"] {
+  max-width: 80px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* List styling */
+.url-list {
+  margin-top: 40px;
+}
+
+.url-list-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.url-list-items li {
+  background-color: #fff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  line-height: 1.5rem;
+}
+
+.url-list-items a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.url-list-items a:hover {
+  text-decoration: underline;
+}
