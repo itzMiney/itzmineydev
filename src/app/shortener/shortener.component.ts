@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Router} from '@angular/router';
-import {UserService} from '../shared/services/user.service';
 import {ShortenerService} from '../shared/services/shortener.service';
-import {Observer} from 'rxjs';
+import {interval, Observer, Subscription} from 'rxjs';
 import {FormsModule} from '@angular/forms';
 import {NgFor, NgIf, SlicePipe} from '@angular/common';
+import {AuthService} from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-shortener',
@@ -27,11 +27,12 @@ export class ShortenerComponent implements OnInit {
   og_url: string = '';
   short_name: string | null = null;
   deleteId: number | null = null;
+  tokenValidationInterval: Subscription = new Subscription();
 
   constructor(
     private shortenerService: ShortenerService,
-    private userService: UserService,
     private router: Router,
+    private authService: AuthService,
     private titleService: Title
   ) {}
 
@@ -39,6 +40,26 @@ export class ShortenerComponent implements OnInit {
     this.titleService.setTitle('Shortener | itzMiney')
     this.checkToken()
     this.loadURLs();
+    this.startTokenValidation();
+  }
+
+  startTokenValidation() {
+    this.tokenValidationInterval = interval(300000).subscribe(() => {
+      this.authService.isTokenValid(this.token).subscribe(
+        (isValid: boolean) => {
+          if (!isValid) {
+            console.warn('Token is no longer valid. Logging out.');
+            localStorage.removeItem('token');
+            this.navigateToLogin();
+          }
+        },
+        (error) => {
+          console.error('Error validating token:', error);
+          localStorage.removeItem('token');
+          this.navigateToLogin();
+        }
+      );
+    });
   }
 
   checkToken() {

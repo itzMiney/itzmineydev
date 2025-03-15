@@ -75,11 +75,13 @@ export class AdminComponent implements OnInit, OnDestroy {
         (isValid: boolean) => {
           if (!isValid) {
             console.warn('Token is no longer valid. Logging out.');
+            localStorage.removeItem('token');
             this.navigateToLogin();
           }
         },
         (error) => {
           console.error('Error validating token:', error);
+          localStorage.removeItem('token');
           this.navigateToLogin();
         }
       );

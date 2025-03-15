@@ -1,21 +1,14 @@
-/* Make the body fill the entire height of the viewport */
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-/* Flexbox to center the container */
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-width: 300px;
   padding: 25px;
   background-color: #ffffff;
   border-radius: 35px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-height: 80vh;
+  max-height: 90vh;
   overflow: scroll;
 }
 
@@ -28,7 +21,7 @@ body, html {
 }
 
 h1 {
-  margin-top: 60px;
+  margin-top: 40px;
   text-align: center;
   color: #333;
 }
@@ -89,11 +82,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* List styling */
-.url-list {
-  margin-top: 40px;
-}
-
 .url-list-items {
   list-style-type: none;
   padding: 0;
@@ -102,10 +90,14 @@ button:hover {
 .url-list-items li {
   background-color: #fff;
   padding: 10px 15px;
-  margin-bottom: 10px;
+  row-gap: 10px;
   border: 1px solid #ddd;
   border-radius: 20px;
   line-height: 1.5rem;
+}
+
+li + li {
+  margin-top: 10px;
 }
 
 .url-list-items a {
