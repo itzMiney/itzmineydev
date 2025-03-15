@@ -1,13 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ArticleService} from '../shared/services/article.service';
 import {UserService} from '../shared/services/user.service';
 import {NgFor, NgIf, NgStyle} from '@angular/common';
-import { Observer} from 'rxjs';
+import {Observer, Subscription, interval} from 'rxjs';
 import {FormsModule} from '@angular/forms';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
 import {ModalComponent} from '../shared/modal/modal.component';
+import {AuthService} from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -21,7 +22,7 @@ import {ModalComponent} from '../shared/modal/modal.component';
     ModalComponent
   ]
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent implements OnInit, OnDestroy {
   articles: any[] = [];
   users: any[] = [];
   noArticles: boolean = false;
@@ -36,50 +37,94 @@ export class AdminComponent implements OnInit {
   isModalOpen: boolean = false;
   isViewingArticles: boolean = true;
 
+  token: string | null= localStorage.getItem('token');
+  tokenValidationInterval: Subscription = new Subscription();
+
   userData = {
     username: '',
     password: '',
     id: '',
   };
 
-  token: string | null = localStorage.getItem('token');
-
   constructor(
     private articleService: ArticleService,
     private userService: UserService,
     private router: Router,
     private deviceService: DeviceDetectorService,
-    private titleService: Title
+    private titleService: Title,
+    private authService: AuthService
   ) {}
 
-  // Fetch articles from backend
   ngOnInit() {
     this.titleService.setTitle('Admin Panel | itzMiney')
     this.isMobile = this.deviceService.isMobile;
-    if (!this.token) {
+    this.checkToken();
+    this.loadArticles();
+    this.startTokenValidation();
+  }
+
+  ngOnDestroy() {
+    if (this.tokenValidationInterval) {
+      this.tokenValidationInterval.unsubscribe();
+    }
+  }
+
+  startTokenValidation() {
+    this.tokenValidationInterval = interval(300000).subscribe(() => {
+      this.authService.isTokenValid(this.token).subscribe(
+        (isValid: boolean) => {
+          if (!isValid) {
+            console.warn('Token is no longer valid. Logging out.');
+            this.navigateToLogin();
+          }
+        },
+        (error) => {
+          console.error('Error validating token:', error);
+          this.navigateToLogin();
+        }
+      );
+    });
+  }
+
+  checkToken() {
+    if (!this.token || !this.isValidToken(this.token)) {
+      localStorage.removeItem('token');
       this.navigateToLogin();
       return;
     }
-    this.loadArticles();
   }
 
-  navigateToLogin() {
-    this.router.navigate(['/login']).then(
-      (success) => {
-        if (success) {
-          console.log('Navigation to login succeeded');
-        } else {
-          console.warn('Navigation to login failed');
-        }
-      },
-      (error) => {
-        console.error('Navigation error:', error);
-      }
-    );
+  isValidToken(token: string) {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const expiry = payload.exp * 1000;
+
+      return expiry > Date.now();
+    } catch (e) {
+      console.error('Invalid token format:', e);
+      return false;
+    }
+  }
+
+  async navigateToLogin() {
+    try {
+    const currentRoute = this.router.url;
+    const success = await this.router.navigate(['/login'], {
+      queryParams: { redirectUrl: currentRoute },
+    });
+    if (success) {
+      console.log('Navigation to login succeeded');
+    } else {
+      console.warn('Navigation to login failed');
+    }
+  } catch (error) {
+    console.error('Navigation error:', error);
+  }
   }
 
   createArticle(form: any) {
-    if (!this.token) {
+    if (!this.token || !this.isValidToken(this.token)) {
+      localStorage.removeItem('token');
       this.navigateToLogin();
       return;
     }
@@ -106,10 +151,7 @@ export class AdminComponent implements OnInit {
   }
 
   editArticle(form: any): void {
-    if (!this.token) {
-      this.navigateToLogin();
-      return;
-    }
+    this.checkToken();
 
     const articleId = form.value.editId;
 
@@ -154,7 +196,8 @@ export class AdminComponent implements OnInit {
   }
 
   deleteArticle(form: any): void {
-    if (!this.token) {
+    if (!this.token || !this.isValidToken(this.token)) {
+      localStorage.removeItem('token');
       this.navigateToLogin();
       return;
     }

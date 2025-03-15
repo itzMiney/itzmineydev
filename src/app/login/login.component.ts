@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {AuthService} from '../shared/services/auth.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
@@ -24,10 +24,12 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   errorMessage: string = '';
   private readonly elementId = 'vanta-login-bg';
   isMobile: boolean = false;
+  redirectUrl: string = '/admin';
 
   constructor(
     private authService: AuthService,
     private router: Router,
+    private route: ActivatedRoute,
     private vantaService: VantaBackgroundService,
     private deviceService: DeviceDetectorService,
     private titleService: Title,
@@ -37,6 +39,13 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit() {
     this.titleService.setTitle('Login | itzMiney')
     this.isMobile = this.deviceService.isMobile;
+
+    this.route.queryParams.subscribe(params => {
+      if (params['redirectUrl']) {
+        this.redirectUrl = decodeURIComponent(params['redirectUrl']);
+      }
+    });
+
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize.bind(this));
     }
@@ -46,7 +55,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
     const observer = {
       'next': (response: any) => {
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/admin']).then(
+        this.router.navigate([this.redirectUrl]).then(
           (success) => {
             if (success) {
               console.log('Navigation to admin succeeded');
@@ -60,7 +69,6 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
         );
       },
       error: (err: any) => {
-        // Check if the error response contains a message
         if (err.error && err.error.message) {
           this.errorMessage = err.error.message;
         } else {

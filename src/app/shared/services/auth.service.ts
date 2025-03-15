@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, tap} from 'rxjs';
+import {Observable, of, tap} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,12 @@ export class AuthService {
               }
             })
         );
+  }
+
+  isTokenValid(token: string | null) {
+    if (!token) return of(false);
+    return this.http.get<boolean>('/api/users', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
   }
 }

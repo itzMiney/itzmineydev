@@ -37,15 +37,33 @@ export class ShortenerComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('Shortener | itzMiney')
-    if (!this.token) {
-      this.navigateToLogin();
-      return;
-    }
+    this.checkToken()
     this.loadURLs();
   }
 
+  checkToken() {
+    if (!this.token || !this.isValidToken(this.token)) {
+      localStorage.removeItem('token');
+      this.navigateToLogin();
+      return;
+    }
+  }
+
+  isValidToken(token: string) {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const expiry = payload.exp * 1000;
+
+      return expiry > Date.now();
+    } catch (e) {
+      console.error('Invalid token format:', e);
+      return false;
+    }
+  }
+
   navigateToLogin() {
-    this.router.navigate(['/login']).then(
+    const currentRoute = this.router.url;
+    this.router.navigate(['/login'], { queryParams: { redirectUrl: currentRoute } }).then(
       (success) => {
         if (success) {
           console.log('Navigation to login succeeded');
@@ -60,10 +78,7 @@ export class ShortenerComponent implements OnInit {
   }
 
   loadURLs(): void {
-    if (!this.token) {
-      this.navigateToLogin();
-      return;
-    }
+    this.checkToken()
     const urlObserver: Observer<any> = {
       next: (data) => {
         this.urls = data;
@@ -81,7 +96,8 @@ export class ShortenerComponent implements OnInit {
   }
 
   createShortURL(form: any) {
-    if (!this.token) {
+    if (!this.token || !this.isValidToken(this.token)) {
+      localStorage.removeItem('token');
       this.navigateToLogin();
       return;
     }
@@ -121,7 +137,8 @@ export class ShortenerComponent implements OnInit {
   }
 
   deleteShortURL(form: any) {
-    if (!this.token) {
+    if (!this.token || !this.isValidToken(this.token)) {
+      localStorage.removeItem('token');
       this.navigateToLogin();
       return;
     }
