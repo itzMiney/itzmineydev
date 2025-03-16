@@ -11,6 +11,7 @@ import {ServicesComponent} from './services/services.component';
 import {TosComponent} from './tos/tos.component';
 import {ImprintComponent} from './imprint/imprint.component';
 import {ShortenerComponent} from './shortener/shortener.component';
+import {ForbiddenComponent} from './forbidden/forbidden.component';
 
 export const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -25,5 +26,6 @@ export const routes: Routes = [
   { path: 'imprint', component: ImprintComponent },
   { path: 'blog/:slug', component: ArticlePageComponent },
   { path: 'shortener', component: ShortenerComponent },
+  { path: '403', component: ForbiddenComponent },
   { path: '**', pathMatch: 'full', component: NotFoundComponent }
 ];
