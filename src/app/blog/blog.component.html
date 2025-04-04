@@ -4,6 +4,7 @@
     <h1>Blog</h1>
     <p class="subtitle">Some (very) irregular updates</p>
   </div>
+  <hr class="rounded">
   <div class="blog-container">
     <div *ngIf="articles$ | async as articles; else noArticles">
       <div *ngFor="let article of articles.slice().reverse()" (click)="navigateToArticle(article.slug)" class="article-card">
