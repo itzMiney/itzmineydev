@@ -94,13 +94,13 @@ a {
 }
 
 .tech-stack {
-  background: linear-gradient(135deg, #924dd3, #e43b68);
   border-radius: 40px;
   justify-content: center;
   align-items: flex-start;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  border-bottom: 2.5px solid #534a61;
 }
 
 .tech-stack ul {
@@ -110,7 +110,7 @@ a {
 }
 
 .tech-stack li {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #4f4455, rgba(109, 68, 147, 0.5));
   margin: 12px 0;
   padding: 10px;
   border-radius: 25px;
@@ -118,11 +118,11 @@ a {
 }
 
 .tech-stack li:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(57, 53, 74, 0.5);
 }
 
 hr.rounded {
-  border-top: 4px solid #ffffff;
+  border-top: 4px solid white;
   max-width: 40px;
   border-radius: 5px;
 }
