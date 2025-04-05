@@ -4,11 +4,9 @@
   left: 50%;
   transform: translateX(-50%); /* Center the navbar horizontally */
   width: auto;
-  background-color: #1e1e1e;
   padding: 10px 13px; /* Adjusted padding for a wider 'bean' shape */
   border-radius: 50px; /* Create the 'bean' shape */
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +19,7 @@
 
 .navbar a {
   color: white;
+  background-color: rgba(57, 53, 74, 0.5);
   text-decoration: none;
   font-size: 16px;
   padding: 10px 20px;
@@ -29,7 +28,7 @@
 }
 
 .navbar a:hover {
-  background-color: #452737;
+  background-color: #4f4455;
   color: #fff;
   transform: scale(1.1);
 }
