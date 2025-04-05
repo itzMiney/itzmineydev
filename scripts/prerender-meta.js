@@ -167,5 +167,32 @@ async function generateMetaFiles() {
   });
 }
 
+function copyFolderRecursiveSync(source, target) {
+  if (!fs.existsSync(source)) {
+    console.warn(`Source folder "${source}" does not exist.`);
+    return;
+  }
+
+  const files = fs.readdirSync(source);
+
+  // Ensure the target directory exists
+  fs.mkdirSync(target, { recursive: true });
+
+  for (const file of files) {
+    const currentSource = path.join(source, file);
+    const currentTarget = path.join(target, file);
+
+    if (fs.lstatSync(currentSource).isDirectory()) {
+      copyFolderRecursiveSync(currentSource, currentTarget); // Recurse
+    } else {
+      fs.copyFileSync(currentSource, currentTarget);
+    }
+  }
+}
+
 generateMetaFiles().then();
 console.log('Metadata generation complete!')
+const sourceAssets = path.join(__dirname, '../public/assets');
+const targetAssets = path.join(outputDir, 'assets');
+copyFolderRecursiveSync(sourceAssets, targetAssets);
+console.log(`Copied assets to ${targetAssets}`);
