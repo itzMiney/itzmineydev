@@ -19,7 +19,7 @@
 
 .navbar a {
   color: white;
-  background-color: rgba(57, 53, 74, 0.5);
+  background-color: #39354A;
   text-decoration: none;
   font-size: 16px;
   padding: 10px 20px;
@@ -28,7 +28,7 @@
 }
 
 .navbar a:hover {
-  background-color: #4f4455;
+  background-color: #362e51;
   color: #fff;
   transform: scale(1.1);
 }
