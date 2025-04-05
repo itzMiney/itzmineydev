@@ -100,7 +100,6 @@ a {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  border-bottom: 2.5px solid #534a61;
 }
 
 .tech-stack ul {
@@ -113,7 +112,6 @@ a {
   background: linear-gradient(135deg, #4f4455, rgba(109, 68, 147, 0.5));
   margin: 12px 0;
   padding: 10px;
-  border-radius: 25px;
   text-align: center;
 }
 
@@ -124,6 +122,12 @@ a {
 hr.rounded {
   border-top: 4px solid white;
   max-width: 40px;
+  border-radius: 5px;
+}
+
+hr.tech-stack {
+  border: 3px solid #534a61;
+  width: 100px;
   border-radius: 5px;
 }
 
