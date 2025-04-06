@@ -61,7 +61,7 @@
 
 .article-card {
   z-index: 10;
-  background: linear-gradient(135deg, #924dd3, #e43b68);
+  background: linear-gradient(135deg, #501949, #93446e);
   padding: 15px;
   margin: 25px 0;
   cursor: pointer;
@@ -71,7 +71,7 @@
 }
 
 .article-card:hover {
-  background: linear-gradient(135deg, #b737cd, #773ec6);
+  background: linear-gradient(135deg, #cd376b, #592840);
   transform: translateY(-5px);
 }
 

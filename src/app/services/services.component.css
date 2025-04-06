@@ -82,7 +82,7 @@
 }
 
 .service-card {
-  background: linear-gradient(135deg, #8054aa, #bc5570);
+  background: linear-gradient(135deg, #321950, #6D4493);
   border-radius: 35px;
   border: none;
   padding: 25px;
@@ -95,7 +95,7 @@
 }
 
 .tab-btn {
-  background-color: rgba(57, 53, 74, 0.45);
+  background-color: rgba(74, 69, 96, 0.8);
   border: none;
   border-radius: 25px;
   color: white;
@@ -108,11 +108,11 @@
 }
 
 .tab-btn:hover {
-  background-color: rgb(227, 72, 90);
+  background-color: rgb(86, 80, 112);
 }
 
 .tab-btn.active {
-  background-color: rgb(227, 72, 90);
+  background-color: rgba(187, 107, 209, 0.5);
   color: #ffffff;
 }
 
@@ -138,7 +138,7 @@
 }
 
 .contact-btn {
-  background-color: #FF5C8D;
+  background-color: #d13e6d;
   color: white;
   border: none;
   padding: 12px 25px;
