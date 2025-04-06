@@ -120,14 +120,9 @@ a {
 }
 
 hr.rounded {
-  border-top: 4px solid white;
-  max-width: 40px;
-  border-radius: 5px;
-}
-
-hr.tech-stack {
-  border: 3px solid #534a61;
+  border: 2px solid white;
   width: 40px;
+  max-width: 40px;
   border-radius: 5px;
 }
 

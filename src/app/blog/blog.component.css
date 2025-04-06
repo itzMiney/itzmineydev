@@ -86,7 +86,8 @@ p {
 }
 
 hr.rounded {
-  border-top: 4px solid #ffffff;
+  border: 2px solid white;
   width: 40px;
+  max-width: 40px;
   border-radius: 5px;
 }

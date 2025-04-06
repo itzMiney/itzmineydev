@@ -79,10 +79,10 @@ button {
 }
 
 hr.rounded {
-  border-top: 4px solid #ffffff;
+  border: 2px solid white;
+  width: 40px;
   max-width: 40px;
   border-radius: 5px;
-  margin-bottom: 80px;
 }
 
 button.discord { background-color: #5865F2; }
