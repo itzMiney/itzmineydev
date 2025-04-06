@@ -1,0 +1,11 @@
+<div class="audio-player">
+  <div id="youtube-player"></div>
+  <div class="controls">
+    <button (click)="previousVideo()" [disabled]="!isPlayerReady"><i class="fa-solid fa-backward"></i></button>
+    <button (click)="togglePlayPause()" [disabled]="!isPlayerReady">
+      <i class="{{ isPlaying() ? 'fa-solid fa-pause' : 'fa-solid fa-play'}}"></i>
+    </button>
+    <button (click)="nextVideo()" [disabled]="!isPlayerReady"><i class="fa-solid fa-forward"></i></button>
+    <h3>{{ nowPlayingTitle() }}</h3>
+  </div>
+</div>

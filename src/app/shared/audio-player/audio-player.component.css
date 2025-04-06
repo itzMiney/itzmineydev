@@ -1,0 +1,31 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls button {
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  height: 42px;
+  width: 42px;
+  border-radius: 25px;
+}
+
+.audio-player {
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  z-index: 10;
+}
+
+.audio-player h3 {
+  margin-left: 15px;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  color: white;
+}

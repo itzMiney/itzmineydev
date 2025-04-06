@@ -3,11 +3,13 @@ import {VantaBackgroundService} from '../shared/services/vanta-background.servic
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {isPlatformBrowser, NgStyle} from '@angular/common';
 import {Title} from '@angular/platform-browser';
+import {AudioPlayerComponent} from '../shared/audio-player/audio-player.component';
 
 @Component({
   selector: 'app-portfolio',
   imports: [
-    NgStyle
+    NgStyle,
+    AudioPlayerComponent
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
