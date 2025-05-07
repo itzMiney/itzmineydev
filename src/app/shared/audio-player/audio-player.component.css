@@ -15,6 +15,34 @@
   border-radius: 25px;
 }
 
+.volume-control input[type="range"] {
+  -webkit-appearance: none;
+  width: 150px;
+  background: #43497e;
+  border-radius: 15px;
+  height: 6px;
+  margin-bottom: 3px;
+}
+
+.volume-control input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin-top: -6px; /* align with track */
+}
+
+.volume-control input[type="range"]::-moz-range-progress {
+  width: 150px;
+  background: #818aec;
+  border-radius: 15px;
+  height: 6px;
+  margin-bottom: 3px;;
+}
+
 .audio-player {
   position: fixed;
   bottom: 10px;

@@ -1,4 +1,5 @@
 import {Component, AfterViewInit, signal} from '@angular/core';
+import {NgIf} from '@angular/common';
 
 declare global {
   interface Window {
@@ -9,7 +10,9 @@ declare global {
 
 @Component({
   selector: 'app-audio-player',
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './audio-player.component.html',
   styleUrl: './audio-player.component.css'
 })
@@ -40,6 +43,7 @@ export class AudioPlayerComponent implements AfterViewInit {
       events: {
         onReady: () => {
           this.isPlayerReady.set(true);
+          this.player.setVolume(this.volume());
           console.log('YouTube Player Ready');
 
           const iframe = document.getElementById('youtube-player') as HTMLIFrameElement | null;
@@ -103,6 +107,18 @@ export class AudioPlayerComponent implements AfterViewInit {
   previousVideo() {
     if (this.isPlayerReady() && this.player?.previousVideo) {
       this.player.previousVideo();
+    }
+  }
+
+  volume = signal(50);
+
+  onVolumeChange(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const newVolume = parseInt(target.value, 10);
+
+    if (this.isPlayerReady() && this.player?.setVolume) {
+      this.player.setVolume(newVolume);
+      this.volume.set(newVolume);
     }
   }
 }

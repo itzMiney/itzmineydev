@@ -1,11 +1,21 @@
 <div class="audio-player">
   <div id="youtube-player"></div>
+  <h3>{{ nowPlayingTitle() }}</h3>
   <div class="controls">
     <button (click)="previousVideo()" [disabled]="!isPlayerReady"><i class="fa-solid fa-backward"></i></button>
     <button (click)="togglePlayPause()" [disabled]="!isPlayerReady">
       <i class="{{ isPlaying() ? 'fa-solid fa-pause' : 'fa-solid fa-play'}}"></i>
     </button>
     <button (click)="nextVideo()" [disabled]="!isPlayerReady"><i class="fa-solid fa-forward"></i></button>
-    <h3>{{ nowPlayingTitle() }}</h3>
+    <div class="volume-control" *ngIf="isPlayerReady()">
+      <input
+        id="volume"
+        type="range"
+        min="0"
+        max="100"
+        [value]="volume()"
+        (input)="onVolumeChange($event)"
+      />
+    </div>
   </div>
 </div>
