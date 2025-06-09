@@ -74,6 +74,13 @@ const staticMeta = {
     url: 'https://itzminey.dev/tos',
     color: '#eb284c'
   },
+  '/privacy': {
+    title: 'Terms of Service | itzMiney',
+    description: 'My Terms of Service for the Freelancing work I provide',
+    image: 'https://meta.itzminey.dev/assets/ogimg.png',
+    url: 'https://itzminey.dev/tos',
+    color: '#eb284c'
+  },
   '/imprint': {
     title: 'Imprint | itzMiney',
     description: 'Imprint and Contact',
@@ -104,8 +111,6 @@ async function fetchDynamicMeta() {
 
     return articles.reduce((acc, article) => {
       const createdAt = new Date(article.createdAt);
-
-      // Format the date directly using toLocaleDateString
       const formattedCreatedAt = createdAt.toLocaleDateString('en-US', {
         month: 'short',
         day: '2-digit',
@@ -113,18 +118,17 @@ async function fetchDynamicMeta() {
         hour: '2-digit',
         minute: '2-digit',
         hour12: false,
-      })
+      });
 
       const description = `By ${article.authorName} | Article from ${formattedCreatedAt}`;
-
-    acc[`/blog/${article.slug}`] = {
-      title: article.title,
-      description: description,
-      image: 'https://meta.itzminey.dev/assets/ogimg.png',
-      url: `https://itzminey.dev/blog/${article.slug}`,
-      color: '#eb284c',
-    };
-    return acc;
+      acc[`/blog/${article.slug}`] = {
+        title: article.title,
+        description,
+        image: 'https://meta.itzminey.dev/assets/ogimg.png',
+        url: `https://itzminey.dev/blog/${article.slug}`,
+        color: '#eb284c',
+      };
+      return acc;
     }, {});
   } catch (error) {
     console.error('Error fetching dynamic metadata:', error);

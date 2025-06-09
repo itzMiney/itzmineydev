@@ -11,6 +11,7 @@ import {ServicesComponent} from './services/services.component';
 import {TosComponent} from './tos/tos.component';
 import {ImprintComponent} from './imprint/imprint.component';
 import {ShortenerComponent} from './shortener/shortener.component';
+import {PrivacyComponent} from './privacy/privacy.component';
 
 export const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'socials', component: SocialsComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'tos', component: TosComponent },
+  { path: 'privacy', component: PrivacyComponent },
   { path: 'imprint', component: ImprintComponent },
   { path: 'blog/:slug', component: ArticlePageComponent },
   { path: 'shortener', component: ShortenerComponent },

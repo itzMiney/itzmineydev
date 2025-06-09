@@ -1,0 +1,150 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#vanta-privacy-bg {
+  animation: fadeIn 1s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -100; /* Place the background behind content */
+}
+
+.privacy-container {
+  position: relative;
+  color: white;
+  padding-bottom: 60px;
+  max-width: 960px;
+  margin: 160px auto 80px auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.height-container {
+  min-height: 100vh;
+  align-content: center;
+}
+
+.privacy-content {
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-family: Roboto, sans-serif;
+}
+
+.contact-details {
+  list-style-type: none;
+}
+
+.text-content li {
+  margin-bottom: 10px;
+}
+
+.text-content a {
+  color: cornflowerblue;
+}
+
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 20px 10px;
+  }
+
+  .privacy-header h1 {
+    font-size: 2rem;
+  }
+}
+
+.floating-nav.hidden {
+  display: none;
+}
+
+.floating-nav {
+  position: fixed;
+  top: 20%;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.floating-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.floating-nav li {
+  margin: 10px 0;
+}
+
+.floating-nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.floating-nav a:hover {
+  color: #e3485a;
+}
+
+.floating-nav a.active {
+  color: #846cd1;
+}
+
+.clickable-title {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.clickable-title:hover {
+  color: #ddd3ff;
+}
+
+.clickable-title:active {
+  color: #9179e8;
+}
+
+.clickable-title .link-icon {
+  font-size: 16px;
+  margin-left: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.clickable-title:hover .link-icon {
+  opacity: 1;
+}
+
+.copied-text {
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  color: #7fd67f;
+  margin-left: 8px;
+}
+
+.contact-details span {
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.contact-details span:hover {
+  color: cornflowerblue;
+}
+
+.contact-details span:active {
+  color: mediumpurple;
+}
+
+.copy-status {
+  color: #7fd67f;
+}

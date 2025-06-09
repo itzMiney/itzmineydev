@@ -1,0 +1,109 @@
+<div id="vanta-privacy-bg"></div>
+<div class="height-container">
+  <div class="privacy-container">
+    <div class="floating-nav" [class.hidden]="isMobile">
+      <ul>
+        <li><a href="#controller" [class.active]="activeSection === 'controller'" (click)="scrollToSection($event, 'controller')">1. Controller of the Data</a></li>
+        <li><a href="#what-data" [class.active]="activeSection === 'what-data'" (click)="scrollToSection($event, 'what-data')">2. What Data We collect</a></li>
+        <li><a href="#purpose" [class.active]="activeSection === 'purpose'" (click)="scrollToSection($event, 'purpose')">3. Purpose and Legal Basis</a></li>
+        <li><a href="#data-retention" [class.active]="activeSection === 'data-retention'" (click)="scrollToSection($event, 'data-retention')">4. Data Retention</a></li>
+        <li><a href="#your-rights" [class.active]="activeSection === 'your-rights'" (click)="scrollToSection($event, 'your-rights')">5. Your Rights</a></li>
+        <li><a href="#security" [class.active]="activeSection === 'security'" (click)="scrollToSection($event, 'security')">6. Security</a></li>
+        <li><a href="#changes" [class.active]="activeSection === 'changes'" (click)="scrollToSection($event, 'changes')">7. Changes</a></li>
+      </ul>
+    </div>
+
+    <div class="text-content">
+      <section id="controller">
+      <h1>Privacy Policy</h1>
+        Last updated: 9th June 2025
+        <br><br>
+        <h2 (click)="copySectionLink('controlle')" class="clickable-title">
+          1. Controller of the Data
+          <span class="link-icon" *ngIf="copiedSection !== 'controller'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'controller'">Copied!</span>
+        </h2>
+        <p>The controller responsible for processing data on this website is:<br><br><b>Michael Reisinger</b><br><a href="mailto:michael@itzminey.dev">michael&#x40;itzminey.dev</a></p>
+      </section>
+
+      <section id="what-data">
+        <br><br>
+        <h2 (click)="copySectionLink('what-data')" class="clickable-title">
+          2. What Data We Collect
+          <span class="link-icon" *ngIf="copiedSection !== 'what-data'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'what-data'">Copied!</span>
+        </h2>
+        <p>a) Website Usage Data
+          <br><br>
+           We may temporarily process your IP address when you visit certain pages, such as article views. This is done solely to protect the integrity of view counts and prevent automated abuse. This data is stored securely and is not retained longer than necessary.
+          <br><br>
+           We do not use cookies for tracking or analytics purposes.
+          <br><br>
+          b) Email Inquiries
+          <br><br>
+           If you contact us via the email address provided on the website, we may store your message and contact information in order to respond to your inquiry or provide the requested service. This data is treated as confidential and will not be shared with third parties without your consent.</p>
+      </section>
+
+      <section id="purpose">
+        <br><br>
+        <h2 (click)="copySectionLink('purpose')" class="clickable-title">
+          3. Purpose and Legal Basis
+          <span class="link-icon" *ngIf="copiedSection !== 'purpose'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'purpose'">Copied!</span>
+        </h2>
+        <p>We process personal data on the basis of legitimate interest (Art. 6(1)(f) GDPR), namely:</p>
+        <ul>
+          <li>To maintain and protect the integrity of our website</li>
+          <li>To respond to your inquiries and service requests</li>
+        </ul>
+      </section>
+
+      <section id="data-retention">
+        <br><br>
+        <h2 (click)="copySectionLink('data-retention')" class="clickable-title">
+          4. Data Retention
+          <span class="link-icon" *ngIf="copiedSection !== 'data-retention'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'data-retention'">Copied!</span>
+        </h2>
+        <p>Personal data is retained only as long as necessary for the stated purposes. Email correspondence may be retained for legal or administrative reasons, such as fulfilling service requests or maintaining communication history.</p>
+      </section>
+
+      <section id="your-rights">
+        <br><br>
+        <h2 (click)="copySectionLink('your-rights')" class="clickable-title">
+          5. Your Rights
+          <span class="link-icon" *ngIf="copiedSection !== 'your-rights'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'your-rights'">Copied!</span>
+        </h2>
+        <p>Under the GDPR, you have the right to:</p>
+        <ul>
+          <li>Access your personal data</li>
+          <li>Request correction or deletion</li>
+          <li>Object to or restrict processing</li>
+          <li>Lodge a complaint with your local data protection authority (in Austria, <b>DSB - Datenschutzbehörde</b>)</li>
+        </ul>
+        <p>To exercise these rights, please contact us at the email listed above.</p>
+      </section>
+
+      <section id="security">
+        <br><br>
+        <h2 (click)="copySectionLink('security')" class="clickable-title">
+          6. Security
+          <span class="link-icon" *ngIf="copiedSection !== 'security'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'security'">Copied!</span>
+        </h2>
+        <p>We take appropriate technical and organizational measures to protect your personal data from unauthorized access, misuse, or loss.</p>
+      </section>
+
+      <section id="changes">
+        <br><br>
+        <h2 (click)="copySectionLink('changes')" class="clickable-title">
+          7. Changes
+          <span class="link-icon" *ngIf="copiedSection !== 'changes'"><i class="fa-solid fa-link"></i></span>
+          <span class="copied-text" *ngIf="copiedSection === 'changes'">Copied!</span>
+        </h2>
+        <p>This policy may be updated occasionally to reflect changes in our practices. The latest version will always be available on this page.</p>
+      </section>
+    </div>
+  </div>
+</div>
