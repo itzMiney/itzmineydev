@@ -51,6 +51,10 @@
   color: cornflowerblue;
 }
 
+div.indent {
+  padding-left: 30px;
+}
+
 @media (max-width: 768px) {
   .privacy-container {
     padding: 20px 10px;
