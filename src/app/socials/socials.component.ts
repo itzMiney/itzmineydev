@@ -3,11 +3,13 @@ import {isPlatformBrowser, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-socials',
   imports: [
-    NgStyle
+    NgStyle,
+    TranslatePipe
   ],
   templateUrl: './socials.component.html',
   styleUrl: './socials.component.css'

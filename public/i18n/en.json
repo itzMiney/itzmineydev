@@ -1,0 +1,211 @@
+{
+  "NAV_ABOUT": "About",
+  "NAV_SERVICES": "Services",
+
+  "FOOTER_TOS": "Terms of Service",
+  "FOOTER_IMP": "Imprint",
+  "FOOTER_PRIV": "Privacy Policy",
+
+  "TECHSTACK_LANGS": "< LANGUAGES >",
+  "TECHSTACK_DBS": "< DATABASES >",
+  "TECHSTACK_TOOLS": "< TOOLS >",
+
+  "ABOUT_TITLE": "About Me",
+  "ABOUT_SUB": "Hobby developer & designer",
+  "ABOUT": "Hello, I'm Michael, a web developer and graphic designer based in Austria. I specialize in frontend web development, graphic design, and creating neat UIs.</p><p>When I'm not coding, I love learning new technologies and contributing to open-source projects.<br>I also give support on the Pterodactyl Discord",
+  "ABOUT_OUTRO": "",
+
+  "PORTF_TITLE": "My Portfolio",
+  "PORTF_SUB": "Projects & Designs",
+  "PORTFOLIO": "Welcome to my portfolio!<br><br>I mostly do modern graphic designs since a couple years now, but I'm also getting better at coding and you might soon see a couple little coding projects from my <a href=\"https://github.com/itzminey\" target=\"_blank\">GitHub</a> listed here too!<br>If you like what I do consider following me on my <a href=\"/socials\">Socials</a> and if you feel really generous leave a tip on my <a href=\"https://ko-fi.com/itzminey\" target=\"_blank\">Ko-Fi</a>!<br>You can also commission me to make designs for you, just click on the button below!",
+
+  "SOCIALS_SUB": "You can find me in a lotta places",
+  "SOCIALS_GAMES": "Games",
+  "SOCIALS_COMMS": "Donations & Commissions",
+
+  "SERVS_TITLE": "My Services",
+  "SERVS": "Welcome!<br><br>Here is where I offer freelance services in web development and design!<br> Feel free to check out my <a href='/portfolio'>Portfolio</a> to see some of my previous work. If you like what I do consider commissioning my services that I offer for various prices and tiers here on this site!<br>If you're interested, feel free to email me at <a href=\"mailto:michael@itzminey.dev\">michael&#64;itzminey.dev</a> with the service you're requesting, along with any relevant details and specifications.<br>Please also contact me at the above mail or with the contact button below for a precise estimate or to discuss a customized flat-rate package tailored to your specific needs.",
+  "SERVS_CONTACT": "Contact me",
+
+  "SERVICES": {
+    "SUPPORT_NAME": "Support & Maintenance",
+    "SUPPORT_BASIC": "<b class=\"centered-text\">Maintenance Service</b><br>Depending on the software(s) in use, flexible baseline ~€35-90+/month.<br>Contact me for a precise estimate.<br><br><b>Support Service</b><br>Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br><b>Flat Rate:</b> €60-130 for minor issues (up to 2.5 hours, depends on complexity, contact me for a precise estimate)",
+    "SUPPORT_ADVANCED": "<b class=\"centered-text\">Maintenance Service</b><br>Depending on the software(s) in use, flexible baseline ~€35-90+/month.<br>Contact me for a precise estimate.<br><br><b>Support Service</b><br>Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br><b>Flat Rate:</b> €60-130 for minor issues (up to 2.5 hours, depends on complexity, contact me for a precise estimate)",
+
+    "WP_FILES_NAME": "<b>Design a Custom WordPress Website</b> (Files Only)",
+    "WP_FILES_BASIC": "<b class=\"centered-text\">Base Service: €100</b><br>I will design a custom WordPress website and provide the installation files for your dedicated server or WordPress host.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Maintenance Service (€35/month)<br>• Support Service (€50/hour)<br><b>Flat Rate:</b> €50 for minor issues (up to 2.5 hours)",
+    "WP_FILES_ADVANCED": "<b class=\"centered-text\">Base Service: €100</b><br>Includes basic service + detailed documentation of each feature.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Maintenance Service (€35/month)<br>• Support Service (€50/hour)<br><b>Flat Rate:</b> €50 for minor issues (up to 2.5 hours)",
+
+    "WP_SETUP_NAME": "<b>Design & Setup Custom WordPress Website</b>",
+    "WP_SETUP_BASIC": "<b class=\"centered-text\">Base Service: €150</b><br>I will design a custom WordPress website and set it up on:<br>• Your dedicated server<br>• Your existing WordPress host<br>• My server (shared hosting: €20/month)<br><br><b class=\"centered-text\">Additional Services:</b><br>• Domain registration & management (€20 setup)<br>• Basic DDoS Protection (€25/month)<br>• Maintenance Service (€35/month)<br>• Support Service (€50/hour)<br><b>Flat Rate:</b> €60 for minor issues (up to 2.5 hours)",
+    "WP_SETUP_ADVANCED": "<b class=\"centered-text\">Base Service: €200</b><br>Includes basic service + additional security configuration.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Domain registration & management (€20 setup)<br>• Advanced DDoS Protection (€45/month)<br>• Dedicated IPv4 Address (€15/month)<br>• Maintenance Service (€35/month)<br>• Support Service (€50/hour)<br><b>Flat Rate:</b> €60 for minor issues (up to 2.5 hours)",
+
+    "ANGULAR_FILES_NAME": "<b>Custom-Made Website in Angular</b> (Files Only)",
+    "ANGULAR_FILES_BASIC": "<b class=\"centered-text\">Base Service: €200</b><br>I will develop a custom frontend using Angular, Node.js, TypeScript, HTML, and CSS, and provide the files.<br>If you have a backend, provide its documentation, so I can integrate it.<br>If not, I will add placeholders for future backend integration.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Maintenance Service (€50/month)<br>• Support Service (€75/hour)<br><b>Flat Rate:</b> €100 for minor issues (up to 2.5 hours)",
+    "ANGULAR_FILES_ADVANCED": "<b class=\"centered-text\">Base Service: €300</b><br>Includes basic service + backend development.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Maintenance Service (€50/month)<br>• Support Service (€75/hour)<br><b>Flat Rate:</b> €100 for minor issues (up to 2.5 hours)",
+
+    "ANGULAR_SETUP_NAME": "<b>Custom-Made Website in Angular + Setup</b>",
+    "ANGULAR_SETUP_BASIC": "<b class=\"centered-text\">Base Service: €400</b><br>I will develop a full-stack website using Angular, Node.js, TypeScript, HTML, and CSS, and set it up on:<br>• Your dedicated server<br>• Your existing hosting provider<br>• My server (shared hosting: €20/month)<br><br><b class=\"centered-text\">Additional Services:</b><br>• Domain registration & management (€20 setup)<br>• Basic DDoS Protection (€25/month)<br>• Maintenance Service (€50/month)<br>• Support Service (€75/hour)<br><b>Flat Rate:</b> €100 for minor issues (up to 2.5 hours)",
+    "ANGULAR_SETUP_ADVANCED": "<b class=\"centered-text\">Base Service: €400</b><br>Includes basic service + additional security configuration.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Domain registration & management (€20 setup)<br>• Advanced DDoS Protection (€45/month)<br>• Dedicated IPv4 Address (€15/month)<br>• Maintenance Service (€50/month)<br>• Support Service (€75/hour)<br><b>Flat Rate:</b> €100 for minor issues (up to 2.5 hours)",
+
+    "SERVER_SETUP_NAME": "<b>Server Setup for Provided Software</b>",
+    "SERVER_SETUP_BASIC": "<b class=\"centered-text\">Flexible Baseline ~€100-250+</b><br>Pricing depends on software complexity, required configurations, and security hardening.<br>Contact me for a precise estimate.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Maintenance Service (€60/month)<br>• Support Service (€90/hour)<br><b>Flat Rate:</b> €60-130 for minor issues (up to 2.5 hours, depends on complexity, contact me for a precise estimate)",
+    "SERVER_SETUP_ADVANCED": "<b class=\"centered-text\">Flexible Baseline ~€100-250+</b><br>Pricing depends on software complexity, resource requirements, and hosting needs.<br>Shared hosting available (€30/month). Contact me for a dedicated solution.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Maintenance Service (€60/month)<br>• Support Service (€90/hour)<br><b>Flat Rate:</b> €60-130 for minor issues (up to 2.5 hours, depends on complexity, contact me for a precise estimate)"
+  },
+
+  "BLOG_SUB": "Some (very) irregular updates",
+
+  "ARTICLE_BACK": "Back to Overview",
+  "ARTICLES_NONE": "No Articles yet!",
+  "ARCITCLE_NOTFOUND": "Article not found!",
+  "CREATED_AT": "Created At:",
+
+  "IMP_TITLE": "Imprint",
+  "IMPRINT": "This website is ran by Michael Reisinger in Austria, reachable via Email at:",
+
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: 10th June 2025",
+    "nav": {
+      "controller": "1. Controller of the Data",
+      "whatData": "2. What Data We Collect",
+      "purpose": "3. Purpose and Legal Basis",
+      "dataRetention": "4. Data Retention",
+      "yourRights": "5. Your Rights",
+      "security": "6. Security",
+      "changes": "7. Changes"
+    },
+    "controller": {
+      "title": "1. Controller of the Data",
+      "content": "The controller responsible for processing data on this website is:<br><br><b>Michael Reisinger</b><br><a href=\"mailto:michael@itzminey.dev\">michael&#x40;itzminey.dev</a>"
+    },
+    "whatData": {
+      "title": "2. What Data We Collect",
+      "websiteUsageTitle": "a) Website Usage Data",
+      "websiteUsage": "We may temporarily process your IP address when you visit certain pages...",
+      "noCookies": "We do not use cookies for tracking or analytics purposes.",
+      "emailInquiriesTitle": "b) Email Inquiries",
+      "emailInquiries": "If you contact us via the email address...",
+      "thirdPartyTitle": "c) Third-Party Services (Cloudflare)",
+      "thirdParty": "We use Cloudflare, Inc. to protect and accelerate our website..."
+    },
+    "purpose": {
+      "title": "3. Purpose and Legal Basis",
+      "intro": "We process personal data on the basis of legitimate interest (Art. 6(1)(f) GDPR), namely:",
+      "points": [
+        "To maintain and protect the integrity of our website",
+        "To respond to your inquiries and service requests"
+      ]
+    },
+    "dataRetention": {
+      "title": "4. Data Retention",
+      "content": "Personal data is retained only as long as necessary for the stated purposes..."
+    },
+    "yourRights": {
+      "title": "5. Your Rights",
+      "intro": "Under the GDPR, you have the right to:",
+      "rights": [
+        "Access your personal data",
+        "Request correction or deletion",
+        "Object to or restrict processing",
+        "Lodge a complaint with your local data protection authority (in Austria, <b>DSB - Datenschutzbehörde</b>)"
+      ],
+      "footer": "To exercise these rights, please contact us at the email listed above."
+    },
+    "security": {
+      "title": "6. Security",
+      "content": "We take appropriate technical and organizational measures to protect your personal data..."
+    },
+    "changes": {
+      "title": "7. Changes",
+      "content": "This policy may be updated occasionally to reflect changes in our practices..."
+    }
+  },
+
+  "termsOfService": {
+    "title": "Terms of Service",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "content": "These Terms of Service (\"Terms\") apply to all services provided by Michael Reisinger (\"Freelancer,\" \"we,\" \"us,\" or \"our\") to clients (\"Client,\" \"you,\" or \"your\"). By hiring us for web development and design services, you agree to comply with these Terms."
+      },
+      "servicesProvided": {
+        "title": "2. Services Provided",
+        "intro": "We offer web development and design services, including but not limited to:",
+        "list": [
+          "Custom WordPress website design and development.",
+          "Website maintenance and support.",
+          "Domain registration and hosting assistance.",
+          "DDoS protection setup."
+        ]
+      },
+      "projectScopeAndDeliverables": {
+        "title": "3. Project Scope and Deliverables",
+        "content": "The scope of the project, including deliverables, timeline, and specific requirements, will be defined in a written agreement between the Client and Freelancer prior to the commencement of work. Any changes to the project scope may require an additional fee."
+      },
+      "paymentTerms": {
+        "title": "4. Payment Terms",
+        "list": [
+          "A deposit of 30% of the total project cost is required before work begins. The remaining balance is due upon completion of the project or as outlined in the agreement.",
+          "Payments can be made via bank transfer, PayPal, or other mutually agreed payment methods.",
+          "If additional work or revisions are requested that were not included in the original agreement, those will be billed at a rate of 20 EUR/revision."
+        ]
+      },
+      "timelineAndDeadlines": {
+        "title": "5. Timeline and Deadlines",
+        "content": "We will make reasonable efforts to complete the project within the agreed timeline. However, delays may occur due to unforeseen circumstances, or if the Client does not provide necessary content, information, or feedback on time."
+      },
+      "clientResponsibilities": {
+        "title": "6. Client Responsibilities",
+        "list": [
+          "The Client must provide all necessary materials (e.g., text, images, logos, branding) for the project.",
+          "The Client agrees to provide timely feedback and approvals as required for the project’s progress.",
+          "The Client is responsible for ensuring they have the necessary licenses or permissions for any third-party materials provided."
+        ]
+      },
+      "revisions": {
+        "title": "7. Revisions",
+        "content": "We offer 5 rounds of revisions as part of the project. Additional revisions will incur a fee of 20 EUR per revision."
+      },
+      "ownershipAndRights": {
+        "title": "8. Ownership and Rights",
+        "content": "Upon full payment, the Client will own the rights to the website and its content. However, we retain the right to showcase the project in our portfolio and marketing materials unless otherwise agreed."
+      },
+      "confidentiality": {
+        "title": "9. Confidentiality",
+        "content": "We agree to keep all Client information confidential and not share it with third parties, except as necessary to perform the services or as required by law."
+      },
+      "cancellationsAndRefunds": {
+        "title": "10. Cancellations and Refunds",
+        "list": [
+          "If the Client cancels the project after work has commenced, the deposit is non-refundable.",
+          "If the Client is dissatisfied with the work, they should notify us in writing. We will make reasonable efforts to resolve the issue. If the project is cancelled due to a breach of agreement, no refunds will be provided."
+        ]
+      },
+      "limitationOfLiability": {
+        "title": "11. Limitation of Liability",
+        "content": "To the extent permitted by law, our liability for any claims arising from the services we provide is limited to the total amount paid for the services. We are not liable for any indirect, incidental, or consequential damages."
+      },
+      "disputeResolution": {
+        "title": "12. Dispute Resolution",
+        "content": "In the event of a dispute, both parties agree to attempt to resolve the issue amicably. If a resolution cannot be reached, the dispute will be handled through mediation or arbitration as agreed upon by both parties."
+      },
+      "forceMajeure": {
+        "title": "13. Force Majeure",
+        "content": "Neither party shall be held liable for any failure or delay in performance due to causes beyond their control, including but not limited to natural disasters, strikes, or governmental actions."
+      },
+      "governingLaw": {
+        "title": "14. Governing Law",
+        "content": "These Terms will be governed by and construed in accordance with the laws of Austria."
+      },
+      "modifications": {
+        "title": "15. Modifications",
+        "content": "We reserve the right to modify or update these Terms at any time. Any changes will be communicated to the Client, and continued use of our services constitutes acceptance of those changes."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "intro": "For any questions or concerns regarding these Terms of Service, please contact us at:"
+      }
+    }
+  }
+}

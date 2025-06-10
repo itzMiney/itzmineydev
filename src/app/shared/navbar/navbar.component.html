@@ -1,9 +1,13 @@
 <nav class="navbar">
   <div class="navbar-links">
-    <a [routerLink]="'/'" [class.active]="activeLink === '/'">About</a>
+    <a [routerLink]="'/'" [class.active]="activeLink === '/'">{{ 'NAV_ABOUT' | translate }}</a>
     <a [routerLink]="'/portfolio'" [class.active]="activeLink === '/portfolio'">Portfolio</a>
     <a [routerLink]="'/socials'" [class.active]="activeLink === '/socials'">Socials</a>
-    <a [routerLink]="'/services'" [class.active]="activeLink === '/services'">Services</a>
+    <a [routerLink]="'/services'" [class.active]="activeLink === '/services'">{{ 'NAV_SERVICES' | translate }}</a>
     <a [routerLink]="'/blog'" [class.active]="activeLink === '/blog'">Blog</a>
+  </div>
+  <div class="language-switch">
+    <button (click)="switchLang('en')" [class.active]="currentLang === 'en'" class="en">EN</button>
+    <button (click)="switchLang('de')" [class.active]="currentLang === 'de'" class="de">DE</button>
   </div>
 </nav>

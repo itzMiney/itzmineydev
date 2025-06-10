@@ -113,7 +113,7 @@
   text-align: center;
 }
 
-.text-content a {
+::ng-deep .text-content a {
   color: cornflowerblue;
 }
 

@@ -6,6 +6,7 @@ import { ArticleService } from '../shared/services/article.service';
 import { Router } from '@angular/router';
 import {Observable} from 'rxjs';
 import {Title} from '@angular/platform-browser';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-blog',
@@ -15,7 +16,8 @@ import {Title} from '@angular/platform-browser';
     DatePipe,
     AsyncPipe,
     SlicePipe,
-    NgStyle
+    NgStyle,
+    TranslatePipe
   ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'

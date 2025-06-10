@@ -82,3 +82,33 @@
   color: white;
   cursor: pointer;
 }
+
+.language-switch {
+  position: absolute;
+  bottom: 20px;
+}
+
+.language-switch button {
+  padding: 8px 16px;
+  background: #362e51;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: Roboto, serif;
+  font-size: 1.2rem;
+}
+
+.language-switch button.active {
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+}
+
+.language-switch button.en {
+  margin-left: 8px;
+  border-radius: 25px 0 0 25px;
+}
+
+.language-switch button.de {
+  border-radius: 0 25px 25px 0;
+}

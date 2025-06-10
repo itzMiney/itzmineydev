@@ -1,0 +1,210 @@
+{
+  "NAV_ABOUT": "Über",
+  "NAV_SERVICES": "Leistungen",
+
+  "FOOTER_TOS": "Nutzungsbedingungen",
+  "FOOTER_IMP": "Impressum",
+  "FOOTER_PRIV": "Datenschutzerklärung",
+
+  "TECHSTACK_LANGS": "< SPRACHEN >",
+  "TECHSTACK_DBS": "< DATENBANKEN >",
+  "TECHSTACK_TOOLS": "< WERKZEUGE >",
+
+  "ABOUT_TITLE": "Wer ich bin",
+  "ABOUT_SUB": "Hobby Entwickler & Designer",
+  "ABOUT": "Hallo, ich bin Michael, ein Web-Entwickler und Grafik Designer aus Österreich. Ich spezialisiere mich auf Frontend Web-Entwicklung, Grafisches Design, und tolle Nutzeroberflächen zu kreiren.</p><p>Wenn ich nicht am programmieren bin, lerne ich gerne über neue Technologien und trage zu open-source Projekten bei.<br>Ich biete auch oft unterstüzung auf dem Pterodactyl Discord Server an",
+
+  "PORTF_TITLE": "Mein Portfolio",
+  "PORTF_SUB": "Projekte & Designs",
+  "PORTFOLIO": "Willkommen zu meinem Portfolio!<br><br>Ich mache seit einigen Jahren Grafikdesign, aber werde auch langsam besser im programmieren und du wirst bald vielleicht ein paar Projekte von meinem <a href=\"https://github.com/itzminey\" target=\"_blank\">GitHub</a> hier sehen!<br>Wenn du magst was ich erstelle, würde ich mich freuen wenn du mir auf meinen <a href=\"/socials\">Socials</a> folgs und wenn du dich sehr großzügig fühlst kannst du mir eine kleine Spende auf meinem <a href=\"https://ko-fi.com/itzminey\" target=\"_blank\">Ko-Fi</a> hinterlassen!<br>Du kannst mich auch in Auftrag nehmen für deine Wünsche, klick dafür einfach den Knopf unten!",
+
+  "SOCIALS_SUB": "Man kann mich an vielen Orten finden",
+  "SOCIALS_GAMES": "Spiele",
+  "SOCIALS_COMMS": "Spenden und Freelance Aufträge",
+
+  "SERVS_TITLE": "Leistungen",
+  "SERVS": "Willkommen!<br><br>Hier kannst du Freelance-Leistungen von mir in Web-Development and Design beauftragen!<br> Sieh dir auch gerne mein <a href='/portfolio'>Portfolio</a> an um meine bisherige Arbeiten zu betrachten. Wenn dir gefällt was ich tue, würde ich mich sehr freuen über einen Auftrag von dir zu einer der Leistungen die ich hier anbiete!<br>Wenn du dich interressierst, schick mir gerne eine E-Mail an <a href=\"mailto:michael@itzminey.dev\">michael&#64;itzminey.dev</a> mit der Leistung die du beantragen willst, zusammen mit allen relevanten Details und Spezifikationen.<br>Bitte kontaktiere mich auch unter der oben genannten E-Mail-Adresse oder über die Kontaktschaltfläche unten, um einen genauen Kostenvoranschlag zu erhalten oder ein individuelles Pauschalpaket zu besprechen, das auf deine spezifischen Bedürfnisse zugeschnitten ist.",
+  "SERVS_CONTACT": "Kontaktiere mich",
+
+  "SERVICES": {
+    "SUPPORT_NAME": "Support & Wartung",
+    "SUPPORT_BASIC": "<b class=\"centered-text\">Wartungsservice</b><br>Je nach verwendeter Software flexible Basis ab ca. 35-90€/Monat.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b>Support-Service</b><br>Je nach verwendeter Software flexible Basis ab ca. 50-75€/Stunde.<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",
+    "SUPPORT_ADVANCED": "<b class=\"centered-text\">Wartungsservice</b><br>Je nach verwendeter Software flexible Basis ab ca. 35-90€/Monat.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b>Support-Service</b><br>Je nach verwendeter Software flexible Basis ab ca. 50-75€/Stunde.<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",
+
+    "WP_FILES_NAME": "<b>Individuelles WordPress Website-Design</b> (Nur Dateien)",
+    "WP_FILES_BASIC": "<b class=\"centered-text\">Basis-Service: 100€</b><br>Ich entwerfe eine individuelle WordPress Website und liefere die Installationsdateien für Ihren dedizierten Server oder WordPress-Host.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Wartungsservice (35€/Monat)<br>• Support-Service (50€/Stunde)<br><b>Pauschalpreis:</b> 50€ für kleinere Probleme (bis zu 2,5 Stunden)",
+    "WP_FILES_ADVANCED": "<b class=\"centered-text\">Basis-Service: 100€</b><br>Enthält Basis-Service + detaillierte Dokumentation jeder Funktion.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Wartungsservice (35€/Monat)<br>• Support-Service (50€/Stunde)<br><b>Pauschalpreis:</b> 50€ für kleinere Probleme (bis zu 2,5 Stunden)",
+
+    "WP_SETUP_NAME": "<b>Individuelles WordPress Website-Design & Einrichtung</b>",
+    "WP_SETUP_BASIC": "<b class=\"centered-text\">Basis-Service: 150€</b><br>Ich entwerfe eine individuelle WordPress Website und richte sie ein auf:<br>• Ihrem dedizierten Server<br>• Ihrem bestehenden WordPress-Host<br>• Meinem Server (Shared Hosting: 20€/Monat)<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Domain-Registrierung & Verwaltung (20€ Einrichtung)<br>• Basis-DDoS-Schutz (25€/Monat)<br>• Wartungsservice (35€/Monat)<br>• Support-Service (50€/Stunde)<br><b>Pauschalpreis:</b> 60€ für kleinere Probleme (bis zu 2,5 Stunden)",
+    "WP_SETUP_ADVANCED": "<b class=\"centered-text\">Basis-Service: 200€</b><br>Enthält Basis-Service + zusätzliche Sicherheitskonfiguration.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Domain-Registrierung & Verwaltung (20€ Einrichtung)<br>• Erweiterter DDoS-Schutz (45€/Monat)<br>• Dedizierte IPv4-Adresse (15€/Monat)<br>• Wartungsservice (35€/Monat)<br>• Support-Service (50€/Stunde)<br><b>Pauschalpreis:</b> 60€ für kleinere Probleme (bis zu 2,5 Stunden)",
+
+    "ANGULAR_FILES_NAME": "<b>Individuelle Website in Angular</b> (Nur Dateien)",
+    "ANGULAR_FILES_BASIC": "<b class=\"centered-text\">Basis-Service: 200€</b><br>Ich entwickle ein individuelles Frontend mit Angular, Node.js, TypeScript, HTML und CSS und liefere die Dateien.<br>Wenn Sie ein Backend haben, liefern Sie bitte die Dokumentation, damit ich es integrieren kann.<br>Falls nicht, füge ich Platzhalter für eine zukünftige Backend-Integration hinzu.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Wartungsservice (50€/Monat)<br>• Support-Service (75€/Stunde)<br><b>Pauschalpreis:</b> 100€ für kleinere Probleme (bis zu 2,5 Stunden)",
+    "ANGULAR_FILES_ADVANCED": "<b class=\"centered-text\">Basis-Service: 300€</b><br>Enthält Basis-Service + Backend-Entwicklung.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Wartungsservice (50€/Monat)<br>• Support-Service (75€/Stunde)<br><b>Pauschalpreis:</b> 100€ für kleinere Probleme (bis zu 2,5 Stunden)",
+
+    "ANGULAR_SETUP_NAME": "<b>Individuelle Website in Angular + Einrichtung</b>",
+    "ANGULAR_SETUP_BASIC": "<b class=\"centered-text\">Basis-Service: 400€</b><br>Ich entwickle eine Full-Stack-Website mit Angular, Node.js, TypeScript, HTML und CSS und richte sie ein auf:<br>• Ihrem dedizierten Server<br>• Ihrem bestehenden Hosting-Provider<br>• Meinem Server (Shared Hosting: 20€/Monat)<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Domain-Registrierung & Verwaltung (20€ Einrichtung)<br>• Basis-DDoS-Schutz (25€/Monat)<br>• Wartungsservice (50€/Monat)<br>• Support-Service (75€/Stunde)<br><b>Pauschalpreis:</b> 100€ für kleinere Probleme (bis zu 2,5 Stunden)",
+    "ANGULAR_SETUP_ADVANCED": "<b class=\"centered-text\">Basis-Service: 400€</b><br>Enthält Basis-Service + zusätzliche Sicherheitskonfiguration.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Domain-Registrierung & Verwaltung (20€ Einrichtung)<br>• Erweiterter DDoS-Schutz (45€/Monat)<br>• Dedizierte IPv4-Adresse (15€/Monat)<br>• Wartungsservice (50€/Monat)<br>• Support-Service (75€/Stunde)<br><b>Pauschalpreis:</b> 100€ für kleinere Probleme (bis zu 2,5 Stunden)",
+
+    "SERVER_SETUP_NAME": "<b>Server-Einrichtung für bereitgestellte Software</b>",
+    "SERVER_SETUP_BASIC": "<b class=\"centered-text\">Flexible Basis ab ca. 100-250€</b><br>Preis abhängig von Software-Komplexität, erforderlichen Konfigurationen und Sicherheitshärtung.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Wartungsservice (60€/Monat)<br>• Support-Service (90€/Stunde)<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",
+    "SERVER_SETUP_ADVANCED": "<b class=\"centered-text\">Flexible Basis ab ca. 100-250€</b><br>Preis abhängig von Software-Komplexität, Ressourcenbedarf und Hosting-Anforderungen.<br>Shared Hosting verfügbar (30€/Monat). Kontaktieren Sie mich für eine dedizierte Lösung.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Wartungsservice (60€/Monat)<br>• Support-Service (90€/Stunde)<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)"
+  },
+
+  "BLOG_SUB": "(Sehr) irreguläre updates",
+
+  "ARTICLE_BACK": "Zurück zur Übersicht",
+  "ARTICLES_NONE": "Noch keine Artikel!",
+  "ARCITCLE_NOTFOUND": "Artikel wurde nicht gefunden!",
+  "CREATED_AT": "Erstellt:",
+
+  "IMP_TITLE": "Impressum",
+  "IMPRINT": "Diese Website wird betrieben von Michael Reisinger in Österreich, erreichbar via E-Mail unter:",
+
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: 10. Juni 2025",
+    "nav": {
+      "controller": "1. Verantwortlicher",
+      "whatData": "2. Welche Daten wir erheben",
+      "purpose": "3. Zweck und Rechtsgrundlage",
+      "dataRetention": "4. Speicherdauer",
+      "yourRights": "5. Ihre Rechte",
+      "security": "6. Sicherheit",
+      "changes": "7. Änderungen"
+    },
+    "controller": {
+      "title": "1. Verantwortlicher",
+      "content": "Der Verantwortliche für die Verarbeitung personenbezogener Daten auf dieser Website ist:<br><br><b>Michael Reisinger</b><br><a href=\"mailto:michael@itzminey.dev\">michael&#x40;itzminey.dev</a>"
+    },
+    "whatData": {
+      "title": "2. Welche Daten wir erheben",
+      "websiteUsageTitle": "a) Nutzungsdaten der Website",
+      "websiteUsage": "Wir können Ihre IP-Adresse vorübergehend verarbeiten, wenn Sie bestimmte Seiten besuchen, z. B. bei Artikelaufrufen. Dies dient ausschließlich dem Schutz der Integrität von Aufrufzählern und der Vermeidung automatisierten Missbrauchs. Diese Daten werden sicher gespeichert und nicht länger als nötig aufbewahrt.",
+      "noCookies": "Wir verwenden keine Cookies zu Tracking- oder Analysezwecken.",
+      "emailInquiriesTitle": "b) E-Mail-Anfragen",
+      "emailInquiries": "Wenn Sie uns über die auf der Website angegebene E-Mail-Adresse kontaktieren, können wir Ihre Nachricht und Ihre Kontaktdaten speichern, um auf Ihre Anfrage zu antworten oder den gewünschten Dienst bereitzustellen. Diese Daten werden vertraulich behandelt und nicht ohne Ihre Zustimmung an Dritte weitergegeben.",
+      "thirdPartyTitle": "c) Dienste Dritter (Cloudflare)",
+      "thirdParty": "Wir nutzen Cloudflare, Inc., um unsere Website zu schützen und zu beschleunigen. Cloudflare bietet Dienste wie DDoS-Schutz, sichere DNS-Auflösung und Leistungsoptimierung. Im Rahmen dieser Dienste kann Cloudflare technische Daten wie Ihre IP-Adresse und HTTP-Anfrage-Header verarbeiten. Diese Verarbeitung erfolgt ausschließlich zu Sicherheits- und Betriebszwecken und automatisch beim Aufrufen der Website.<br><br>Cloudflare agiert in unserem Auftrag als Auftragsverarbeiter. Weitere Informationen finden Sie in der <a href=\"https://www.cloudflare.com/privacypolicy/\">Datenschutzerklärung von Cloudflare</a>."
+    },
+    "purpose": {
+      "title": "3. Zweck und Rechtsgrundlage",
+      "intro": "Wir verarbeiten personenbezogene Daten auf Grundlage unseres berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO), insbesondere:",
+      "points": [
+        "Zur Aufrechterhaltung und zum Schutz der Integrität unserer Website",
+        "Zur Beantwortung Ihrer Anfragen und Servicewünsche"
+      ]
+    },
+    "dataRetention": {
+      "title": "4. Speicherdauer",
+      "content": "Personenbezogene Daten werden nur so lange gespeichert, wie es für die genannten Zwecke erforderlich ist. E-Mail-Korrespondenz kann aus rechtlichen oder administrativen Gründen aufbewahrt werden, z. B. zur Erfüllung von Serviceanfragen oder zur Dokumentation von Kommunikation."
+    },
+    "yourRights": {
+      "title": "5. Ihre Rechte",
+      "intro": "Nach der DSGVO haben Sie das Recht auf:",
+      "rights": [
+        "Zugang zu Ihren personenbezogenen Daten",
+        "Berichtigung oder Löschung Ihrer Daten",
+        "Einschränkung oder Widerspruch gegen die Verarbeitung",
+        "Beschwerde bei Ihrer lokalen Datenschutzbehörde (in Österreich: <b>DSB - Datenschutzbehörde</b>)"
+      ],
+      "footer": "Um diese Rechte auszuüben, kontaktieren Sie uns bitte über die oben genannte E-Mail-Adresse."
+    },
+    "security": {
+      "title": "6. Sicherheit",
+      "content": "Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre personenbezogenen Daten vor unbefugtem Zugriff, Missbrauch oder Verlust zu schützen."
+    },
+    "changes": {
+      "title": "7. Änderungen",
+      "content": "Diese Richtlinie kann gelegentlich aktualisiert werden, um Änderungen unserer Praktiken zu reflektieren. Die jeweils aktuelle Version ist immer auf dieser Seite verfügbar."
+    }
+  },
+
+  "termsOfService": {
+    "title": "Nutzungsbedingungen",
+    "sections": {
+      "introduction": {
+        "title": "1. Einführung",
+        "content": "Diese Nutzungsbedingungen (\"Bedingungen\") gelten für alle von Michael Reisinger (\"Freelancer\", \"wir\", \"uns\" oder \"unser\") erbrachten Dienstleistungen gegenüber Kunden (\"Kunde\", \"Sie\" oder \"Ihr\"). Durch die Beauftragung unserer Webentwicklungs- und Design-Dienstleistungen erklären Sie sich mit diesen Bedingungen einverstanden."
+      },
+      "servicesProvided": {
+        "title": "2. Erbrachte Dienstleistungen",
+        "intro": "Wir bieten Webentwicklungs- und Design-Dienstleistungen an, einschließlich, aber nicht beschränkt auf:",
+        "list": [
+          "Individuelle WordPress-Webseitengestaltung und -entwicklung.",
+          "Wartung und Support der Webseite.",
+          "Domainregistrierung und Hosting-Unterstützung.",
+          "Einrichtung von DDoS-Schutz."
+        ]
+      },
+      "projectScopeAndDeliverables": {
+        "title": "3. Projektumfang und Liefergegenstände",
+        "content": "Der Umfang des Projekts, einschließlich der Liefergegenstände, des Zeitplans und spezifischer Anforderungen, wird in einer schriftlichen Vereinbarung zwischen dem Kunden und dem Freelancer vor Arbeitsbeginn festgelegt. Änderungen am Projektumfang können zusätzliche Kosten verursachen."
+      },
+      "paymentTerms": {
+        "title": "4. Zahlungsbedingungen",
+        "list": [
+          "Eine Anzahlung von 30 % der Gesamtkosten des Projekts ist vor Arbeitsbeginn erforderlich. Der Restbetrag ist bei Projektabschluss oder gemäß Vereinbarung zu zahlen.",
+          "Zahlungen können per Banküberweisung, PayPal oder anderen einvernehmlich vereinbarten Zahlungsmethoden erfolgen.",
+          "Wenn zusätzliche Arbeiten oder Revisionen gewünscht werden, die nicht in der ursprünglichen Vereinbarung enthalten sind, werden diese mit 20 EUR pro Revision berechnet."
+        ]
+      },
+      "timelineAndDeadlines": {
+        "title": "5. Zeitplan und Fristen",
+        "content": "Wir bemühen uns, das Projekt innerhalb des vereinbarten Zeitplans abzuschließen. Verzögerungen können jedoch aufgrund unvorhergesehener Umstände auftreten oder wenn der Kunde erforderliche Inhalte, Informationen oder Rückmeldungen nicht rechtzeitig bereitstellt."
+      },
+      "clientResponsibilities": {
+        "title": "6. Verantwortlichkeiten des Kunden",
+        "list": [
+          "Der Kunde muss alle notwendigen Materialien (z. B. Texte, Bilder, Logos, Branding) für das Projekt bereitstellen.",
+          "Der Kunde verpflichtet sich, rechtzeitig Feedback und Freigaben zu erteilen, die für den Fortschritt des Projekts erforderlich sind.",
+          "Der Kunde ist dafür verantwortlich sicherzustellen, dass er die notwendigen Lizenzen oder Genehmigungen für alle bereitgestellten Drittmaterialien besitzt."
+        ]
+      },
+      "revisions": {
+        "title": "7. Überarbeitungen",
+        "content": "Wir bieten 5 Überarbeitungsrunden im Rahmen des Projekts an. Weitere Überarbeitungen werden mit 20 EUR pro Revision berechnet."
+      },
+      "ownershipAndRights": {
+        "title": "8. Eigentum und Rechte",
+        "content": "Nach vollständiger Zahlung besitzt der Kunde die Rechte an der Website und deren Inhalten. Wir behalten uns jedoch das Recht vor, das Projekt in unserem Portfolio und Marketingmaterialien zu präsentieren, sofern nicht anders vereinbart."
+      },
+      "confidentiality": {
+        "title": "9. Vertraulichkeit",
+        "content": "Wir verpflichten uns, alle Kundeninformationen vertraulich zu behandeln und nicht an Dritte weiterzugeben, außer wenn dies zur Erbringung der Dienstleistungen oder gesetzlich erforderlich ist."
+      },
+      "cancellationsAndRefunds": {
+        "title": "10. Stornierungen und Rückerstattungen",
+        "list": [
+          "Wenn der Kunde das Projekt nach Arbeitsbeginn storniert, ist die Anzahlung nicht erstattungsfähig.",
+          "Bei Unzufriedenheit mit der Arbeit sollte der Kunde uns schriftlich benachrichtigen. Wir werden angemessene Anstrengungen unternehmen, um das Problem zu lösen. Bei Vertragsbruch durch den Kunden erfolgen keine Rückerstattungen."
+        ]
+      },
+      "limitationOfLiability": {
+        "title": "11. Haftungsbeschränkung",
+        "content": "Soweit gesetzlich zulässig, ist unsere Haftung für Ansprüche aus den erbrachten Dienstleistungen auf den Gesamtbetrag der gezahlten Leistungen begrenzt. Wir haften nicht für indirekte, beiläufige oder Folgeschäden."
+      },
+      "disputeResolution": {
+        "title": "12. Streitbeilegung",
+        "content": "Im Falle eines Streits verpflichten sich beide Parteien, eine einvernehmliche Lösung anzustreben. Kann keine Lösung erzielt werden, wird der Streit durch Mediation oder Schlichtung geregelt, wie von beiden Parteien vereinbart."
+      },
+      "forceMajeure": {
+        "title": "13. Höhere Gewalt",
+        "content": "Keine Partei haftet für Verzögerungen oder Ausfälle aufgrund von Umständen, die außerhalb ihrer Kontrolle liegen, einschließlich, aber nicht beschränkt auf Naturkatastrophen, Streiks oder staatliche Maßnahmen."
+      },
+      "governingLaw": {
+        "title": "14. Anwendbares Recht",
+        "content": "Diese Bedingungen unterliegen dem Recht der Republik Österreich und sind entsprechend auszulegen."
+      },
+      "modifications": {
+        "title": "15. Änderungen",
+        "content": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern oder zu aktualisieren. Änderungen werden dem Kunden mitgeteilt, und die weitere Nutzung unserer Dienstleistungen gilt als Zustimmung zu den Änderungen."
+      },
+      "contact": {
+        "title": "Kontaktinformationen",
+        "intro": "Bei Fragen oder Anliegen zu diesen Nutzungsbedingungen kontaktieren Sie uns bitte unter:"
+      }
+    }
+  }
+}

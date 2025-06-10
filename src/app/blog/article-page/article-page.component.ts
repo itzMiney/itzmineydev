@@ -5,6 +5,7 @@ import {VantaBackgroundService} from '../../shared/services/vanta-background.ser
 import {ArticleService} from '../../shared/services/article.service';
 import {ActivatedRoute} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import {TranslatePipe} from '@ngx-translate/core';
 
 interface Article {
   id: number;
@@ -23,7 +24,8 @@ interface Article {
   imports: [
     NgIf,
     DatePipe,
-    NgStyle
+    NgStyle,
+    TranslatePipe
   ],
   templateUrl: './article-page.component.html',
   styleUrl: './article-page.component.css'

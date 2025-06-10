@@ -2,18 +2,12 @@
 <div class="height-container">
 <div class="portfolio-container">
   <div class="portfolio-header" [ngStyle]="{'margin-top': isMobile ? '60px' : '120px'}">
-    <h1>My Portfolio</h1>
-    <p class="subtitle">Projects & Designs</p>
+    <h1>{{ 'PORTF_TITLE' | translate }}</h1>
+    <p class="subtitle">{{ 'PORTF_SUB' | translate }}</p>
   </div>
   <hr class="rounded">
   <div class="text-content">
-    <p>
-      Welcome to my portfolio!<br><br>
-      I mostly do modern graphic designs since a couple years now,
-      but I'm also getting better at coding and you might soon see a couple little coding projects from my <a href="https://github.com/itzminey" target="_blank">GitHub</a> listed here too!<br>
-      If you like what I do consider following me on my <a href="/socials">Socials</a> and if you feel really generous leave a tip on my <a href="https://ko-fi.com/itzminey" target="_blank">Ko-Fi</a>!<br>
-      You can also commission me to make designs for you, just click on the button below!
-    </p>
+    <p [innerHTML]="'PORTFOLIO' | translate"></p>
   </div>
   <div class="commission-button">
     <a href="https://ko-fi.com/itzminey/commissions" target="_blank">

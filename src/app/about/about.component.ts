@@ -3,12 +3,14 @@ import {isPlatformBrowser, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   imports: [
-    NgStyle
+    NgStyle,
+    TranslatePipe
   ],
   styleUrls: ['./about.component.css']
 })

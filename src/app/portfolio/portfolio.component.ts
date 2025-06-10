@@ -4,12 +4,14 @@ import {DeviceDetectorService} from '../shared/services/device-detector.service'
 import {isPlatformBrowser, NgStyle} from '@angular/common';
 import {Title} from '@angular/platform-browser';
 import {AudioPlayerComponent} from '../shared/audio-player/audio-player.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio',
   imports: [
     NgStyle,
-    AudioPlayerComponent
+    AudioPlayerComponent,
+    TranslatePipe
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'

@@ -3,11 +3,13 @@ import {VantaBackgroundService} from '../shared/services/vanta-background.servic
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
 import {isPlatformBrowser, NgIf} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-services',
   imports: [
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './privacy.component.html',
   styleUrl: './privacy.component.css'

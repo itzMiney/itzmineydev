@@ -2,23 +2,16 @@
 <div class="height-container">
   <div class="services-container">
     <div class="services-header" [ngStyle]="{'margin-top': isMobile ? '60px' : '120px'}">
-      <h1>My Services</h1>
+      <h1>{{ 'SERVS_TITLE' | translate}}</h1>
       <p class="subtitle">Web Development & Design</p>
     </div>
     <hr class="rounded">
     <div class="text-content">
-      <p>
-        Welcome!<br><br>
-        Here is where I offer freelance services in web development and design!<br>
-        Feel free to check out my <a href='/portfolio'>Portfolio</a> to see some of my previous work.
-        If you like what I do consider commissioning my services that I offer for various prices and tiers here on this site!<br>
-        If you're interested, feel free to email me at <a href="mailto:michael@itzminey.dev">michael&#64;itzminey.dev</a> with the service you're requesting, along with any relevant details and specifications.<br>
-        Please also contact me at the above mail or with the contact button below for a precise estimate or to discuss a customized flat-rate package tailored to your specific needs.
-      </p>
+      <p [innerHTML]="'SERVS' | translate"></p>
     </div>
     <div class="contact-button">
       <a href="mailto:michael@itzminey.dev" target="_blank">
-        <button class="contact-btn">Contact me</button>
+        <button class="contact-btn">{{ 'SERVS_CONTACT' | translate}}</button>
       </a>
     </div>
     <div class="service-cards">

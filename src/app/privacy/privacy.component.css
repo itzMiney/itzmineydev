@@ -43,11 +43,11 @@
   list-style-type: none;
 }
 
-.text-content li {
+::ng-deep .text-content li {
   margin-bottom: 10px;
 }
 
-.text-content a {
+::ng-deep .text-content a {
   color: cornflowerblue;
 }
 

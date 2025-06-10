@@ -2,7 +2,7 @@
 <div class="height-container">
   <div class="blog-header" [ngStyle]="{'margin-top': isMobile ? '72px' : '112px'}">
     <h1>Blog</h1>
-    <p class="subtitle">Some (very) irregular updates</p>
+    <p class="subtitle">{{ 'BLOG_SUB' | translate }}</p>
   </div>
   <hr class="rounded">
   <div class="blog-container">
@@ -15,6 +15,6 @@
     </div>
   </div>
 <ng-template #noArticles>
-  <h2>No Articles yet!</h2>
+  <h2>{{ 'ARTICLES_NONE' | translate }}</h2>
 </ng-template>
 </div>

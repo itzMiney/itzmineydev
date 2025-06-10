@@ -3,7 +3,7 @@
   <div class="socials-container">
     <div class="socials-header" [ngStyle]="{'margin-top': isMobile ? '80px' : '120px'}">
       <h1>Socials</h1>
-      <p class="subtitle">You can find me in a lotta places</p>
+      <p class="subtitle">{{ 'SOCIALS_SUB' | translate }}</p>
     </div>
     <hr class="rounded">
     <div class="social-links">
@@ -15,7 +15,7 @@
       <a href="https://twitter.com/@itzMiney" target="_blank"><button class="twitter"><a class="fa-brands fa-twitter"></a>&#x2007;Twitter</button></a>
       <a href="https://twitch.tv/itzminey"><button class="twitch"><a class="fa-brands fa-twitch"></a>&#x2007;Twitch</button></a>
       <br><br>
-      <h3>Games</h3>
+      <h3>{{ 'SOCIALS_GAMES' | translate }}</h3>
       <a href="https://steamcommunity.com/id/itzMiney/" target="_blank"><button class="steam"><a class="fa-brands fa-steam"></a>&#x2007;Steam</button></a>
       <a href="https://osu.ppy.sh/users/16470989" target="_blank"><button class="osu">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
@@ -23,7 +23,7 @@
         </svg>&#x2007;osu!</button>
       </a>
       <br><br>
-      <h3>Donations & Commissions</h3>
+      <h3>{{ 'SOCIALS_COMMS' | translate }}</h3>
       <a href="https://ko-fi.com/itzMiney" target="_blank"><button class="kofi"><a class="fa-solid fa-mug-hot"></a>&#x2007;Ko-Fi Donations</button></a>
       <a href="https://ko-fi.com/itzMiney/commissions" target="_blank"><button class="kofi-comms"><a class="fa-solid fa-mug-hot"></a>&#x2007;Ko-Fi Commissions</button></a>
     </div>

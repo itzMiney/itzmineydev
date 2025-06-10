@@ -5,6 +5,7 @@ import {NavbarComponent} from './shared/navbar/navbar.component';
 import {MobileNavbarComponent} from './shared/mobile-navbar/mobile-navbar.component';
 import {FooterComponent} from './shared/footer/footer.component';
 import {DeviceDetectorService} from './shared/services/device-detector.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,11 @@ export class AppComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private deviceService: DeviceDetectorService,
-  ) {}
+    private translate: TranslateService,
+  ) {
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
 
   ngOnInit() {
     this.router.events.subscribe(() => this.checkRoute())
