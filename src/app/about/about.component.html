@@ -2,11 +2,11 @@
 <div class="height-container">
   <div class="about-container">
     <div class="about-header" [ngStyle]="{'margin-top': isMobile ? '60px' : '120px'}">
-      <h1>About Me</h1>
-      <p class="subtitle">Hobby developer & designer</p>
+      <h1 i18n="@@aboutTitle">About Me</h1>
+      <p class="subtitle" i18n="@@aboutSubtitle">Hobby developer & designer</p>
     </div>
     <hr class="rounded">
-    <div class="about-content">
+    <div class="about-content" [innerHTML]="'ABOUT_CONTENT' | translate">
       <h1><code>itzMiney</code></h1>
       <p>
         Hello, I'm Michael, a developer and designer based in Austria. I specialize in frontend web development,
