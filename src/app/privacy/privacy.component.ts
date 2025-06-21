@@ -2,13 +2,14 @@ import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
-import {isPlatformBrowser, NgIf} from '@angular/common';
+import {isPlatformBrowser, NgFor, NgIf} from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-services',
   imports: [
     NgIf,
+    NgFor,
     TranslatePipe
   ],
   templateUrl: './privacy.component.html',
