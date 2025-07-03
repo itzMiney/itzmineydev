@@ -82,12 +82,12 @@
     "whatData": {
       "title": "2. What Data We Collect",
       "websiteUsageTitle": "a) Website Usage Data",
-      "websiteUsage": "We may temporarily process your IP address when you visit certain pages...",
+      "websiteUsage": "We may temporarily process your IP address when you visit certain pages, such as article views. This is done solely to protect the integrity of view counts and prevent automated abuse. This data is stored securely and is not retained longer than necessary.",
       "noCookies": "We do not use cookies for tracking or analytics purposes.",
       "emailInquiriesTitle": "b) Email Inquiries",
-      "emailInquiries": "If you contact us via the email address...",
+      "emailInquiries": "If you contact us via the email address provided on the website, we may store your message and contact information in order to respond to your inquiry or provide the requested service. This data is treated as confidential and will not be shared with third parties without your consent.",
       "thirdPartyTitle": "c) Third-Party Services (Cloudflare)",
-      "thirdParty": "We use Cloudflare, Inc. to protect and accelerate our website..."
+      "thirdParty": "We use Cloudflare, Inc. to protect and accelerate our website. Cloudflare provides services such as DDoS protection, secure DNS resolution, and performance optimization. As part of these services, Cloudflare may process technical data such as your IP address and HTTP request headers. This processing occurs solely for security and operational purposes and automatically when you visit the website.<br><br>Cloudflare acts as a processor on our behalf. For more information, see the <a href=\"https://www.cloudflare.com/privacypolicy/\">Cloudflare Privacy Policy</a>."
     },
     "purpose": {
       "title": "3. Purpose and Legal Basis",
@@ -99,7 +99,7 @@
     },
     "dataRetention": {
       "title": "4. Data Retention",
-      "content": "Personal data is retained only as long as necessary for the stated purposes..."
+      "content": ">Personal data is retained only as long as necessary for the stated purposes. Email correspondence may be retained for legal or administrative reasons, such as fulfilling service requests or maintaining communication history."
     },
     "yourRights": {
       "title": "5. Your Rights",
@@ -114,11 +114,11 @@
     },
     "security": {
       "title": "6. Security",
-      "content": "We take appropriate technical and organizational measures to protect your personal data..."
+      "content": "We take appropriate technical and organizational measures to protect your personal data from unauthorized access, misuse, or loss."
     },
     "changes": {
       "title": "7. Changes",
-      "content": "This policy may be updated occasionally to reflect changes in our practices..."
+      "content": "This policy may be updated occasionally to reflect changes in our practices. The latest version will always be available on this page."
     }
   },
 

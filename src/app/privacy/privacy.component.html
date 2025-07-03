@@ -70,7 +70,10 @@
         </h2>
         <p>{{ 'privacy.yourRights.intro' | translate }}</p>
         <ul>
-          <li *ngFor="let right of ['privacy.yourRights.rights' | translate]">{{ right }}</li>
+          <li>{{ 'privacy.yourRights.rights.0' | translate }}</li>
+          <li>{{ 'privacy.yourRights.rights.1' | translate }}</li>
+          <li>{{ 'privacy.yourRights.rights.2' | translate }}</li>
+          <li [innerHTML]="'privacy.yourRights.rights.3' | translate"></li>
         </ul>
         <p [innerHTML]="'privacy.yourRights.footer' | translate"></p>
       </section>
