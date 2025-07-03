@@ -46,24 +46,29 @@
 
 .language-switch button {
   padding: 4px 8px;
-  background: #362e51;
+  background: transparent;
   color: #fff;
   border: none;
+  font-size: 14px;
   cursor: pointer;
   font-family: Roboto, serif;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.language-switch button:hover {
+  text-decoration: underline;
 }
 
 .language-switch button.active {
-  font-weight: bold;
   background: #fff;
   color: #000;
 }
 
 .language-switch button.en {
-  margin-left: 8px;
-  border-radius: 25px 0 0 25px;
+  margin-right: 8px;
+  border-radius: 25px;
 }
 
 .language-switch button.de {
-  border-radius: 0 25px 25px 0;
+  border-radius: 25px;
 }
