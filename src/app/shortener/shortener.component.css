@@ -9,7 +9,12 @@
   border-radius: 35px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-height: 90vh;
-  overflow: scroll;
+  overflow: hidden;
+}
+
+.container-content {
+  flex: 0 0 auto;
+  width: 100%;
 }
 
 .container-wrapper {
@@ -82,10 +87,20 @@ button:hover {
   opacity: 0.9;
 }
 
+.url-list-wrapper {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
 .url-list-items {
   list-style-type: none;
   padding: 0;
+  width: 100%;
 }
+
 
 .url-list-items li {
   background-color: #fff;

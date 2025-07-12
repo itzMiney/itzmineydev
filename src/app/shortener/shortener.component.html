@@ -1,59 +1,62 @@
 <div class="container-wrapper">
   <div class="container">
-    <h1>URL Shortener</h1>
+    <div class="container-content">
+      <h1>URL Shortener</h1>
 
-    <!-- URL Creation Form -->
-    <div class="form-section">
-      <form (ngSubmit)="createShortURL(shortURLForm)" #shortURLForm="ngForm">
-        <div class="form-group">
-          <input
-            type="url"
-            id="og_url"
-            name="og_url"
-            ngModel
-            class="form-control"
-            placeholder="Original URL"
-            required
-          />
-        </div>
+      <!-- URL Creation Form -->
+      <div class="form-section">
+        <form (ngSubmit)="createShortURL(shortURLForm)" #shortURLForm="ngForm">
+          <div class="form-group">
+            <input
+              type="url"
+              id="og_url"
+              name="og_url"
+              ngModel
+              class="form-control"
+              placeholder="Original URL"
+              required
+            />
+          </div>
 
-        <div class="form-group">
-          <input
-            type="text"
-            id="short_name"
-            name="short_name"
-            ngModel
-            class="form-control"
-            placeholder="Short URL Name (Optional)"
-          />
-        </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="short_name"
+              name="short_name"
+              ngModel
+              class="form-control"
+              placeholder="Short URL Name (Optional)"
+            />
+          </div>
 
-        <button type="submit" class="btn btn-primary">Shorten URL</button>
-      </form>
-    </div>
+          <button type="submit" class="btn btn-primary">Shorten URL</button>
+        </form>
+      </div>
 
-    <!-- Delete URL Section -->
-    <div class="form-section">
-      <h3>Delete Short URL</h3>
-      <form (ngSubmit)="deleteShortURL(deleteURLForm)" #deleteURLForm="ngForm">
-        <div class="form-group">
-          <input
-            type="number"
-            id="deleteId"
-            name="deleteId"
-            ngModel
-            class="form-control"
-            placeholder="ID"
-            required
-          />
-          <button type="submit" class="btn btn-danger">Delete</button>
-        </div>
-      </form>
-    </div>
+      <!-- Delete URL Section -->
+      <div class="form-section">
+        <h3>Delete Short URL</h3>
+        <form (ngSubmit)="deleteShortURL(deleteURLForm)" #deleteURLForm="ngForm">
+          <div class="form-group">
+            <input
+              type="number"
+              id="deleteId"
+              name="deleteId"
+              ngModel
+              class="form-control"
+              placeholder="ID"
+              required
+            />
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </div>
+        </form>
+      </div>
 
-    <!-- List of Short URLs -->
-    <div class="url-list">
       <h3>Existing Short URLs</h3>
+    </div>
+
+    <!-- Scrollable URL list -->
+    <div class="url-list-wrapper">
       <div *ngIf="noURLs; else urlList">
         <p>No short URLs available.</p>
       </div>
@@ -61,11 +64,16 @@
       <ng-template #urlList>
         <ul class="url-list-items">
           <li *ngFor="let url of urls">
-            <strong>ID {{url.id}}</strong> // <strong>URL: </strong> <a [href]="'https://itz.sh/' + url.short_url" target="_blank">{{ 'https://itz.sh/' + url.short_url }}</a><br>
-            <strong>Original: </strong> <a [href]="url.og_url" target="_blank">{{ (url.og_url | slice:0:45) + (url.og_url.length > 40 ? '...' : '')}}</a><br>
+            <strong>ID {{url.id}}</strong> // <strong>URL: </strong>
+            <a [href]="'https://itz.sh/' + url.short_url" target="_blank">{{ 'https://itz.sh/' + url.short_url }}</a><br>
+            <strong>Original: </strong>
+            <a [href]="url.og_url" target="_blank">
+              {{ (url.og_url | slice:0:45) + (url.og_url.length > 40 ? '...' : '')}}
+            </a><br>
           </li>
         </ul>
       </ng-template>
     </div>
+
   </div>
 </div>
