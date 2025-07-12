@@ -41,6 +41,7 @@ h3 {
 }
 
 .form-group {
+  justify-content: center;
   display: flex;
   margin-bottom: 15px;
   gap: 12px;
