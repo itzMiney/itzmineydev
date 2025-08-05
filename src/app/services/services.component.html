@@ -22,16 +22,23 @@
             <button
               class="tab-btn"
               [class.active]="activeTab[i] === 'basic'"
-              (click)="switchTab(i, 'basic')">Basic</button>
+              (click)="switchTab(i, 'basic')">
+              Basic
+            </button>
             <button
               class="tab-btn"
               [class.active]="activeTab[i] === 'advanced'"
-              (click)="switchTab(i, 'advanced')">Advanced</button>
+              (click)="switchTab(i, 'advanced')">
+              Advanced
+            </button>
           </div>
-          <div *ngIf="activeTab[i] === 'basic'" class="tab-content" [innerHTML]="service.basic">
-          </div>
-          <div *ngIf="activeTab[i] === 'advanced'" class="tab-content" [innerHTML]="service.advanced">
-          </div>
+          <div class="tab-content" [innerHTML]="activeTab[i] === 'basic' ? service.basic : service.advanced"></div>
+          <button
+            class="buy-button"
+            *ngIf="getActivePriceId(service, activeTab[i])"
+            (click)="checkout(getActivePriceId(service, activeTab[i]) || '')">
+            Buy Service
+          </button>
         </div>
       </div>
     </div>

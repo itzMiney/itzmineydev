@@ -12,6 +12,8 @@ import {TosComponent} from './tos/tos.component';
 import {ImprintComponent} from './imprint/imprint.component';
 import {ShortenerComponent} from './shortener/shortener.component';
 import {PrivacyComponent} from './privacy/privacy.component';
+import {SuccessComponent} from './checkout/success/success.component';
+import {CancelComponent} from './checkout/cancel/cancel.component';
 
 export const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -27,5 +29,7 @@ export const routes: Routes = [
   { path: 'imprint', component: ImprintComponent },
   { path: 'blog/:slug', component: ArticlePageComponent },
   { path: 'shortener', component: ShortenerComponent },
+  { path: 'checkout/success', pathMatch: 'full', component: SuccessComponent },
+  { path: 'checkout/cancel', pathMatch: 'full', component: CancelComponent },
   { path: '**', pathMatch: 'full', component: NotFoundComponent }
 ];

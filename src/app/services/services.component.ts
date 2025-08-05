@@ -22,7 +22,13 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
   isMobile: boolean = false;
   activeTab: string[] = [];
 
-  services: { name: string; basic: string; advanced: string }[] = [];
+  services: {
+    name: string;
+    basic: string;
+    advanced: string;
+    basicPriceId: string;
+    advancedPriceId: string;
+  }[] = [];
 
   constructor(
     private vantaService: VantaBackgroundService,
@@ -48,6 +54,9 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
 
   loadServices(): void {
     this.translate.get([
+      'SERVICES.PTERO_NAME',
+      'SERVICES.PTERO_BASIC',
+      'SERVICES.PTERO_ADVANCED',
       'SERVICES.SUPPORT_NAME',
       'SERVICES.SUPPORT_BASIC',
       'SERVICES.SUPPORT_ADVANCED',
@@ -69,34 +78,53 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
     ]).subscribe(translations => {
       this.services = [
         {
+          name: translations['SERVICES.PTERO_NAME'],
+          basic: translations['SERVICES.PTERO_BASIC'],
+          advanced: translations['SERVICES.PTERO_ADVANCED'],
+          basicPriceId: 'price_1RscMR2LT0gYeSqcQ7SDj6gG',
+          advancedPriceId: 'price_1RscMR2LT0gYeSqcQ7SDj6gG'
+        },
+        {
           name: translations['SERVICES.SUPPORT_NAME'],
           basic: translations['SERVICES.SUPPORT_BASIC'],
-          advanced: translations['SERVICES.SUPPORT_ADVANCED']
+          advanced: translations['SERVICES.SUPPORT_ADVANCED'],
+          basicPriceId: '',
+          advancedPriceId: ''
         },
         {
           name: translations['SERVICES.WP_FILES_NAME'],
           basic: translations['SERVICES.WP_FILES_BASIC'],
-          advanced: translations['SERVICES.WP_FILES_ADVANCED']
+          advanced: translations['SERVICES.WP_FILES_ADVANCED'],
+          basicPriceId: '',
+          advancedPriceId: ''
         },
         {
           name: translations['SERVICES.WP_SETUP_NAME'],
           basic: translations['SERVICES.WP_SETUP_BASIC'],
-          advanced: translations['SERVICES.WP_SETUP_ADVANCED']
+          advanced: translations['SERVICES.WP_SETUP_ADVANCED'],
+          basicPriceId: '',
+          advancedPriceId: ''
         },
         {
           name: translations['SERVICES.ANGULAR_FILES_NAME'],
           basic: translations['SERVICES.ANGULAR_FILES_BASIC'],
-          advanced: translations['SERVICES.ANGULAR_FILES_ADVANCED']
+          advanced: translations['SERVICES.ANGULAR_FILES_ADVANCED'],
+          basicPriceId: '',
+          advancedPriceId: ''
         },
         {
           name: translations['SERVICES.ANGULAR_SETUP_NAME'],
           basic: translations['SERVICES.ANGULAR_SETUP_BASIC'],
-          advanced: translations['SERVICES.ANGULAR_SETUP_ADVANCED']
+          advanced: translations['SERVICES.ANGULAR_SETUP_ADVANCED'],
+          basicPriceId: '',
+          advancedPriceId: ''
         },
         {
           name: translations['SERVICES.SERVER_SETUP_NAME'],
           basic: translations['SERVICES.SERVER_SETUP_BASIC'],
-          advanced: translations['SERVICES.SERVER_SETUP_ADVANCED']
+          advanced: translations['SERVICES.SERVER_SETUP_ADVANCED'],
+          basicPriceId: '',
+          advancedPriceId: ''
         }
       ];
 
@@ -120,5 +148,30 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
   onResize() {
     // Update the minHeight and minWidth when the window is resized
     this.vantaService.resizeVanta(this.elementId);
+  }
+
+  checkout(priceId: string): void {
+    fetch('http://localhost:7020/api/stripe/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ priceId })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert('Checkout session failed.');
+        }
+      })
+      .catch(err => {
+        console.error('Stripe error:', err);
+        alert('Error creating checkout session.');
+      });
+  }
+
+  getActivePriceId(service: any, activeTab: string): string | null {
+    const priceId = activeTab === 'basic' ? service.basicPriceId : service.advancedPriceId;
+    return priceId?.trim() || null;
   }
 }

@@ -1,4 +1,10 @@
 {
+  "SUCCESS": "Success!",
+  "SUCCESS_SUB": "Your order has been placed.",
+
+  "CANCEL": "Cancelled",
+  "CANCEL_SUB": "Your order has been cancelled.",
+
   "NAV_ABOUT": "About",
   "NAV_SERVICES": "Services",
 
@@ -28,6 +34,10 @@
   "SERVS_CONTACT": "Contact me",
 
   "SERVICES": {
+    "PTERO_NAME": "Pterodactyl Panel Setup",
+    "PTERO_BASIC": "<b class=\"centered-text\">Base Service: €40</b><br>I will set up Pterodactyl Panel for you on a Server you provide",
+    "PTERO_ADVANCED": "<b class=\"centered-text\">Base Service: €40</b><br>I will set up Pterodactyl Panel for you on a Server you provide",
+
     "SUPPORT_NAME": "Support & Maintenance",
     "SUPPORT_BASIC": "<b class=\"centered-text\">Maintenance Service</b><br>Depending on the software(s) in use, flexible baseline ~€35-90+/month.<br>Contact me for a precise estimate.<br><br><b>Support Service</b><br>Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br><b>Flat Rate:</b> €60-130 for minor issues (up to 2.5 hours, depends on complexity, contact me for a precise estimate)",
     "SUPPORT_ADVANCED": "<b class=\"centered-text\">Maintenance Service</b><br>Depending on the software(s) in use, flexible baseline ~€35-90+/month.<br>Contact me for a precise estimate.<br><br><b>Support Service</b><br>Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br><b>Flat Rate:</b> €60-130 for minor issues (up to 2.5 hours, depends on complexity, contact me for a precise estimate)",

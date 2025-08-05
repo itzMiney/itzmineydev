@@ -1,4 +1,10 @@
 {
+  "SUCCESS": "Erfolgreich!",
+  "SUCCESS_SUB": "Deine Bestellung wurde aufgegeben.",
+
+  "CANCEL": "Abgebrochen",
+  "CANCEL_SUB": "Deine Bestellung wurde abgebrochen.",
+
   "NAV_ABOUT": "Über",
   "NAV_SERVICES": "Leistungen",
 
@@ -27,6 +33,10 @@
   "SERVS_CONTACT": "Kontaktiere mich",
 
   "SERVICES": {
+    "PTERO_NAME": "Pterodactyl Panel Setup",
+    "PTERO_BASIC": "<b class=\"centered-text\">Base Service: €40</b><br>I will set up Pterodactyl Panel for you on a Server you provide",
+    "PTERO_ADVANCED": "<b class=\"centered-text\">Base Service: €40</b><br>I will set up Pterodactyl Panel for you on a Server you provide",
+
     "SUPPORT_NAME": "Support & Wartung",
     "SUPPORT_BASIC": "<b class=\"centered-text\">Wartungsservice</b><br>Je nach verwendeter Software flexible Basis ab ca. 35-90€/Monat.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b>Support-Service</b><br>Je nach verwendeter Software flexible Basis ab ca. 50-75€/Stunde.<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",
     "SUPPORT_ADVANCED": "<b class=\"centered-text\">Wartungsservice</b><br>Je nach verwendeter Software flexible Basis ab ca. 35-90€/Monat.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b>Support-Service</b><br>Je nach verwendeter Software flexible Basis ab ca. 50-75€/Stunde.<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",

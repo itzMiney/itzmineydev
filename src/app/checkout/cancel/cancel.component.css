@@ -1,0 +1,41 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#vanta-cancel-bg {
+  animation: fadeIn 1s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+}
+
+.cancel-container {
+  position: relative;
+  color: white;
+  padding-bottom: 60px;
+  max-width: 960px;
+  margin: 160px auto 80px auto;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.height-container {
+  min-height: 100vh;
+  align-content: center;
+}
+
+.privacy-content {
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-family: Roboto, sans-serif;
+}
