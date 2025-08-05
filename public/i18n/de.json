@@ -36,7 +36,7 @@
     "PTERO_NAME": "Pterodactyl Panel Setup",
     "PTERO_BASIC": "<b class=\"centered-text\">Basis-Service: €40</b><br>Ich werde Pterodactyl Panel für dich aufsetzten auf einem Server den du bereitstellst",
     "PTERO_ADVANCED": "<b class=\"centered-text\">Basis-Service: €40</b><br>Ich werde Pterodactyl Panel für dich aufsetzten auf einem Server den du bereitstellst",
-1
+
     "SUPPORT_NAME": "Support & Wartung",
     "SUPPORT_BASIC": "<b class=\"centered-text\">Wartungsservice</b><br>Je nach verwendeter Software flexible Basis ab ca. 35-90€/Monat.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b>Support-Service</b><br>Je nach verwendeter Software flexible Basis ab ca. 50-75€/Stunde.<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",
     "SUPPORT_ADVANCED": "<b class=\"centered-text\">Wartungsservice</b><br>Je nach verwendeter Software flexible Basis ab ca. 35-90€/Monat.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b>Support-Service</b><br>Je nach verwendeter Software flexible Basis ab ca. 50-75€/Stunde.<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",
@@ -66,7 +66,7 @@
 
   "ARTICLE_BACK": "Zurück zur Übersicht",
   "ARTICLES_NONE": "Noch keine Artikel!",
-  "ARCITCLE_NOTFOUND": "Artikel wurde nicht gefunden!",
+  "ARTICLE_NOTFOUND": "Artikel wurde nicht gefunden!",
   "CREATED_AT": "Erstellt:",
 
   "IMP_TITLE": "Impressum",
