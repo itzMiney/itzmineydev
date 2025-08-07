@@ -4,6 +4,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 import {VantaBackgroundService} from '../../shared/services/vanta-background.service';
 import {DeviceDetectorService} from '../../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-success',
@@ -21,6 +22,7 @@ export class SuccessComponent implements OnInit, OnDestroy, AfterViewInit {
     private vantaService: VantaBackgroundService,
     private deviceService: DeviceDetectorService,
     private titleService: Title,
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -47,5 +49,9 @@ export class SuccessComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onResize() {
     this.vantaService.resizeVanta(this.elementId);
+  }
+
+  goBack(): void {
+    this.router.navigate(['/services']);
   }
 }

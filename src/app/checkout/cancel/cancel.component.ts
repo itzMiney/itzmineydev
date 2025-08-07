@@ -4,6 +4,7 @@ import {VantaBackgroundService} from '../../shared/services/vanta-background.ser
 import {DeviceDetectorService} from '../../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
 import {isPlatformBrowser} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cancel',
@@ -21,6 +22,7 @@ export class CancelComponent implements OnInit, OnDestroy, AfterViewInit {
     private vantaService: VantaBackgroundService,
     private deviceService: DeviceDetectorService,
     private titleService: Title,
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -47,5 +49,9 @@ export class CancelComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onResize() {
     this.vantaService.resizeVanta(this.elementId);
+  }
+
+  goBack(): void {
+    this.router.navigate(['/services']);
   }
 }

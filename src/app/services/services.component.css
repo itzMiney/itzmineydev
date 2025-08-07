@@ -101,6 +101,7 @@
   color: white;
   padding: 10px;
   margin-inline: 15px;
+  margin-bottom: 5px;
   font-size: 1rem;
   cursor: pointer;
   width: 110px;
@@ -135,7 +136,6 @@
 }
 
 .tab-content {
-  margin-top: 10px;
   font-size: 0.9rem;
   white-space: pre-line;
   text-wrap: pretty;

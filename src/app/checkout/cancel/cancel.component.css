@@ -39,3 +39,20 @@
   margin-bottom: 10px;
   font-family: Roboto, sans-serif;
 }
+
+.back-button {
+  background-color: rgb(154, 89, 172);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 20px;
+  margin-inline: 15px;
+  margin-top: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.back-button:hover {
+  background-color: rgb(187, 107, 209);
+}

@@ -60,6 +60,9 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
       'SERVICES.PTERO_NAME',
       'SERVICES.PTERO_BASIC',
       'SERVICES.PTERO_ADVANCED',
+      'SERVICES.SYSADMIN_NAME',
+      'SERVICES.SYSADMIN_BASIC',
+      'SERVICES.SYSADMIN_ADVANCED',
       'SERVICES.SUPPORT_NAME',
       'SERVICES.SUPPORT_BASIC',
       'SERVICES.SUPPORT_ADVANCED',
@@ -84,8 +87,15 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
           name: translations['SERVICES.PTERO_NAME'],
           basic: translations['SERVICES.PTERO_BASIC'],
           advanced: translations['SERVICES.PTERO_ADVANCED'],
-          basicPriceId: 'price_1RscMR2LT0gYeSqcQ7SDj6gG',
-          advancedPriceId: 'price_1RscMR2LT0gYeSqcQ7SDj6gG'
+          basicPriceId: 'price_1RtaOO2LT0gYeSqc4ns1BgPW',
+          advancedPriceId: 'price_1RtaQF2LT0gYeSqcxxzlazIV'
+        },
+        {
+          name: translations['SERVICES.SYSADMIN_NAME'],
+          basic: translations['SERVICES.SYSADMIN_BASIC'],
+          advanced: translations['SERVICES.SYSADMIN_ADVANCED'],
+          basicPriceId: 'price_1Rtapt2LT0gYeSqcvZLmcj7S',
+          advancedPriceId: 'price_1Rtapt2LT0gYeSqcvZLmcj7S'
         },
         {
           name: translations['SERVICES.SUPPORT_NAME'],
@@ -98,29 +108,29 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
           name: translations['SERVICES.WP_FILES_NAME'],
           basic: translations['SERVICES.WP_FILES_BASIC'],
           advanced: translations['SERVICES.WP_FILES_ADVANCED'],
-          basicPriceId: '',
-          advancedPriceId: ''
+          basicPriceId: 'price_1RtaMn2LT0gYeSqcibmWe3c6',
+          advancedPriceId: 'price_1RhuVf2LT0gYeSqcAbTNIM4F'
         },
         {
           name: translations['SERVICES.WP_SETUP_NAME'],
           basic: translations['SERVICES.WP_SETUP_BASIC'],
           advanced: translations['SERVICES.WP_SETUP_ADVANCED'],
-          basicPriceId: '',
-          advancedPriceId: ''
+          basicPriceId: 'price_1RtbTA2LT0gYeSqcH6u8krsj',
+          advancedPriceId: 'price_1RtbTA2LT0gYeSqcpHffXghH'
         },
         {
           name: translations['SERVICES.ANGULAR_FILES_NAME'],
           basic: translations['SERVICES.ANGULAR_FILES_BASIC'],
           advanced: translations['SERVICES.ANGULAR_FILES_ADVANCED'],
-          basicPriceId: '',
-          advancedPriceId: ''
+          basicPriceId: 'price_1RtbAi2LT0gYeSqcutD8Zc9W',
+          advancedPriceId: 'price_1RtbAi2LT0gYeSqcuLJXNSjZ'
         },
         {
           name: translations['SERVICES.ANGULAR_SETUP_NAME'],
           basic: translations['SERVICES.ANGULAR_SETUP_BASIC'],
           advanced: translations['SERVICES.ANGULAR_SETUP_ADVANCED'],
-          basicPriceId: '',
-          advancedPriceId: ''
+          basicPriceId: 'price_1RtbR32LT0gYeSqcWxYCVjoO',
+          advancedPriceId: 'price_1RtbR32LT0gYeSqcIAWEqy5I'
         },
         {
           name: translations['SERVICES.SERVER_SETUP_NAME'],
