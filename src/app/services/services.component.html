@@ -23,13 +23,13 @@
               class="tab-btn"
               [class.active]="activeTab[i] === 'basic'"
               (click)="switchTab(i, 'basic')">
-              Basic
+              {{ 'BASIC' | translate}}
             </button>
             <button
               class="tab-btn"
               [class.active]="activeTab[i] === 'advanced'"
               (click)="switchTab(i, 'advanced')">
-              Advanced
+              {{ 'ADVANCED' | translate}}
             </button>
           </div>
           <div class="tab-content" [innerHTML]="activeTab[i] === 'basic' ? service.basic : service.advanced"></div>
@@ -37,7 +37,7 @@
             class="buy-button"
             *ngIf="getActivePriceId(service, activeTab[i])"
             (click)="checkout(getActivePriceId(service, activeTab[i])!)">
-            Buy Service
+            {{ 'BUY' | translate}}
           </button>
         </div>
       </div>

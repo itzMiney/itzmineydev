@@ -1,4 +1,8 @@
 {
+  "BASIC": "Basic",
+  "ADVANCED": "Advanced",
+  "BUY": "Buy Service",
+
   "SUCCESS": "Success!",
   "SUCCESS_SUB": "Your order has been placed.",
 

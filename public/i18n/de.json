@@ -1,4 +1,8 @@
 {
+  "BASIC": "Basis",
+  "ADVANCED": "Erweitert",
+  "BUY": "Kaufen",
+
   "SUCCESS": "Erfolgreich!",
   "SUCCESS_SUB": "Deine Bestellung wurde aufgegeben.",
 
