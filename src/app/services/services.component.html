@@ -36,7 +36,7 @@
           <button
             class="buy-button"
             *ngIf="getActivePriceId(service, activeTab[i])"
-            (click)="checkout(getActivePriceId(service, activeTab[i]) || '')">
+            (click)="checkout(getActivePriceId(service, activeTab[i])!)">
             Buy Service
           </button>
         </div>

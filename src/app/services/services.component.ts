@@ -5,7 +5,6 @@ import {Title} from '@angular/platform-browser';
 import {isPlatformBrowser, NgIf, NgFor, NgStyle} from '@angular/common';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, tap} from 'rxjs';
 
 @Component({
   selector: 'app-services',
@@ -154,16 +153,17 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
     this.vantaService.resizeVanta(this.elementId);
   }
 
-  checkout(priceId: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl, { priceId }).pipe(
-      tap((response) => {
+  checkout(priceId: string): void {
+    this.http.post<any>(this.apiUrl, { priceId }).subscribe({
+      next: (response) => {
         if (response.url) {
           window.location.href = response.url;
         } else {
           alert('Checkout session failed.');
         }
-      })
-    );
+      },
+      error: () => alert('Checkout session failed.')
+    });
   }
 
   getActivePriceId(service: any, activeTab: string): string | null {
