@@ -4,6 +4,8 @@ import {DeviceDetectorService} from '../shared/services/device-detector.service'
 import {Title} from '@angular/platform-browser';
 import {isPlatformBrowser, NgIf, NgFor, NgStyle} from '@angular/common';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable, tap} from 'rxjs';
 
 @Component({
   selector: 'app-services',
@@ -19,6 +21,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly elementId = 'vanta-services-bg';
+  private apiUrl = '/api/stripe/create-checkout-session';
   isMobile: boolean = false;
   activeTab: string[] = [];
 
@@ -35,6 +38,7 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
     private deviceService: DeviceDetectorService,
     private titleService: Title,
     private translate: TranslateService,
+    private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -150,24 +154,16 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
     this.vantaService.resizeVanta(this.elementId);
   }
 
-  checkout(priceId: string): void {
-    fetch('http://localhost:7020/api/stripe/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ priceId })
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.url) {
-          window.location.href = data.url;
+  checkout(priceId: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl, { priceId }).pipe(
+      tap((response) => {
+        if (response.url) {
+          window.location.href = response.url;
         } else {
           alert('Checkout session failed.');
         }
       })
-      .catch(err => {
-        console.error('Stripe error:', err);
-        alert('Error creating checkout session.');
-      });
+    );
   }
 
   getActivePriceId(service: any, activeTab: string): string | null {
