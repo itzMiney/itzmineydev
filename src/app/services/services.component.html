@@ -18,18 +18,26 @@
       <div class="service-item" *ngFor="let service of services; let i = index">
         <div class="service-card">
           <span [innerHTML]="service.name"></span>
-          <div class="tabs">
+          <div class="tab-toggle">
+            <div
+              class="tab-slider"
+              [class.right]="activeTab[i] === 'advanced'">
+            </div>
+
             <button
-              class="tab-btn"
+              class="tab-option"
               [class.active]="activeTab[i] === 'basic'"
               (click)="switchTab(i, 'basic')">
-              {{ 'BASIC' | translate}}
+              {{ 'BASIC' | translate }}
             </button>
+
             <button
-              class="tab-btn"
+              class="tab-option"
               [class.active]="activeTab[i] === 'advanced'"
+              [class.disabled]="!service.advanced || service.advanced.trim() === ''"
+              [disabled]="!service.advanced || service.advanced.trim() === ''"
               (click)="switchTab(i, 'advanced')">
-              {{ 'ADVANCED' | translate}}
+              {{ 'ADVANCED' | translate }}
             </button>
           </div>
           <div class="tab-content" [innerHTML]="activeTab[i] === 'basic' ? service.basic : service.advanced"></div>

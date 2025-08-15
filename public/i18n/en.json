@@ -41,16 +41,16 @@
 
   "SERVICES": {
     "PTERO_NAME": "Pterodactyl Panel Setup",
-    "PTERO_BASIC": "<b class=\"centered-text\">Base Service: €20</b><br>I will set up Pterodactyl Panel for you on a Server you provide",
-    "PTERO_ADVANCED": "<b class=\"centered-text\">Base Service: €25/month</b><br>I will set up Pterodactyl Panel for you on a Server you provide and give ongoing support and maintenance",
+    "PTERO_BASIC": "<b class=\"centered-text\">Base Service: €20</b><br>I will fully install and configure the Pterodactyl Panel on a server you provide.<br><br>This includes setting up the panel interface, configuring the daemon for game server hosting, and ensuring the system is optimized for performance and security.<br><br>Perfect for those who want a quick, reliable setup without ongoing support.",
+    "PTERO_ADVANCED": "<b class=\"centered-text\">Base Service: €25/month</b><br>In addition to everything included in the Basic service, I will provide ongoing support, maintenance, and updates for your Pterodactyl Panel.<br><br>This includes applying security patches, troubleshooting issues, optimizing performance, and assisting with game server configurations whenever needed.<br><br>Ideal for long-term hosting environments that require continuous care.",
 
     "SYSADMIN_NAME": "System Administration",
-    "SYSADMIN_BASIC":  "<b class=\"centered-text\">Base Service: €80/month</b><br>I will administrate your server, fix problems, give support and update and maintain everything securely.",
-    "SYSADMIN_ADVANCED":  "<b class=\"centered-text\">Base Service: €80/month</b><br>I will administrate your server, fix problems, give support and update and maintain everything securely.",
+    "SYSADMIN_BASIC": "<b class=\"centered-text\">Base Service: €80/month</b><br>I will manage your server infrastructure by performing regular maintenance, applying updates, and monitoring system health.<br><br>I will also address technical issues, configure necessary services, and ensure everything runs securely and efficiently.<br><br>This service is suitable for stable environments where you want peace of mind knowing your server is in expert hands.",
+    "SYSADMIN_ADVANCED": "",
 
     "SUPPORT_NAME": "Support & Maintenance",
     "SUPPORT_BASIC": "<b class=\"centered-text\">Maintenance Service</b><br>Depending on the software(s) in use, flexible baseline ~€35-90+/month.<br>Contact me for a precise estimate.<br><br><b>Support Service</b><br>Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br><b>Flat Rate:</b> €60-130 for minor issues (up to 2.5 hours, depends on complexity, contact me for a precise estimate)",
-    "SUPPORT_ADVANCED": "<b class=\"centered-text\">Maintenance Service</b><br>Depending on the software(s) in use, flexible baseline ~€35-90+/month.<br>Contact me for a precise estimate.<br><br><b>Support Service</b><br>Depending on the software(s) in use, flexible baseline ~€50-75+/hour.<br><b>Flat Rate:</b> €60-130 for minor issues (up to 2.5 hours, depends on complexity, contact me for a precise estimate)",
+    "SUPPORT_ADVANCED": "",
 
     "WP_FILES_NAME": "<b>Design a Custom WordPress Website</b> (Files Only)",
     "WP_FILES_BASIC": "<b class=\"centered-text\">Base Service: €80</b><br>I will design a custom WordPress website and provide the installation files for your dedicated server or WordPress host.<br><br><b class=\"centered-text\">Additional Services:</b><br>• Maintenance Service (€35/month)<br>• Support Service (€50/hour)<br><b>Flat Rate:</b> €50 for minor issues (up to 2.5 hours)",

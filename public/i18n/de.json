@@ -40,16 +40,16 @@
 
   "SERVICES": {
     "PTERO_NAME": "Pterodactyl Panel Setup",
-    "PTERO_BASIC": "<b class=\"centered-text\">Basis-Service: €20</b><br>Ich werde Pterodactyl Panel für dich aufsetzten auf einem Server den du bereitstellst",
-    "PTERO_ADVANCED": "<b class=\"centered-text\">Basis-Service: €25/Monat</b><br>Ich werde Pterodactyl Panel für dich aufsetzten auf einem Server den du bereitstellst und Wartung und Support übernehmen",
+    "PTERO_BASIC": "<b class=\"centered-text\">Basis-Service: €20</b><br>321 / 5,000\nIch installiere und konfiguriere das Pterodactyl Panel vollständig auf einem von dir bereitgestelltem Server.<br><br>Dazu gehört die Einrichtung der Panel-Oberfläche, die Konfiguration des Daemons für das Gameserver-Hosting und die Sicherstellung der optimalen Leistung und Sicherheit des Systems.<br><br>Perfekt für alle, die eine schnelle und zuverlässige Einrichtung ohne laufenden Support wünschen.",
+    "PTERO_ADVANCED": "<b class=\"centered-text\">Basis-Service: €25/Monat</b><br>Zusätzlich zu den Leistungen des Basisservices biete ich Ihnen fortlaufenden Support, Wartung und Updates für Ihr Pterodactyl-Panel.<br><br>Dazu gehören das Einspielen von Sicherheitspatches, die Fehlerbehebung, die Optimierung der Leistung und die Unterstützung bei der Konfiguration von Spieleservern, wann immer dies erforderlich ist.<br><br>Ideal für langfristige Hosting-Umgebungen, die kontinuierliche Pflege benötigen.",
 
     "SYSADMIN_NAME": "Systemadministration",
-    "SYSADMIN_BASIC":  "<b class=\"centered-text\">Basis-Service: 80 €/Monat</b><br>Ich administriere deinen Server, behebe Probleme, leiste Support und aktualisiere und halte alles sicher.",
-    "SYSADMIN_ADVANCED":  "<b class=\"centered-text\">Basis-Service: 80 €/Monat</b><br>Ich administriere deinen Server, behebe Probleme, leiste Support und aktualisiere und halte alles sicher.",
+    "SYSADMIN_BASIC":  "<b class=\"centered-text\">Basis-Service: 80 €/Monat</b><br>Ich verwalte Ihre Serverinfrastruktur, führe regelmäßige Wartungsarbeiten durch, führe Updates durch und überwache den Systemzustand.<br><br>Ich kümmere mich auch um technische Probleme, konfiguriere die erforderlichen Dienste und sorge für einen sicheren und effizienten Betrieb.<br><br>Dieser Service eignet sich für stabile Umgebungen, in denen Sie sich darauf verlassen können, dass Ihr Server in fachkundigen Händen ist.",
+    "SYSADMIN_ADVANCED":  "",
 
     "SUPPORT_NAME": "Support & Wartung",
     "SUPPORT_BASIC": "<b class=\"centered-text\">Wartungsservice</b><br>Je nach verwendeter Software flexible Basis ab ca. 35-90€/Monat.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b>Support-Service</b><br>Je nach verwendeter Software flexible Basis ab ca. 50-75€/Stunde.<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",
-    "SUPPORT_ADVANCED": "<b class=\"centered-text\">Wartungsservice</b><br>Je nach verwendeter Software flexible Basis ab ca. 35-90€/Monat.<br>Kontaktieren Sie mich für eine genaue Schätzung.<br><br><b>Support-Service</b><br>Je nach verwendeter Software flexible Basis ab ca. 50-75€/Stunde.<br><b>Pauschalpreis:</b> 60-130€ für kleinere Probleme (bis zu 2,5 Stunden, abhängig von der Komplexität, kontaktieren Sie mich für eine genaue Schätzung)",
+    "SUPPORT_ADVANCED": "",
 
     "WP_FILES_NAME": "<b>Individuelles WordPress Website-Design</b> (Nur Dateien)",
     "WP_FILES_BASIC": "<b class=\"centered-text\">Basis-Service: 80€</b><br>Ich entwerfe eine individuelle WordPress Website und liefere die Installationsdateien für Ihren dedizierten Server oder WordPress-Host.<br><br><b class=\"centered-text\">Zusatzleistungen:</b><br>• Wartungsservice (35€/Monat)<br>• Support-Service (50€/Stunde)<br><b>Pauschalpreis:</b> 50€ für kleinere Probleme (bis zu 2,5 Stunden)",

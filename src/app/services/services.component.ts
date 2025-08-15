@@ -93,14 +93,14 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
         {
           name: translations['SERVICES.SYSADMIN_NAME'],
           basic: translations['SERVICES.SYSADMIN_BASIC'],
-          advanced: translations['SERVICES.SYSADMIN_ADVANCED'],
+          advanced: "",
           basicPriceId: 'price_1Rtapt2LT0gYeSqcvZLmcj7S',
-          advancedPriceId: 'price_1Rtapt2LT0gYeSqcvZLmcj7S'
+          advancedPriceId: ''
         },
         {
           name: translations['SERVICES.SUPPORT_NAME'],
           basic: translations['SERVICES.SUPPORT_BASIC'],
-          advanced: translations['SERVICES.SUPPORT_ADVANCED'],
+          advanced: "",
           basicPriceId: '',
           advancedPriceId: ''
         },

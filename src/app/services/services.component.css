@@ -88,37 +88,71 @@
   padding: 25px;
   text-align: center;
   color: white;
-  height: 350px;
+  height: 525px;
   overflow: hidden;
   scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
   scrollbar-gutter: unset;
 }
 
-.tabs {
-  margin-top: 20px;
+.tab-toggle {
+  position: relative;
+  display: flex;
+  background: rgba(74, 69, 96, 0.8);
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 5px;
+  width: 220px;
+  height: 35px;
+  margin: 15px auto;
 }
 
-.tab-btn {
-  background-color: rgba(74, 69, 96, 0.8);
+.tab-slider {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: calc(100% - 10px);
+  width: calc(50% - 5px);
+  background: rgba(187, 107, 209, 0.5);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.tab-slider:hover {
+  background: rgb(86, 80, 112);
+}
+
+.tab-slider.right {
+  left: 50%;
+}
+
+.tab-option {
+  flex: 1;
   border: none;
-  border-radius: 25px;
+  background: transparent;
   color: white;
-  padding: 10px;
-  margin-inline: 15px;
-  margin-bottom: 5px;
+  font-weight: bold;
   font-size: 1rem;
+  padding: 10px 0;
+  z-index: 2;
   cursor: pointer;
-  width: 110px;
-  display: inline-block;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.tab-btn:hover {
-  background-color: rgb(86, 80, 112);
+.tab-option.active {
+  color: white;
 }
 
-.tab-btn.active {
-  background-color: rgba(187, 107, 209, 0.5);
-  color: #ffffff;
+.tab-option:not(.active) {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tab-option:disabled {
+  color : #2e2940;
+  text-decoration: line-through;
 }
 
 .buy-button {
@@ -145,7 +179,7 @@
   text-wrap: pretty;
   text-align: left;
   overflow-y: scroll;
-  height: 200px;
+  height: 340px;
   background: rgba(0, 0, 0, 0.15);
   border-radius: 15px;
   padding: 10px;
