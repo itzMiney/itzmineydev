@@ -58,7 +58,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 30px;
   font-family: "Roboto", sans-serif;
 }
@@ -88,6 +88,10 @@
   padding: 25px;
   text-align: center;
   color: white;
+  height: 350px;
+  overflow: hidden;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  scrollbar-gutter: unset;
 }
 
 .tabs {
@@ -140,6 +144,11 @@
   white-space: pre-line;
   text-wrap: pretty;
   text-align: left;
+  overflow-y: scroll;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 10px;
 }
 
 :host ::ng-deep .centered-text {
