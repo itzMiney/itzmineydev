@@ -153,6 +153,7 @@
 .tab-option:disabled {
   color : #2e2940;
   text-decoration: line-through;
+  cursor: not-allowed;
 }
 
 .buy-button {
