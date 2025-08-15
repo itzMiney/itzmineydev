@@ -41,12 +41,21 @@
             </button>
           </div>
           <div class="tab-content" [innerHTML]="activeTab[i] === 'basic' ? service.basic : service.advanced"></div>
-          <button
+          <a
             class="buy-button"
-            *ngIf="getActivePriceId(service, activeTab[i])"
+            *ngIf="getActivePriceId(service, activeTab[i]); else contactButton"
             (click)="checkout(getActivePriceId(service, activeTab[i])!)">
-            {{ 'BUY' | translate}}
-          </button>
+            {{ 'BUY' | translate }}
+          </a>
+
+          <ng-template #contactButton>
+            <a
+              class="buy-button"
+              [href]="'mailto:michael@itzminey.dev?subject=Inquiry about ' + service.name">
+              {{ 'SERVS_CONTACT' | translate }}
+            </a>
+          </ng-template>
+
         </div>
       </div>
     </div>
