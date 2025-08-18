@@ -6,7 +6,7 @@
       <h1>{{ article.title }}</h1>
       <div class="content-container">
         <!-- Article Content -->
-        <div class="article-content" [innerHTML]="article.content"></div>
+        <div #articleContent class="article-content" [innerHTML]="article.content"></div>
 
         <a href="/blog"><button>{{ 'ARTICLE_BACK' | translate }}</button></a>
         <!-- Article Metadata -->
@@ -16,6 +16,10 @@
           <p><strong>{{ 'CREATED_AT' | translate }}</strong> {{ article.createdAt | date:'MMM dd, yyyy, HH:mm' }}</p>
         </div>
       </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal" *ngIf="selectedImage" (click)="closePreview()">
+      <img [src]="selectedImage" alt="Full Preview" />
     </div>
   </div>
   <!-- Loading State-->

@@ -1,61 +1,33 @@
 <div id="vanta-portfolio-bg"></div>
 <div class="height-container">
-<div class="portfolio-container">
-  <div class="portfolio-header" [ngStyle]="{'margin-top': isMobile ? '60px' : '120px'}">
-    <h1>{{ 'PORTF_TITLE' | translate }}</h1>
-    <p class="subtitle">{{ 'PORTF_SUB' | translate }}</p>
-  </div>
-  <hr class="rounded">
-  <div class="text-content">
-    <p [innerHTML]="'PORTFOLIO' | translate"></p>
-  </div>
-  <div class="commission-button">
-    <a href="https://ko-fi.com/itzminey/commissions" target="_blank">
-      <button class="ko-fi-btn">Commission me on Ko-Fi</button>
-    </a>
-  </div>
-  <div class="portfolio-gallery">
-    <div class="gallery-item">
-      <img src="/assets/design1.png" alt="Design 1">
-      <p>Abstract Background</p>
+  <div class="portfolio-container">
+    <div class="portfolio-header" [ngStyle]="{'margin-top': isMobile ? '60px' : '120px'}">
+      <h1>{{ 'PORTF_TITLE' | translate }}</h1>
+      <p class="subtitle">{{ 'PORTF_SUB' | translate }}</p>
     </div>
-    <div class="gallery-item">
-      <img src="/assets/design2.png" alt="Design 2">
-      <p>Profile Picture Design</p>
+    <hr class="rounded">
+    <div class="text-content">
+      <p [innerHTML]="'PORTFOLIO' | translate"></p>
     </div>
-    <div class="gallery-item">
-      <img src="/assets/design3.png" alt="Design 3">
-      <p>Pixelart Canvas</p>
-    </div>
-    <div class="gallery-item">
-      <img src="/assets/design4.png" alt="Design 4">
-      <p>Profile Picture Design 2</p>
-    </div>
-    <div class="gallery-item">
-      <img src="/assets/design5.png" alt="Design 5">
-      <p>Social Media Banner</p>
-    </div>
-    <div class="gallery-item">
-      <img src="/assets/design6.png" alt="Design 6">
-      <p>Logo Design</p>
-    </div>
-    <div class="gallery-item">
-      <img src="/assets/design7.png" alt="Design 6">
-      <p>Clipart Design</p>
-    </div>
-    <div class="gallery-item">
-      <a href="https://github.com/itzMiney/itzmineydev">
-        <img src="https://opengraph.githubassets.com/1/itzMiney/itzmineydev" alt="Frontend">
-        <p>itzMiney.dev Frontend</p>
+    <div class="commission-button">
+      <a href="https://ko-fi.com/itzminey/commissions" target="_blank">
+        <button class="ko-fi-btn">Commission me on Ko-Fi</button>
       </a>
     </div>
-    <div class="gallery-item">
-      <a href="https://github.com/Hideout-Codeworks/DoritoBot">
-        <img src="https://opengraph.githubassets.com/1/Hideout-Codeworks/DoritoBot" alt="DoritoBot">
-        <p>DoritoBot</p>
-      </a>
+    <div class="portfolio-gallery" [@staggerGallery]>
+      <div class="gallery-item" *ngFor="let item of galleryItems" (click)="openModal(item)">
+        <img [src]="item.src" [alt]="item.alt">
+        <p>{{ item.label }}</p>
+      </div>
     </div>
   </div>
-</div>
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <img [src]="selectedItem?.src" [alt]="selectedItem?.alt">
+      <h2>{{ selectedItem?.label }}</h2>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
 </div>
 <app-audio-player></app-audio-player>

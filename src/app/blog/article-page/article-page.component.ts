@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {DeviceDetectorService} from '../../shared/services/device-detector.service'
 import {DatePipe, isPlatformBrowser, NgIf, NgStyle} from '@angular/common';
 import {VantaBackgroundService} from '../../shared/services/vanta-background.service';
@@ -31,6 +31,9 @@ interface Article {
   styleUrl: './article-page.component.css'
 })
 export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('articleContent') articleContent!: ElementRef<HTMLDivElement>;
+  selectedImage: string | null = null;
+  private imagesProcessed = false;
   private readonly elementId = 'vanta-article-bg';
   isMobile: boolean = false;
   article: Article | undefined;
@@ -98,6 +101,27 @@ export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
       color: 0xac1f4e,
       backgroundColor: 0x191522
     });
+    this.makeImagesClickable();
+    this.imagesProcessed = true;
+  }
+
+  private makeImagesClickable() {
+    const imgs: NodeListOf<HTMLImageElement> = this.articleContent.nativeElement.querySelectorAll('img');
+    imgs.forEach(img => {
+      img.style.cursor = 'pointer';
+      if (!img.dataset['clickable']) {
+        img.addEventListener('click', () => this.openPreview(img.src));
+        img.dataset['clickable'] = 'true';
+      }
+    });
+  }
+
+  openPreview(src: string) {
+    this.selectedImage = src;
+  }
+
+  closePreview() {
+    this.selectedImage = null;
   }
 
   ngOnDestroy() {
@@ -114,17 +138,19 @@ export class ArticlePageComponent implements OnInit, OnDestroy, AfterViewInit {
   loadTitleBySlug(slug: string) {
     this.articleService.getArticleBySlug(slug).subscribe(
       (article) => {
-        if (article) {
-          this.currentArticle = article;
-          this.titleService.setTitle( article.title );
-        } else {
-          console.warn('Article not found for slug:', slug);
-          this.titleService.setTitle('Article Not Found');
-        }
+        this.article = article;
+        this.loading = false;
+
+        setTimeout(() => this.makeImagesClickable(), 0);
+
+        console.log('Article found!')
       },
       (error) => {
-        console.error('Failed to load article title', error);
-        this.titleService.setTitle('Error loading Article');
+        console.error('Error fetching article:', error);
+        this.loading = false;
+        if (error.status === 404) {
+          this.error = true;
+        }
       }
     );
   }
