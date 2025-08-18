@@ -215,13 +215,13 @@ h1 {
 
 @media (max-width: 480px) {
   ::ng-deep img {
-    max-width: 98vw;
+    max-width: 98%;
   }
 }
 
 @media (max-width: 480px) {
   ::ng-deep .modal img {
-    max-width: 100%;
+    max-width: 95%;
     max-height: 95%;
   }
 }
