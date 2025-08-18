@@ -4,7 +4,7 @@ import {ArticleService} from '../shared/services/article.service';
 import {UserService} from '../shared/services/user.service';
 import {NgFor, NgIf, NgStyle} from '@angular/common';
 import {Observer, Subscription, interval} from 'rxjs';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, NgForm} from '@angular/forms';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {Title} from '@angular/platform-browser';
 import {ModalComponent} from '../shared/modal/modal.component';
@@ -152,7 +152,7 @@ export class AdminComponent implements OnInit, OnDestroy {
     );
   }
 
-  editArticle(form: any): void {
+  editArticle(form: NgForm): void {
     this.checkToken();
 
     const articleId = form.value.editId;

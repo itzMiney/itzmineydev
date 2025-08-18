@@ -1,6 +1,6 @@
 <div id="admin-bg">
   <div class="height-container">
-    <!-- Left Section: Placeholder -->
+    <!-- Left Section: Edit/Delete Article -->
     <ng-container *ngIf="!isMobile">
     <div class="left-section">
       <div class="delete-article-tile">
@@ -15,7 +15,7 @@
         <form #editForm="ngForm" id="editForm" (ngSubmit)="editArticle(editForm)">
           <input id="editId" type="number" min="1" required name="editId" ngModel placeholder="Article ID">
           <input id="editTitle" type="text" name="editTitle" ngModel placeholder="Edit Title (Optional)"><br>
-          <textarea id="editContent" type="text" name="editContent" placeholder="Edit Content (Optional)"></textarea>
+          <textarea id="editContent" type="text" name="editContent" ngModel placeholder="Edit Content (Optional)"></textarea>
           <button type="submit" [disabled]="editForm.invalid">Edit Article</button>
         </form>
       </div>
