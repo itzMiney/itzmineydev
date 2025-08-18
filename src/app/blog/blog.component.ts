@@ -75,4 +75,14 @@ export class BlogComponent implements OnInit, OnDestroy, AfterViewInit {
   onResize() {
     this.vantaService.resizeVanta(this.elementId);
   }
+
+  sanitizeContent(content: string): string {
+    if (!content) return '';
+    return content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  truncateContent(content: string, length: number): string {
+    const sanitized = this.sanitizeContent(content);
+    return sanitized.length > length ? sanitized.slice(0, length) + '...' : sanitized;
+  }
 }
