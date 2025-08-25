@@ -75,8 +75,8 @@ const staticMeta = {
     color: '#eb284c'
   },
   '/privacy': {
-    title: 'Terms of Service | itzMiney',
-    description: 'My Terms of Service for the Freelancing work I provide',
+    title: 'Privacy Policy | itzMiney',
+    description: 'My Privacy Policy for the data collected on this site',
     image: 'https://meta.itzminey.dev/assets/ogimg.png',
     url: 'https://itzminey.dev/tos',
     color: '#eb284c'
