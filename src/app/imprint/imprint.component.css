@@ -74,6 +74,14 @@
   color: #7fd67f;
 }
 
+.flex {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 13px;
+  gap: 10px;
+}
+
 @media (max-width: 768px) {
   .imprint-container {
     padding: 20px 10px;

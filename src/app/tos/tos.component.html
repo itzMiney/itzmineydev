@@ -205,6 +205,11 @@
             Email: <a href="mailto:michael@itzminey.dev">michael&#64;itzminey.dev</a>
             <span *ngIf="copiedSection === 'email'" class="copy-status">Copied!</span>
           </li>
+          <li>
+            <span (click)="copyToClipboard('+436604349465')"><i class="fa-solid fa-phone"></i></span>
+            Phone: <a href="tel:+436604349465">+43 660 4349465</a>
+            <span *ngIf="copiedSection === 'phone'" class="copy-status">Copied!</span>
+          </li>
         </ul>
       </section>
     </div>
