@@ -85,7 +85,7 @@
 
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: 10th June 2025",
+    "lastUpdated": "Last updated: 29th October 2025",
     "nav": {
       "controller": "1. Controller of the Data",
       "whatData": "2. What Data We Collect",
@@ -106,8 +106,8 @@
       "noCookies": "We do not use cookies for tracking or analytics purposes.",
       "emailInquiriesTitle": "b) Email Inquiries",
       "emailInquiries": "If you contact us via the email address provided on the website, we may store your message and contact information in order to respond to your inquiry or provide the requested service. This data is treated as confidential and will not be shared with third parties without your consent.",
-      "thirdPartyTitle": "c) Third-Party Services (Cloudflare)",
-      "thirdParty": "We use Cloudflare, Inc. to protect and accelerate our website. Cloudflare provides services such as DDoS protection, secure DNS resolution, and performance optimization. As part of these services, Cloudflare may process technical data such as your IP address and HTTP request headers. This processing occurs solely for security and operational purposes and automatically when you visit the website.<br><br>Cloudflare acts as a processor on our behalf. For more information, see the <a href=\"https://www.cloudflare.com/privacypolicy/\">Cloudflare Privacy Policy</a>."
+      "thirdPartyTitle": "c) Third-Party Services (Cloudflare, Google Search Console)",
+      "thirdParty": "We use trusted third-party services to ensure the security, stability, and visibility of our website.<br><br>Cloudflare, Inc. provides DDoS protection, secure DNS resolution, and performance optimization. As part of these services, Cloudflare may process technical data such as your IP address and HTTP request headers. This processing occurs automatically and solely for security and operational purposes.<br><br>Google Search Console, a service provided by Google LLC, helps us monitor and maintain our website’s presence in Google Search results. It provides aggregated, non-personal performance data (such as search queries, impressions, and indexing information) and does not collect or store any personal data from visitors.<br><br>Both Cloudflare and Google act as independent data processors under applicable privacy regulations. For more information, see the <a href=\"https://www.cloudflare.com/privacypolicy/\" target=\"_blank\">Cloudflare Privacy Policy</a> and the <a href=\"https://policies.google.com/privacy\" target=\"_blank\">Google Privacy Policy</a>."
     },
     "purpose": {
       "title": "3. Purpose and Legal Basis",

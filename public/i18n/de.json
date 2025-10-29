@@ -84,7 +84,7 @@
 
   "privacy": {
     "title": "Datenschutzerklärung",
-    "lastUpdated": "Zuletzt aktualisiert: 10. Juni 2025",
+    "lastUpdated": "Zuletzt aktualisiert: 29. Oktober 2025",
     "nav": {
       "controller": "1. Verantwortlicher",
       "whatData": "2. Welche Daten wir erheben",
@@ -105,8 +105,8 @@
       "noCookies": "Wir verwenden keine Cookies zu Tracking- oder Analysezwecken.",
       "emailInquiriesTitle": "b) E-Mail-Anfragen",
       "emailInquiries": "Wenn Sie uns über die auf der Website angegebene E-Mail-Adresse kontaktieren, können wir Ihre Nachricht und Ihre Kontaktdaten speichern, um auf Ihre Anfrage zu antworten oder den gewünschten Dienst bereitzustellen. Diese Daten werden vertraulich behandelt und nicht ohne Ihre Zustimmung an Dritte weitergegeben.",
-      "thirdPartyTitle": "c) Dienste Dritter (Cloudflare)",
-      "thirdParty": "Wir nutzen Cloudflare, Inc., um unsere Website zu schützen und zu beschleunigen. Cloudflare bietet Dienste wie DDoS-Schutz, sichere DNS-Auflösung und Leistungsoptimierung. Im Rahmen dieser Dienste kann Cloudflare technische Daten wie Ihre IP-Adresse und HTTP-Anfrage-Header verarbeiten. Diese Verarbeitung erfolgt ausschließlich zu Sicherheits- und Betriebszwecken und automatisch beim Aufrufen der Website.<br><br>Cloudflare agiert in unserem Auftrag als Auftragsverarbeiter. Weitere Informationen finden Sie in der <a href=\"https://www.cloudflare.com/privacypolicy/\">Datenschutzerklärung von Cloudflare</a>."
+      "thirdPartyTitle": "c) Dienste Dritter (Cloudflare, Google Search Console)",
+      "thirdParty": "Wir verwenden vertrauenswürdige Dienste von Drittanbietern, um die Sicherheit, Stabilität und Sichtbarkeit unserer Website zu gewährleisten.<br><br>Cloudflare, Inc. bietet Schutz vor DDoS-Angriffen, sicheres DNS-Hosting und Leistungsoptimierungen. Im Rahmen dieser Dienste kann Cloudflare technische Daten wie Ihre IP-Adresse und HTTP-Header verarbeiten. Diese Verarbeitung erfolgt automatisch und ausschließlich zu Sicherheits- und Betriebszwecken.<br><br>Google Search Console, ein Dienst von Google LLC, hilft uns dabei, die Präsenz unserer Website in den Google-Suchergebnissen zu überwachen und zu pflegen. Der Dienst stellt aggregierte, nicht personenbezogene Leistungsdaten (wie Suchanfragen, Impressionen und Indexierungsinformationen) bereit und erhebt oder speichert keine personenbezogenen Daten von Besuchern.<br><br>Sowohl Cloudflare als auch Google agieren als unabhängige Datenverarbeiter im Rahmen der geltenden Datenschutzbestimmungen. Weitere Informationen finden Sie in der <a href=\"https://www.cloudflare.com/privacypolicy/\" target=\"_blank\">Datenschutzerklärung von Cloudflare</a> und der <a href=\"https://policies.google.com/privacy\" target=\"_blank\">Datenschutzerklärung von Google</a>."
     },
     "purpose": {
       "title": "3. Zweck und Rechtsgrundlage",
