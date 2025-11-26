@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       },
     };
 
-    this.authService.login(this.username.trim, this.password).subscribe(observer);
+    this.authService.login(this.username.trim(), this.password).subscribe(observer);
   }
 
   ngAfterViewInit() {
