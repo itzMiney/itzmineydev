@@ -7,7 +7,7 @@ import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
 import {ArticlePageComponent} from './blog/article-page/article-page.component';
 import {SocialsComponent} from './socials/socials.component';
-import {ServicesComponent} from './services/services.component';
+// import {ServicesComponent} from './services/services.component';
 import {TosComponent} from './tos/tos.component';
 import {ImprintComponent} from './imprint/imprint.component';
 import {ShortenerComponent} from './shortener/shortener.component';
@@ -23,7 +23,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'socials', component: SocialsComponent },
-  { path: 'services', component: ServicesComponent },
+//  { path: 'services', component: ServicesComponent },
   { path: 'tos', component: TosComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'imprint', component: ImprintComponent },
