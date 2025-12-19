@@ -3,7 +3,7 @@
   <div class="privacy-container">
     <div class="floating-nav" [class.hidden]="isMobile">
       <ul>
-        <li><a href="#controller" [class.active]="activeSection === 'controller'">{{ 'privacy.nav.controller' | translate }}</a></li>
+        <li><a href="#controller" [class.active]="activeSection === 'controller'" (click)="scrollToSection($event, 'controller')">{{ 'privacy.nav.controller' | translate }}</a></li>
         <li><a href="#what-data" [class.active]="activeSection === 'whatData'" (click)="scrollToSection($event, 'what-data')">{{ 'privacy.nav.whatData' | translate }}</a></li>
         <li><a href="#purpose" [class.active]="activeSection === 'purpose'" (click)="scrollToSection($event, 'purpose')">{{ 'privacy.nav.purpose' | translate }}</a></li>
         <li><a href="#data-retention" [class.active]="activeSection === 'dataRetention'" (click)="scrollToSection($event, 'data-retention')">{{ 'privacy.nav.dataRetention' | translate }}</a></li>
