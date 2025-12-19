@@ -96,7 +96,7 @@
     },
     "controller": {
       "title": "1. Verantwortlicher",
-      "content": "Der Verantwortliche für die Verarbeitung personenbezogener Daten auf dieser Website ist:<br><br><b>Michael Reisinger</b><br>Poxham 23<br>4081 Hartkirchen<br><br><a href=\"mailto:michael@itzminey.dev\">michael&#x40;itzminey.dev</a><br><a href=\"tel:+436604349465\",>+43 660 4349465</a>"
+      "content": "Der Verantwortliche für die Verarbeitung personenbezogener Daten auf dieser Website ist:<br><br><b>Michael Reisinger</b><!-- <br>Poxham 23<br>4081 Hartkirchen<br> --><br><a href=\"mailto:michael@itzminey.dev\">michael&#x40;itzminey.dev</a><!-- <br><a href=\"tel:+436604349465\",>+43 660 4349465</a> -->"
     },
     "whatData": {
       "title": "2. Welche Daten wir erheben",
