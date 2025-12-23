@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
-import {CommonModule, isPlatformBrowser, NgStyle} from '@angular/common';
+import { CommonModule, isPlatformBrowser, NgStyle } from '@angular/common';
 import {Title} from '@angular/platform-browser';
 import {AudioPlayerComponent} from '../shared/audio-player/audio-player.component';
 import {TranslatePipe} from '@ngx-translate/core';

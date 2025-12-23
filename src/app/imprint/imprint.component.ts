@@ -1,15 +1,14 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
 import {Title} from '@angular/platform-browser';
-import {isPlatformBrowser, NgIf} from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-services',
   imports: [
-    NgIf,
     TranslatePipe
-  ],
+],
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.css'
 })

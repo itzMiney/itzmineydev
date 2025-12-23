@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '
 import {AuthService} from '../shared/services/auth.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {NgIf} from '@angular/common';
+
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {isPlatformBrowser} from '@angular/common';
@@ -14,9 +14,8 @@ import { take } from 'rxjs/operators';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   imports: [
-    FormsModule,
-    NgIf,
-  ]
+    FormsModule
+]
 })
 
 export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {

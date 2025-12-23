@@ -20,8 +20,12 @@
       <section id="controller">
         <h2 (click)="copySectionLink('controller')" class="clickable-title">
           {{ 'privacy.controller.title' | translate }}
-          <span class="link-icon" *ngIf="copiedSection !== 'controller'"><i class="fa-solid fa-link"></i></span>
-          <span class="copied-text" *ngIf="copiedSection === 'controller'">Copied!</span>
+          @if (copiedSection !== 'controller') {
+            <span class="link-icon"><i class="fa-solid fa-link"></i></span>
+          }
+          @if (copiedSection === 'controller') {
+            <span class="copied-text">Copied!</span>
+          }
         </h2>
         <p [innerHTML]="'privacy.controller.content' | translate"></p>
       </section>
@@ -29,8 +33,12 @@
       <section id="what-data">
         <h2 (click)="copySectionLink('what-data')" class="clickable-title">
           {{ 'privacy.whatData.title' | translate }}
-          <span class="link-icon" *ngIf="copiedSection !== 'what-data'"><i class="fa-solid fa-link"></i></span>
-          <span class="copied-text" *ngIf="copiedSection === 'what-data'">Copied!</span>
+          @if (copiedSection !== 'what-data') {
+            <span class="link-icon"><i class="fa-solid fa-link"></i></span>
+          }
+          @if (copiedSection === 'what-data') {
+            <span class="copied-text">Copied!</span>
+          }
         </h2>
         <p><b>{{ 'privacy.whatData.websiteUsageTitle' | translate }}</b></p>
         <div class="indent"><p>{{ 'privacy.whatData.websiteUsage' | translate }}</p></div>
@@ -44,20 +52,30 @@
       <section id="purpose">
         <h2 (click)="copySectionLink('purpose')" class="clickable-title">
           {{ 'privacy.purpose.title' | translate }}
-          <span class="link-icon" *ngIf="copiedSection !== 'purpose'"><i class="fa-solid fa-link"></i></span>
-          <span class="copied-text" *ngIf="copiedSection === 'purpose'">Copied!</span>
+          @if (copiedSection !== 'purpose') {
+            <span class="link-icon"><i class="fa-solid fa-link"></i></span>
+          }
+          @if (copiedSection === 'purpose') {
+            <span class="copied-text">Copied!</span>
+          }
         </h2>
         <p>{{ 'privacy.purpose.intro' | translate }}</p>
         <ul>
-          <li *ngFor="let point of ['privacy.purpose.points' | translate]">{{ point }}</li>
+          @for (point of ['privacy.purpose.points' | translate]; track point) {
+            <li>{{ point }}</li>
+          }
         </ul>
       </section>
 
       <section id="data-retention">
         <h2 (click)="copySectionLink('data-retention')" class="clickable-title">
           {{ 'privacy.dataRetention.title' | translate }}
-          <span class="link-icon" *ngIf="copiedSection !== 'data-retention'"><i class="fa-solid fa-link"></i></span>
-          <span class="copied-text" *ngIf="copiedSection === 'data-retention'">Copied!</span>
+          @if (copiedSection !== 'data-retention') {
+            <span class="link-icon"><i class="fa-solid fa-link"></i></span>
+          }
+          @if (copiedSection === 'data-retention') {
+            <span class="copied-text">Copied!</span>
+          }
         </h2>
         <p>{{ 'privacy.dataRetention.content' | translate }}</p>
       </section>
@@ -65,8 +83,12 @@
       <section id="your-rights">
         <h2 (click)="copySectionLink('your-rights')" class="clickable-title">
           {{ 'privacy.yourRights.title' | translate }}
-          <span class="link-icon" *ngIf="copiedSection !== 'your-rights'"><i class="fa-solid fa-link"></i></span>
-          <span class="copied-text" *ngIf="copiedSection === 'your-rights'">Copied!</span>
+          @if (copiedSection !== 'your-rights') {
+            <span class="link-icon"><i class="fa-solid fa-link"></i></span>
+          }
+          @if (copiedSection === 'your-rights') {
+            <span class="copied-text">Copied!</span>
+          }
         </h2>
         <p>{{ 'privacy.yourRights.intro' | translate }}</p>
         <ul>
@@ -81,8 +103,12 @@
       <section id="security">
         <h2 (click)="copySectionLink('security')" class="clickable-title">
           {{ 'privacy.security.title' | translate }}
-          <span class="link-icon" *ngIf="copiedSection !== 'security'"><i class="fa-solid fa-link"></i></span>
-          <span class="copied-text" *ngIf="copiedSection === 'security'">Copied!</span>
+          @if (copiedSection !== 'security') {
+            <span class="link-icon"><i class="fa-solid fa-link"></i></span>
+          }
+          @if (copiedSection === 'security') {
+            <span class="copied-text">Copied!</span>
+          }
         </h2>
         <p>{{ 'privacy.security.content' | translate }}</p>
       </section>
@@ -90,8 +116,12 @@
       <section id="changes">
         <h2 (click)="copySectionLink('changes')" class="clickable-title">
           {{ 'privacy.changes.title' | translate }}
-          <span class="link-icon" *ngIf="copiedSection !== 'changes'"><i class="fa-solid fa-link"></i></span>
-          <span class="copied-text" *ngIf="copiedSection === 'changes'">Copied!</span>
+          @if (copiedSection !== 'changes') {
+            <span class="link-icon"><i class="fa-solid fa-link"></i></span>
+          }
+          @if (copiedSection === 'changes') {
+            <span class="copied-text">Copied!</span>
+          }
         </h2>
         <p>{{ 'privacy.changes.content' | translate }}</p>
       </section>

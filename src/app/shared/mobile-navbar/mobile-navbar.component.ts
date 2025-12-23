@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DeviceDetectorService} from 'ngx-device-detector';
-import {NgIf} from '@angular/common';
+
 import {NavigationEnd, Router, RouterLink} from '@angular/router';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
@@ -8,9 +8,8 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
   selector: 'app-mobile-navbar',
   imports: [
     RouterLink,
-    NgIf,
     TranslatePipe
-  ],
+],
   templateUrl: './mobile-navbar.component.html',
   styleUrl: './mobile-navbar.component.css'
 })

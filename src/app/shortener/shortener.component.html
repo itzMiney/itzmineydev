@@ -15,65 +15,68 @@
               class="form-control"
               placeholder="Original URL"
               required
-            />
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="text"
+                id="short_name"
+                name="short_name"
+                ngModel
+                class="form-control"
+                placeholder="Short URL Name (Optional)"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Shorten URL</button>
+            </form>
           </div>
 
-          <div class="form-group">
-            <input
-              type="text"
-              id="short_name"
-              name="short_name"
-              ngModel
-              class="form-control"
-              placeholder="Short URL Name (Optional)"
-            />
+          <!-- Delete URL Section -->
+          <div class="form-section">
+            <h3>Delete Short URL</h3>
+            <form (ngSubmit)="deleteShortURL(deleteURLForm)" #deleteURLForm="ngForm">
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="deleteId"
+                  name="deleteId"
+                  ngModel
+                  class="form-control"
+                  placeholder="ID"
+                  required
+                  />
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+              </form>
+            </div>
+
+            <h3>Existing Short URLs</h3>
           </div>
 
-          <button type="submit" class="btn btn-primary">Shorten URL</button>
-        </form>
-      </div>
+          <!-- Scrollable URL list -->
+          <div class="url-list-wrapper">
+            @if (noURLs) {
+              <div>
+                <p>No short URLs available.</p>
+              </div>
+            } @else {
+              <ul class="url-list-items">
+                @for (url of urls; track url) {
+                  <li>
+                    <strong>ID {{url.id}}</strong> // <strong>URL: </strong>
+                    <a [href]="'https://itz.sh/' + url.short_url" target="_blank">{{ 'https://itz.sh/' + url.short_url }}</a><br>
+                    <strong>Original: </strong>
+                    <a [href]="url.og_url" target="_blank">
+                      {{ (url.og_url | slice:0:45) + (url.og_url.length > 40 ? '...' : '')}}
+                    </a><br>
+                  </li>
+                }
+              </ul>
+            }
 
-      <!-- Delete URL Section -->
-      <div class="form-section">
-        <h3>Delete Short URL</h3>
-        <form (ngSubmit)="deleteShortURL(deleteURLForm)" #deleteURLForm="ngForm">
-          <div class="form-group">
-            <input
-              type="number"
-              id="deleteId"
-              name="deleteId"
-              ngModel
-              class="form-control"
-              placeholder="ID"
-              required
-            />
-            <button type="submit" class="btn btn-danger">Delete</button>
           </div>
-        </form>
+
+        </div>
       </div>
-
-      <h3>Existing Short URLs</h3>
-    </div>
-
-    <!-- Scrollable URL list -->
-    <div class="url-list-wrapper">
-      <div *ngIf="noURLs; else urlList">
-        <p>No short URLs available.</p>
-      </div>
-
-      <ng-template #urlList>
-        <ul class="url-list-items">
-          <li *ngFor="let url of urls">
-            <strong>ID {{url.id}}</strong> // <strong>URL: </strong>
-            <a [href]="'https://itz.sh/' + url.short_url" target="_blank">{{ 'https://itz.sh/' + url.short_url }}</a><br>
-            <strong>Original: </strong>
-            <a [href]="url.og_url" target="_blank">
-              {{ (url.og_url | slice:0:45) + (url.og_url.length > 40 ? '...' : '')}}
-            </a><br>
-          </li>
-        </ul>
-      </ng-template>
-    </div>
-
-  </div>
-</div>

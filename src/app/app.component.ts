@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
+
 import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import {NavbarComponent} from './shared/navbar/navbar.component';
 import {MobileNavbarComponent} from './shared/mobile-navbar/mobile-navbar.component';
@@ -9,7 +9,7 @@ import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, MobileNavbarComponent, CommonModule],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, MobileNavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

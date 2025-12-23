@@ -6,15 +6,18 @@
   </div>
   <hr class="rounded">
   <div class="blog-container">
-    <div *ngIf="articles$ | async as articles; else noArticles">
-      <div *ngFor="let article of articles.slice().reverse()" (click)="navigateToArticle(article.slug)" class="article-card">
-        <h2>{{ (article.title | slice:0:45) + (article.title.length > 40 ? '...' : '')}}</h2>
-        <p>{{ truncateContent(article.content, 80) }}</p>
-        <p><small>By {{ article.authorName }} | {{ article.createdAt | date: 'dd/MM/yy, HH:mm' }}</small></p>
+    @if (articles$ | async; as articles) {
+      <div>
+        @for (article of articles.slice().reverse(); track article) {
+          <div (click)="navigateToArticle(article.slug)" class="article-card">
+            <h2>{{ (article.title | slice:0:45) + (article.title.length > 40 ? '...' : '')}}</h2>
+            <p>{{ truncateContent(article.content, 80) }}</p>
+            <p><small>By {{ article.authorName }} | {{ article.createdAt | date: 'dd/MM/yy, HH:mm' }}</small></p>
+          </div>
+        }
       </div>
-    </div>
+    } @else {
+      <h2>{{ 'ARTICLES_NONE' | translate }}</h2>
+    }
   </div>
-<ng-template #noArticles>
-  <h2>{{ 'ARTICLES_NONE' | translate }}</h2>
-</ng-template>
 </div>

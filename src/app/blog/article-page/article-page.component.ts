@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {DeviceDetectorService} from '../../shared/services/device-detector.service'
-import {DatePipe, isPlatformBrowser, NgIf, NgStyle} from '@angular/common';
+import { DatePipe, isPlatformBrowser, NgStyle } from '@angular/common';
 import {VantaBackgroundService} from '../../shared/services/vanta-background.service';
 import {ArticleService} from '../../shared/services/article.service';
 import {ActivatedRoute} from '@angular/router';
@@ -22,11 +22,10 @@ interface Article {
 @Component({
   selector: 'app-article-page',
   imports: [
-    NgIf,
     DatePipe,
     NgStyle,
     TranslatePipe
-  ],
+],
   templateUrl: './article-page.component.html',
   styleUrl: './article-page.component.css'
 })

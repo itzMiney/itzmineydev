@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ArticleService} from '../shared/services/article.service';
 import {UserService} from '../shared/services/user.service';
-import {NgFor, NgIf, NgStyle} from '@angular/common';
+import { NgStyle } from '@angular/common';
 import {Observer, Subscription, interval} from 'rxjs';
 import {FormsModule, NgForm} from '@angular/forms';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
@@ -15,12 +15,10 @@ import {AuthService} from '../shared/services/auth.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
   imports: [
-    NgIf,
-    NgFor,
     FormsModule,
     NgStyle,
     ModalComponent
-  ]
+]
 })
 export class AdminComponent implements OnInit, OnDestroy {
   tokenValidationInterval: Subscription = new Subscription();

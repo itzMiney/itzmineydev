@@ -15,19 +15,23 @@
       </a>
     </div>
     <div class="portfolio-gallery" [@staggerGallery]>
-      <div class="gallery-item" *ngFor="let item of galleryItems" (click)="openModal(item)">
-        <img [src]="item.src" [alt]="item.alt">
-        <p>{{ item.label }}</p>
-      </div>
+      @for (item of galleryItems; track item) {
+        <div class="gallery-item" (click)="openModal(item)">
+          <img [src]="item.src" [alt]="item.alt">
+          <p>{{ item.label }}</p>
+        </div>
+      }
     </div>
   </div>
   <!-- Modal -->
-  <div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()">
-    <div class="modal-content" (click)="$event.stopPropagation()">
-      <img [src]="selectedItem?.src" [alt]="selectedItem?.alt">
-      <h2>{{ selectedItem?.label }}</h2>
-      <button (click)="closeModal()">Close</button>
+  @if (showModal) {
+    <div class="modal-backdrop" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <img [src]="selectedItem?.src" [alt]="selectedItem?.alt">
+        <h2>{{ selectedItem?.label }}</h2>
+        <button (click)="closeModal()">Close</button>
+      </div>
     </div>
-  </div>
+  }
 </div>
 <app-audio-player></app-audio-player>

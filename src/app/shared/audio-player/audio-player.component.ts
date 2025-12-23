@@ -1,5 +1,5 @@
 import {Component, AfterViewInit, signal} from '@angular/core';
-import {NgIf} from '@angular/common';
+
 
 declare global {
   interface Window {
@@ -10,9 +10,7 @@ declare global {
 
 @Component({
   selector: 'app-audio-player',
-  imports: [
-    NgIf
-  ],
+  imports: [],
   templateUrl: './audio-player.component.html',
   styleUrl: './audio-player.component.css'
 })

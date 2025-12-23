@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {DeviceDetectorService} from '../shared/services/device-detector.service'
-import {DatePipe, isPlatformBrowser, NgIf, NgFor, AsyncPipe, SlicePipe, NgStyle} from '@angular/common';
+import { DatePipe, isPlatformBrowser, AsyncPipe, SlicePipe, NgStyle } from '@angular/common';
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
 import { ArticleService } from '../shared/services/article.service';
 import { Router } from '@angular/router';
@@ -11,14 +11,12 @@ import {TranslatePipe} from '@ngx-translate/core';
 @Component({
   selector: 'app-blog',
   imports: [
-    NgIf,
-    NgFor,
     DatePipe,
     AsyncPipe,
     SlicePipe,
     NgStyle,
     TranslatePipe
-  ],
+],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })

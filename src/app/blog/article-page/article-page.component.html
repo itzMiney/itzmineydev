@@ -1,37 +1,43 @@
 <div id="vanta-article-bg"></div>
 <div class="height-container">
-  <div class="article-container" *ngIf="!loading && article; else error">
-    <div>
-      <!-- Article Title -->
-      <h1>{{ article.title }}</h1>
-      <div class="content-container">
-        <!-- Article Content -->
-        <div #articleContent class="article-content" [innerHTML]="article.content"></div>
-
-        <a href="/blog"><button>{{ 'ARTICLE_BACK' | translate }}</button></a>
-        <!-- Article Metadata -->
-        <div class="article-meta">
-          <p><strong>Author:</strong> {{ article.authorName}}</p>
-          <p><strong>Views:</strong> {{ article.views }}</p><br><button (click)="copyLink()" [ngStyle]="{'background-color':copied ? '#22b34b' : ''}">{{ copied ? 'Copied' : 'Share' }}</button>
-          <p><strong>{{ 'CREATED_AT' | translate }}</strong> {{ article.createdAt | date:'MMM dd, yyyy, HH:mm' }}</p>
+  @if (!loading && article) {
+    <div class="article-container">
+      <div>
+        <!-- Article Title -->
+        <h1>{{ article.title }}</h1>
+        <div class="content-container">
+          <!-- Article Content -->
+          <div #articleContent class="article-content" [innerHTML]="article.content"></div>
+          <a href="/blog"><button>{{ 'ARTICLE_BACK' | translate }}</button></a>
+          <!-- Article Metadata -->
+          <div class="article-meta">
+            <p><strong>Author:</strong> {{ article.authorName}}</p>
+            <p><strong>Views:</strong> {{ article.views }}</p><br><button (click)="copyLink()" [ngStyle]="{'background-color':copied ? '#22b34b' : ''}">{{ copied ? 'Copied' : 'Share' }}</button>
+            <p><strong>{{ 'CREATED_AT' | translate }}</strong> {{ article.createdAt | date:'MMM dd, yyyy, HH:mm' }}</p>
+          </div>
         </div>
       </div>
+      <!-- Modal -->
+      @if (selectedImage) {
+        <div class="modal" (click)="closePreview()">
+          <img [src]="selectedImage" alt="Full Preview" />
+        </div>
+      }
     </div>
-    <!-- Modal -->
-    <div class="modal" *ngIf="selectedImage" (click)="closePreview()">
-      <img [src]="selectedImage" alt="Full Preview" />
-    </div>
-  </div>
+  } @else {
+    @if (!loading && error) {
+      <div class="error-message">
+        <h1>404</h1>
+        <p>{{ 'ARTICLE_NOTFOUND' | translate }}</p>
+        <a href="/blog"><button>{{ 'ARTICLE_BACK' | translate }}</button></a>
+      </div>
+    }
+  }
   <!-- Loading State-->
-  <div *ngIf="loading" class="loading-container">
-    <div class="spinner"></div>
-  </div>
-  <!-- Error Message -->
-  <ng-template #error>
-    <div class="error-message" *ngIf="!loading && error">
-      <h1>404</h1>
-      <p>{{ 'ARTICLE_NOTFOUND' | translate }}</p>
-      <a href="/blog"><button>{{ 'ARTICLE_BACK' | translate }}</button></a>
+  @if (loading) {
+    <div class="loading-container">
+      <div class="spinner"></div>
     </div>
-  </ng-template>
+  }
+  <!-- Error Message -->
 </div>

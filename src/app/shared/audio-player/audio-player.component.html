@@ -7,15 +7,17 @@
       <i class="{{ isPlaying() ? 'fa-solid fa-pause' : 'fa-solid fa-play'}}"></i>
     </button>
     <button (click)="nextVideo()" [disabled]="!isPlayerReady"><i class="fa-solid fa-forward"></i></button>
-    <div class="volume-control" *ngIf="isPlayerReady()">
-      <input
-        id="volume"
-        type="range"
-        min="0"
-        max="100"
-        [value]="volume()"
-        (input)="onVolumeChange($event)"
-      />
+    @if (isPlayerReady()) {
+      <div class="volume-control">
+        <input
+          id="volume"
+          type="range"
+          min="0"
+          max="100"
+          [value]="volume()"
+          (input)="onVolumeChange($event)"
+          />
+        </div>
+      }
     </div>
   </div>
-</div>

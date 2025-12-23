@@ -3,7 +3,7 @@ import {Title} from '@angular/platform-browser';
 import {ShortenerService} from '../shared/services/shortener.service';
 import {interval, Subscription, switchMap} from 'rxjs';
 import {FormsModule} from '@angular/forms';
-import {NgFor, NgIf, SlicePipe} from '@angular/common';
+import { SlicePipe } from '@angular/common';
 import {AuthService} from '../shared/services/auth.service';
 import {filter} from 'rxjs/operators';
 
@@ -11,10 +11,8 @@ import {filter} from 'rxjs/operators';
   selector: 'app-shortener',
   imports: [
     FormsModule,
-    NgFor,
-    NgIf,
     SlicePipe
-  ],
+],
   templateUrl: './shortener.component.html',
   styleUrl: './shortener.component.css'
 })
