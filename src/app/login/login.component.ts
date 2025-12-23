@@ -6,7 +6,8 @@ import {NgIf} from '@angular/common';
 import {VantaBackgroundService} from '../shared/services/vanta-background.service';
 import {DeviceDetectorService} from '../shared/services/device-detector.service';
 import {isPlatformBrowser} from '@angular/common';
-import {Title} from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -19,12 +20,18 @@ import {Title} from '@angular/platform-browser';
 })
 
 export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
-  username: string = '';
-  password: string = '';
-  errorMessage: string = '';
+  username = '';
+  password = '';
+  errorMessage = '';
+  private readonly isBrowser: boolean;
+  private readonly boundResize = this.onResize.bind(this);
   private readonly elementId = 'vanta-login-bg';
-  isMobile: boolean = false;
-  redirectUrl: string = '/admin';
+  private readonly allowedAdminRoutes = new Set([
+    '/admin',
+    '/shortener'
+  ]);
+  isMobile = false;
+  redirectUrl = '/admin';
 
   constructor(
     private authService: AuthService,
@@ -34,51 +41,42 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
     private deviceService: DeviceDetectorService,
     private titleService: Title,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit() {
     this.titleService.setTitle('Login | itzMiney')
     this.isMobile = this.deviceService.isMobile;
 
-    this.route.queryParams.subscribe(params => {
-      if (params['redirectUrl']) {
-        this.redirectUrl = decodeURIComponent(params['redirectUrl']);
+    this.route.queryParams.pipe(take(1)).subscribe(params => {
+      const raw = params['redirectUrl'];
+
+      if (typeof raw === 'string' && this.allowedAdminRoutes.has(raw)) {
+        this.redirectUrl = raw;
+      } else {
+        this.redirectUrl = '/admin';
       }
     });
 
-    if (isPlatformBrowser(this.platformId)) {
-      window.addEventListener('resize', this.onResize.bind(this));
+    if (this.isBrowser) {
+      window.addEventListener('resize', this.boundResize);
     }
   }
 
   onLogin() {
-    const observer = {
-      'next': (response: any) => {
-        localStorage.setItem('token', response.token);
-        this.router.navigate([this.redirectUrl]).then(
-          (success) => {
-            if (success) {
-              console.log('Navigation to admin succeeded');
-            } else {
-              console.warn('Navigation to admin failed');
-            }
-          },
-          (error) => {
-            console.error('Navigation error:', error);
-          }
-        );
-      },
-      error: (err: any) => {
-        if (err.error && err.error.message) {
-          this.errorMessage = err.error.message;
-        } else {
-          this.errorMessage = 'An error occurred. Please try again later.';
-        }
-        console.error('Login error:', err);
-      },
-    };
+    this.errorMessage = '';
 
-    this.authService.login(this.username.trim(), this.password).subscribe(observer);
+    this.authService.login(this.username.trim(), this.password).subscribe({
+      next: () => {
+        void this.router.navigateByUrl(this.redirectUrl);
+      },
+      error: (err) => {
+        this.errorMessage =
+          err?.error?.message ?? 'An error occurred. Please try again later.';
+        console.error('Login error:', err);
+      }
+    });
   }
 
   ngAfterViewInit() {
@@ -86,8 +84,8 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   }
   ngOnDestroy() {
     this.vantaService.destroyVanta(this.elementId);
-    if (isPlatformBrowser(this.platformId)) {
-      window.removeEventListener('resize', this.onResize);
+    if (this.isBrowser) {
+      window.removeEventListener('resize', this.boundResize);
     }
   }
 

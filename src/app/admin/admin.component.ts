@@ -23,6 +23,8 @@ import {AuthService} from '../shared/services/auth.service';
   ]
 })
 export class AdminComponent implements OnInit, OnDestroy {
+  tokenValidationInterval: Subscription = new Subscription();
+
   articles: any[] = [];
   users: any[] = [];
   noArticles: boolean = false;
@@ -37,9 +39,6 @@ export class AdminComponent implements OnInit, OnDestroy {
   isModalOpen: boolean = false;
   isViewingArticles: boolean = true;
 
-  token: string | null= localStorage.getItem('token');
-  tokenValidationInterval: Subscription = new Subscription();
-
   userData = {
     username: '',
     password: '',
@@ -52,85 +51,28 @@ export class AdminComponent implements OnInit, OnDestroy {
     private router: Router,
     private deviceService: DeviceDetectorService,
     private titleService: Title,
-    private authService: AuthService
+    protected authService: AuthService
   ) {}
 
   ngOnInit() {
     this.titleService.setTitle('Admin Panel | itzMiney')
     this.isMobile = this.deviceService.isMobile;
-    this.checkToken();
-    this.loadArticles();
+    this.authService.validateToken().subscribe();
     this.startTokenValidation();
+    this.loadArticles();
   }
 
   ngOnDestroy() {
-    if (this.tokenValidationInterval) {
-      this.tokenValidationInterval.unsubscribe();
-    }
+    this.tokenValidationInterval.unsubscribe();
   }
 
   startTokenValidation() {
     this.tokenValidationInterval = interval(300000).subscribe(() => {
-      this.authService.isTokenValid(this.token).subscribe(
-        (isValid: boolean) => {
-          if (!isValid) {
-            console.warn('Token is no longer valid. Logging out.');
-            localStorage.removeItem('token');
-            this.navigateToLogin();
-          }
-        },
-        (error) => {
-          console.error('Error validating token:', error);
-          localStorage.removeItem('token');
-          this.navigateToLogin();
-        }
-      );
+      this.authService.validateToken().subscribe();
     });
-  }
-
-  checkToken() {
-    if (!this.token || !this.isValidToken(this.token)) {
-      localStorage.removeItem('token');
-      this.navigateToLogin();
-      return;
-    }
-  }
-
-  isValidToken(token: string) {
-    try {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      const expiry = payload.exp * 1000;
-
-      return expiry > Date.now();
-    } catch (e) {
-      console.error('Invalid token format:', e);
-      return false;
-    }
-  }
-
-  async navigateToLogin() {
-    try {
-    const currentRoute = this.router.url;
-    const success = await this.router.navigate(['/login'], {
-      queryParams: { redirectUrl: currentRoute },
-    });
-    if (success) {
-      console.log('Navigation to login succeeded');
-    } else {
-      console.warn('Navigation to login failed');
-    }
-  } catch (error) {
-    console.error('Navigation error:', error);
-  }
   }
 
   createArticle(form: any) {
-    if (!this.token || !this.isValidToken(this.token)) {
-      localStorage.removeItem('token');
-      this.navigateToLogin();
-      return;
-    }
-
     const title = form.value.title;
     const content = form.value.content;
 
@@ -139,28 +81,38 @@ export class AdminComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.articleService.postArticle(this.token, title, content).subscribe(
-      (response) => {
-        alert('Article created successfully!');
-        this.loadArticles();
-        console.log(response);
-      },
-      (error) => {
-        alert('Error creating article');
-        console.error(error);
-      }
-    );
+    this.authService.validateToken().subscribe(valid => {
+      if (!valid) return;
+
+      const token = this.authService.token!;
+      this.articleService.postArticle(token, title, content).subscribe(
+        () => {
+          alert('Article created successfully!');
+          this.loadArticles();
+        },
+        error => {
+          alert('Error creating article');
+          console.error(error);
+        }
+      );
+    });
   }
 
   editArticle(form: NgForm): void {
-    this.checkToken();
-
     const articleId = form.value.editId;
 
-    if (articleId && !isNaN(Number(articleId))) {
-      const id = Number(articleId);
+    if (!articleId || isNaN(Number(articleId))) {
+      alert('Invalid input. Please enter a valid article ID.');
+      return;
+    }
 
-      // Fetch the current article to get existing values
+    const id = Number(articleId);
+
+    this.authService.validateToken().subscribe(valid => {
+      if (!valid) return;
+
+      const token = this.authService.token!;
+
       this.articleService.getArticleById(id).subscribe(
         (article) => {
           if (!article) {
@@ -171,11 +123,10 @@ export class AdminComponent implements OnInit, OnDestroy {
           const newTitle = form.value.editTitle || form.value.editTitleMobile;
           const newContent = form.value.editContent || form.value.editContentMobile;
 
-          // Use current values if left blank
           const updatedTitle = newTitle?.trim() || article.title;
           const updatedContent = newContent?.trim() || article.content;
 
-          this.articleService.editArticle(id, this.token, updatedTitle, updatedContent).subscribe(
+          this.articleService.editArticle(id, token, updatedTitle, updatedContent).subscribe(
             (response) => {
               alert(`Article ${id} updated successfully!`);
               console.log('Updated Article:', response);
@@ -183,58 +134,46 @@ export class AdminComponent implements OnInit, OnDestroy {
             },
             (error) => {
               alert(`Error updating article ${id}: ${error.message}`);
-              console.error('Error:', error)
+              console.error('Error:', error);
             }
           );
         },
-        (error: { message: any; }) => {
+        (error: { message: any }) => {
           alert(`Failed to fetch article with ID ${id}: ${error.message}`);
-          console.error('Error:', error)
+          console.error('Error:', error);
         }
       );
-    } else {
-      alert('Invalid input. Please enter a valid article ID.');
-    }
+    });
   }
 
   deleteArticle(form: any): void {
-    if (!this.token || !this.isValidToken(this.token)) {
-      localStorage.removeItem('token');
-      this.navigateToLogin();
+    const articleId = form.value.deleteId || form.value.deleteIdMobile;
+
+    if (!articleId || isNaN(Number(articleId))) {
+      alert('Invalid input. Please enter a valid article ID.');
       return;
     }
 
-    const articleId = form.value.deleteId || form.value.deleteIdMobile;
+    this.authService.validateToken().subscribe(valid => {
+      if (!valid) return;
 
-    if (articleId && !isNaN(Number(articleId))) {
-      this.articleService.deleteArticle(articleId, this.token).subscribe(
+      const token = this.authService.token!;
+
+      this.articleService.deleteArticle(Number(articleId), token).subscribe(
         () => {
           alert(`Article ${articleId} deleted successfully`);
           this.loadArticles();
         },
-        (error) => {
+        error => {
           alert(`Error deleting article ${articleId}: ${error.message}`);
-          console.error('Error deleting article:', error)
+          console.error(error);
         }
       );
-    } else {
-      alert('Invalid input. Please enter a valid article ID.');
-    }
+    });
   }
 
   navigateToArticle(slug: string): void {
-    this.router.navigate([`/blog/${slug}`]).then(
-      (success) => {
-        if (success) {
-          console.log('Navigation to article succeeded');
-        } else {
-          console.warn('Navigation to article failed');
-        }
-      },
-      (error) => {
-        console.error('Navigation error:', error);
-      }
-    );
+    void this.router.navigate([`/blog/${slug}`]);
   }
 
   loadArticles(): void {
@@ -254,8 +193,14 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   loadUsers() {
-    this.userService.getAllUsers(this.token).subscribe((data: any[]) => {
-      this.users = data;
+    this.authService.validateToken().subscribe(valid => {
+      if (!valid) return;
+
+      const token = this.authService.token!;
+
+      this.userService.getAllUsers(token).subscribe(data => {
+        this.users = data;
+      });
     });
   }
 
@@ -265,11 +210,6 @@ export class AdminComponent implements OnInit, OnDestroy {
       this.loadUsers();
       this.loadArticles();
     }
-  }
-
-  logout() {
-    localStorage.removeItem('token');
-    this.navigateToLogin();
   }
 
   openModal(action: string) {
@@ -299,11 +239,6 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   createUser(form: any): void {
-    if (!this.token) {
-      this.navigateToLogin();
-      return;
-    }
-
     const username = form.value.createUsername;
     const password = form.value.createPassword;
 
@@ -312,30 +247,43 @@ export class AdminComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.userService.createUser(this.token, username, password).subscribe(
-      (response) => {
-        alert('User created successfully!');
-        this.loadUsers();
-        console.log(response);
-      },
-      (error) => {
-        alert('Error creating user');
-        console.error(error);
-      });
-    this.closeModal();
+    this.authService.validateToken().subscribe(valid => {
+      if (!valid) return;
+
+      const token = this.authService.token!;
+
+      this.userService.createUser(token, username, password).subscribe(
+        (response) => {
+         alert('User created successfully!');
+         this.loadUsers();
+         console.log(response);
+         },
+
+        (error) => {
+          alert('Error creating user');
+          console.error(error);
+        });
+      this.closeModal();
+    });
   }
 
   editUser(form: any): void {
-    if (!this.token) {
-      this.navigateToLogin();
-      return;
-    }
     const userId = form.value.editUserId;
 
-    if (userId && !isNaN(Number(userId))) {
-      const id = Number(userId);
+    if (!userId || isNaN(Number(userId))) {
+      alert('Invalid input. Please enter a valid user ID.');
+      this.closeModal();
+      return;
+    }
 
-      this.userService.getUserById(id, this.token).subscribe(
+    const id = Number(userId);
+
+    this.authService.validateToken().subscribe(valid => {
+      if (!valid) return;
+
+      const token = this.authService.token!;
+
+      this.userService.getUserById(id, token).subscribe(
         (user) => {
           if (!user) {
             alert(`User with ID ${id} not found.`);
@@ -345,11 +293,10 @@ export class AdminComponent implements OnInit, OnDestroy {
           const newUsername = form.value.editUsername;
           const newPassword = form.value.editPassword;
 
-          // Use current values if left blank
           const updatedUsername = newUsername?.trim();
           const updatedPassword = newPassword?.trim();
 
-          this.userService.editUser(id, this.token, updatedUsername, updatedPassword).subscribe(
+          this.userService.editUser(id, token, updatedUsername, updatedPassword).subscribe(
             (response) => {
               alert(`User ${id} updated successfully!`);
               console.log('Updated User:', response);
@@ -357,44 +304,47 @@ export class AdminComponent implements OnInit, OnDestroy {
             },
             (error) => {
               alert(`Error updating user ${id}: ${error.message}`);
-              console.error('Error:', error)
+              console.error('Error:', error);
             }
           );
         },
-        (error: { message: any; }) => {
+        (error: { message: any }) => {
           alert(`Failed to fetch user with ID ${id}: ${error.message}`);
-          console.error('Error:', error)
+          console.error('Error:', error);
         }
       );
-    } else {
-      alert('Invalid input. Please enter a valid article ID.');
-    }
+    });
+
     this.closeModal();
   }
 
   deleteUser(form: any): void {
-    if (!this.token) {
-      this.navigateToLogin();
+    const userId = form.value.deleteUserId;
+
+    if (!userId || isNaN(Number(userId))) {
+      alert('Invalid input. Please enter a valid user ID.');
+      console.error('Invalid input:', userId);
+      this.closeModal();
       return;
     }
 
-    const userId = form.value.deleteUserId;
+    this.authService.validateToken().subscribe(valid => {
+      if (!valid) return;
 
-    if (userId && !isNaN(Number(userId))) {
-      this.userService.deleteUser(userId, this.token).subscribe(
+      const token = this.authService.token!;
+
+      this.userService.deleteUser(Number(userId), token).subscribe(
         () => {
           alert(`User ${userId} deleted successfully`);
           this.loadUsers();
         },
         (error) => {
           alert(`Error deleting user ${userId}: ${error.message}`);
-          console.error('Error deleting user:', error)
+          console.error('Error deleting user:', error);
         }
       );
-    } else {
-      alert('Invalid input. Please enter a valid user ID.');
-      console.error('Invalid input:', userId);
-    }
+    });
+
     this.closeModal();
   }
 }
