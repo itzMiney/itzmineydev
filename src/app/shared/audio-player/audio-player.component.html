@@ -6,7 +6,7 @@
     <button (click)="togglePlayPause()" [disabled]="!isPlayerReady">
       <i class="{{ isPlaying() ? 'fa-solid fa-pause' : 'fa-solid fa-play'}}"></i>
     </button>
-    <button (click)="nextVideo()" [disabled]="!isPlayerReady"><i class="fa-solid fa-forward"></i></button>
+    <button (click)="nextVideo()" [disabled]="!isPlayerReady()"><i class="fa-solid fa-forward"></i></button>
     @if (isPlayerReady()) {
       <div class="volume-control">
         <input
