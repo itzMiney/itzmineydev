@@ -2,8 +2,8 @@
   <div id="youtube-player"></div>
   <h3>{{ nowPlayingTitle() }}</h3>
   <div class="controls">
-    <button (click)="previousVideo()" [disabled]="!isPlayerReady"><i class="fa-solid fa-backward"></i></button>
-    <button (click)="togglePlayPause()" [disabled]="!isPlayerReady">
+    <button (click)="previousVideo()" [disabled]="!isPlayerReady()"><i class="fa-solid fa-backward"></i></button>
+    <button (click)="togglePlayPause()" [disabled]="!isPlayerReady()">
       <i class="{{ isPlaying() ? 'fa-solid fa-pause' : 'fa-solid fa-play'}}"></i>
     </button>
     <button (click)="nextVideo()" [disabled]="!isPlayerReady()"><i class="fa-solid fa-forward"></i></button>
