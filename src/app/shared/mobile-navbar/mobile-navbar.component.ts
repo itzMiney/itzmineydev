@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DeviceDetectorService} from 'ngx-device-detector';
+import {DeviceDetectorService} from '../services/device-detector.service';
 
 import {NavigationEnd, Router, RouterLink} from '@angular/router';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
@@ -17,7 +17,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 export class MobileNavbarComponent implements OnInit{
   currentLang: string;
   menuOpen = false;
-  isMobile: boolean;
+  isMobile: boolean = false;
   activeLink: string = '';
 
   constructor(
@@ -25,7 +25,7 @@ export class MobileNavbarComponent implements OnInit{
     private deviceService: DeviceDetectorService,
     private translate: TranslateService
   ) {
-    this.isMobile = this.deviceService.isMobile();
+    this.isMobile = this.deviceService.isMobile;
     this.currentLang = this.translate.currentLang || this.translate.getDefaultLang() || 'en';
   }
 
