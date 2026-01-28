@@ -27,7 +27,7 @@ jobs:
           echo "Changed files:"
           echo "$files"
 
-          if echo "$files" | grep -Eq '^(src/|scripts/|angular\.json$|tsconfig.*\.json$|package\.json$|package-lock\.json$|\.github/workflows/|public/i18n/)'; then
+          if echo "$files" | grep -Eq '^(src/|scripts/|angular\.json$|tsconfig.*\.json$|package\.json$|package-lock\.json$|public/i18n/)'; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_build=false" >> "$GITHUB_OUTPUT"
