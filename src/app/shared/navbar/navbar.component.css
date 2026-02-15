@@ -1,11 +1,11 @@
 .navbar {
   position: fixed;
-  top: 20px; /* Add top margin */
+  top: 20px;
   left: 50%;
-  transform: translateX(-50%); /* Center the navbar horizontally */
+  transform: translateX(-50%);
   width: auto;
-  padding: 10px 13px; /* Adjusted padding for a wider 'bean' shape */
-  border-radius: 50px; /* Create the 'bean' shape */
+  padding: 10px 13px;
+  border-radius: 50px;
   z-index: 1000;
   display: flex;
   justify-content: center;

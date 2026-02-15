@@ -14,9 +14,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  z-index: -100; /* Place the background behind content */
+  width: 100vw;
+  height: 100vw;
+  z-index: -100;
 }
 
 a {
@@ -26,7 +26,6 @@ a {
 
 .height-container {
   min-height: 100vh;
-  width: 100vw;
   align-content: center;
   justify-content: center;
   display: flex;
