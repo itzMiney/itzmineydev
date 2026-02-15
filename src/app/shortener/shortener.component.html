@@ -66,11 +66,14 @@
                 @for (url of urls; track url) {
                   <li>
                     <strong>ID {{url.id}}</strong> // <strong>URL: </strong>
-                    <a [href]="'https://itz.sh/' + url.short_url" target="_blank">{{ 'https://itz.sh/' + url.short_url }}</a><br>
+                    <a [href]="'https://itz.sh/' + url.short_url" target="_blank" rel="noopener">{{ 'https://itz.sh/' + url.short_url }}</a>
+
+                    <button type="button" class="copy-btn" (click)="copyShortUrl(url.short_url)" [attr.aria-label]="'Copy ' + ('https://itz.sh/' + url.short_url)" title="Copy Short URL">
+                        <span class="link-icon"><i class="fa-solid fa-link"></i></span>
+                    </button>
+                    <br>
                     <strong>Original: </strong>
-                    <a [href]="url.og_url" target="_blank">
-                      {{ (url.og_url | slice:0:45) + (url.og_url.length > 40 ? '...' : '')}}
-                    </a><br>
+                    <a [href]="url.og_url" target="_blank">{{ (url.og_url | slice:0:45) + (url.og_url.length > 40 ? '...' : '')}}</a><br>
                   </li>
                 }
               </ul>

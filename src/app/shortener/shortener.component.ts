@@ -26,6 +26,8 @@ export class ShortenerComponent implements OnInit, OnDestroy {
   short_name: string | null = null;
   deleteId: number | null = null;
 
+  copiedShort: string | null = null;
+
   constructor(
     private shortenerService: ShortenerService,
     private authService: AuthService,
@@ -115,6 +117,19 @@ export class ShortenerComponent implements OnInit, OnDestroy {
           console.error('Error deleting Short URL:', error);
         }
       );
+    });
+  }
+
+  copyShortUrl(shortCode: string): void {
+    const shortUrl = `https://itz.sh/${shortCode}`;
+
+    navigator.clipboard.writeText(shortUrl).then(() => {
+      this.copiedShort = shortCode;
+
+      setTimeout(() => {
+        if (this.copiedShort === shortCode) this.copiedShort = null;
+      }, 2000);
+    }).catch(() => {
     });
   }
 }
