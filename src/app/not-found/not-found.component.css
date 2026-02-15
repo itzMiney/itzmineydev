@@ -14,9 +14,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  z-index: -100; /* Place the background behind content */
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
 }
 
 .height-container {
@@ -25,7 +25,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 10; /* Ensure the text and button are above the canvas */
+  z-index: 10;
 }
 
 .error-message h1 {
